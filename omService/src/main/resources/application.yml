@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/omdb
+    password: root123
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

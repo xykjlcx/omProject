@@ -29,6 +29,60 @@
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
+        <!--&lt;!&ndash; ORM层相关依赖 start &ndash;&gt;-->
+        <!--&lt;!&ndash; srping data jpa &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.data</groupId>-->
+            <!--<artifactId>spring-data-jpa</artifactId>-->
+            <!--<version>2.0.9.RELEASE</version>-->
+        <!--</dependency>-->
+
+        <!--&lt;!&ndash; hibernate &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.hibernate</groupId>-->
+            <!--<artifactId>hibernate-core</artifactId>-->
+            <!--<version>5.0.11.Final</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>org.hibernate</groupId>-->
+            <!--<artifactId>hibernate-entitymanager</artifactId>-->
+            <!--<version>5.0.11.Final</version>-->
+        <!--</dependency>-->
+
+        <!--&lt;!&ndash; c3p0 jdbc连接池 &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>com.mchange</groupId>-->
+            <!--<artifactId>c3p0</artifactId>-->
+            <!--<version>0.9.5.2</version>-->
+        <!--</dependency>-->
+
+        <!--&lt;!&ndash; mysql 驱动 &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>mysql</groupId>-->
+            <!--<artifactId>mysql-connector-java</artifactId>-->
+            <!--<version>8.0.12</version>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; ORM层相关依赖 end &ndash;&gt;-->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- lombok 注解框架 start-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.0</version>
+        </dependency>
+        <!-- lombok 注解框架 end-->
 
     </dependencies>
 

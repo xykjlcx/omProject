@@ -8,5 +8,6 @@ public class OmbaseApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(OmbaseApplication.class, args);
+        System.out.println("Hello Spring Boot");
     }
 }
