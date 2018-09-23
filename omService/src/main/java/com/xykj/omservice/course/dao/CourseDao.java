@@ -4,6 +4,11 @@ import com.xykj.ombase.bases.BaseJpaDao;
 import com.xykj.omservice.course.po.TCoursePo;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface CourseDao extends BaseJpaDao<TCoursePo,Integer> {
+
+    List<TCoursePo> findByClassifyId(int classifyId);
+
 }

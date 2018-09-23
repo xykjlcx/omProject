@@ -1,7 +1,6 @@
 package com.xykj.omapp.controller;
 
 import com.xykj.omapp.business.impl.CourseBusinessImpl;
-import com.xykj.omapp.business.impl.UserBusinessImpl;
 import com.xykj.ombase.returnformat.OceanReturn;
 import com.xykj.ombase.returnformat.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +23,8 @@ public class AuthController {
         return OceanReturn
                 .successResult(
                         "查询所有课程成功",
-                        courseBusiness.findAllCourse()
+//                        courseBusiness.findAllCourse()
+                        "qwe"
                 );
 
     }

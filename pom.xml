@@ -40,6 +40,21 @@
         </dependency>
 
 
+
+        <!--&lt;!&ndash; 权限 start&ndash;&gt;-->
+        <!--&lt;!&ndash; spring-security 和 jwt &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-security</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>io.jsonwebtoken</groupId>-->
+            <!--<artifactId>jjwt</artifactId>-->
+            <!--<version>0.7.0</version>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; end &ndash;&gt;-->
+
+
     </dependencies>
 
 

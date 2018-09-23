@@ -50,9 +50,15 @@
             <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.8.RELEASE" />
             <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.0.8.RELEASE" />
             <element id="library" level="project" name="Maven: javax.annotation:javax.annotation-api:1.3.2" />
+            <element id="archive" name="omservice-0.0.1-SNAPSHOT.jar">
+              <element id="module-output" name="omService" />
+            </element>
             <element id="archive" name="ombase-0.0.1-SNAPSHOT.jar">
               <element id="module-output" name="omBase" />
             </element>
+            <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.46" />
+            <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.3.0" />
+            <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.16.22" />
             <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-data-jpa:2.0.4.RELEASE" />
             <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-aop:2.0.4.RELEASE" />
             <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.13" />
@@ -72,11 +78,6 @@
             <element id="library" level="project" name="Maven: org.springframework:spring-orm:5.0.8.RELEASE" />
             <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.0.8.RELEASE" />
             <element id="library" level="project" name="Maven: org.springframework:spring-aspects:5.0.8.RELEASE" />
-            <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.46" />
-            <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.16.22" />
-            <element id="archive" name="omservice-0.0.1-SNAPSHOT.jar">
-              <element id="module-output" name="omService" />
-            </element>
             <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
             <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
             <element id="library" level="project" name="Maven: org.springframework:spring-core:5.0.8.RELEASE" />
@@ -127,9 +128,15 @@
             <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.8.RELEASE" />
             <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.0.8.RELEASE" />
             <element id="library" level="project" name="Maven: javax.annotation:javax.annotation-api:1.3.2" />
+            <element id="archive" name="omservice-0.0.1-SNAPSHOT.jar">
+              <element id="module-output" name="omService" />
+            </element>
             <element id="archive" name="ombase-0.0.1-SNAPSHOT.jar">
               <element id="module-output" name="omBase" />
             </element>
+            <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.46" />
+            <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.3.0" />
+            <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.16.22" />
             <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-data-jpa:2.0.4.RELEASE" />
             <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-aop:2.0.4.RELEASE" />
             <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.13" />
@@ -149,11 +156,6 @@
             <element id="library" level="project" name="Maven: org.springframework:spring-orm:5.0.8.RELEASE" />
             <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.0.8.RELEASE" />
             <element id="library" level="project" name="Maven: org.springframework:spring-aspects:5.0.8.RELEASE" />
-            <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.46" />
-            <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.16.22" />
-            <element id="archive" name="omservice-0.0.1-SNAPSHOT.jar">
-              <element id="module-output" name="omService" />
-            </element>
             <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
             <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
             <element id="library" level="project" name="Maven: org.springframework:spring-core:5.0.8.RELEASE" />
@@ -214,6 +216,12 @@
     <file url="file://$PROJECT_DIR$/omApp" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/omBase" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/omService" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="org.springframework.beans.factory.annotation.Autowired" />
+    </list>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
@@ -223,6 +231,7 @@
   <component name="InspectionProjectProfileManager">
     <profile version="1.0">
       <option name="myName" value="Project Default" />
+      <inspection_tool class="SpringJavaInjectionPointsAutowiringInspection" enabled="false" level="ERROR" enabled_by_default="false" />
     </profile>
     <version value="1.0" />
   </component>
@@ -567,6 +576,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.xml.bind:jaxb-api:2.3.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/bind/jaxb-api/2.3.0/jaxb-api-2.3.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/bind/jaxb-api/2.3.0/jaxb-api-2.3.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/bind/jaxb-api/2.3.0/jaxb-api-2.3.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: junit:junit:4.12">
