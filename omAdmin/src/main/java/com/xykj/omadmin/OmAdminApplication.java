@@ -1,13 +1,12 @@
-package com.xykj.ombase;
+package com.xykj.omadmin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OmbaseApplication {
+public class OmAdminApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(OmbaseApplication.class, args);
-        System.out.println("Hello Spring Boot");
+        SpringApplication.run(OmAdminApplication.class, args);
     }
 }
