@@ -39,6 +39,20 @@
             <version>4.12</version>
         </dependency>
 
+        <!-- lombok 注解框架 start-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.0</version>
+        </dependency>
+        <!-- lombok 注解框架 end-->
+
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+
 
 
         <!--&lt;!&ndash; 权限 start&ndash;&gt;-->

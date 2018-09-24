@@ -1,6 +1,4 @@
-package com.xykj.ombase.bases;
-
-import org.springframework.beans.factory.annotation.Autowired;
+package com.xykj.omservice.bases;
 
 import java.io.Serializable;
 import java.util.List;

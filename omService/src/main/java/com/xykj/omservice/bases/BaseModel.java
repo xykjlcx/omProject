@@ -1,4 +1,4 @@
-package com.xykj.ombase.bases;
+package com.xykj.omservice.bases;
 
 import java.io.Serializable;
 
