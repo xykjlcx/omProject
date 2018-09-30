@@ -2,25 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ba2f577-5a67-417a-a93c-1098c2b86da9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/omBase/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/omBase/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/bases/BaseJpaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/bases/BaseJpaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/bases/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/bases/BaseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/bases/BaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/bases/BaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omBase/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/omBase/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/omService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/OmServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/OmServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseClassifyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseClassifyDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseCommentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseCommentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseSectionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseSectionDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/home/dao/HomeBannerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/home/dao/HomeBannerDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/CourseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/exceptions/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/utils/PoConvertVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/vo/CourseVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/vo/UserVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/utils/error/ErrorInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/utils/error/OceanException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/OmAdminApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/OmAdminApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omAdmin/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/omAdmin/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omApp/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/omApp/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/returnformat/OceanReturn.java" beforeDir="false" afterPath="$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/returnformat/OceanReturn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/po/TCoursePo.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/po/TCoursePo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/ICourService.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/ICourService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/impl/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/impl/CourseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/home/services/IHomeBannerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/home/services/IHomeBannerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/home/services/impl/HomeBannerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/home/services/impl/HomeBannerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/dao/UserCourseCollectDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/dao/UserCourseCollectDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/dao/UserCourseStudyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/dao/UserCourseStudyDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/IUserCourseCollectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/IUserCourseCollectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/IUserCourseStudyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/IUserCourseStudyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,17 +51,6 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="omdb@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="omdb@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="omdb@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="omdb: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -129,26 +119,26 @@
       <file leaf-file-name="OmAppApplication.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/OmAppApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="42">
+              <caret line="5" column="76" lean-forward="true" selection-start-line="5" selection-start-column="76" selection-end-line="5" selection-end-column="76" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OmBaseApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/OmBaseApplication.java">
+      <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="173">
+              <caret line="87" column="6" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseJpaDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/bases/BaseJpaDao.java">
+      <file leaf-file-name="PoConvertVo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/utils/PoConvertVo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="69" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
+            <state relative-caret-position="399">
+              <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -156,58 +146,75 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="CourseController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/CourseController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CourseVo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/vo/CourseVo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserCourseCollectDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/dao/UserCourseCollectDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TCoursePo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/po/TCoursePo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2079">
+              <caret line="103" column="25" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IUserCourseCollectService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/IUserCourseCollectService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="JpaRepository.java" pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/2.0.9.RELEASE/spring-data-jpa-2.0.9.RELEASE-sources.jar!/org/springframework/data/jpa/repository/JpaRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="34" column="13" selection-start-line="34" selection-end-line="35" />
+            <state relative-caret-position="399">
+              <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CourseDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseDao.java">
+      <file leaf-file-name="CourseServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/impl/CourseServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestCourseSevices.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/omService/src/test/java/com/xykj/omservice/testservices/TestCourseSevices.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OmServiceApplicationTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/omService/src/test/java/com/xykj/omservice/OmServiceApplicationTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OmServiceApplication.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/OmServiceApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourseClassifyDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseClassifyDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+            <state relative-caret-position="462">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1854#1855#0" expanded="true" />
+                <element signature="e#1881#1882#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -235,27 +242,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/utils/OceanCollectionUtil.java" />
-        <option value="$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/utils/OceanOperationUtil.java" />
-        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/impl/CouseClassifyService.java" />
-        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/po/TUserPo.java" />
-        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/po/TUserCourseStudyPo.java" />
-        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/po/TUserCourseCollectPo.java" />
-        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/po/TCourseClassifyPo.java" />
-        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/po/TCourseCommentPo.java" />
-        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/po/TCoursePo.java" />
-        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/po/TCourseSectionPo.java" />
-        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/home/services/impl/IHomeBannerService.java" />
-        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/home/services/IHomeBannerService.java" />
-        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/home/services/impl/HomeBannerService.java" />
-        <option value="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/business/ICourseBusiness.java" />
-        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/ICourService.java" />
-        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/impl/CourseServiceImpl.java" />
-        <option value="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/AuthController.java" />
-        <option value="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/business/impl/CourseBusinessImpl.java" />
-        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseDao.java" />
-        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/OmserviceApplication.java" />
-        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/home/po/THomeBannerPo.java" />
         <option value="$PROJECT_DIR$/omService/src/test/java/com/xykj/omservice/OmserviceApplicationTests.java" />
         <option value="$PROJECT_DIR$/omApp/src/test/java/com/xykj/omapp/JavaEmailTest.java" />
         <option value="$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/utils/email/IEmailCompoent.java" />
@@ -270,8 +256,6 @@
         <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/TestOcean.java" />
         <option value="$PROJECT_DIR$/omBase/src/test/java/com/xykj/ombase/OmbaseApplicationTests.java" />
         <option value="$PROJECT_DIR$/omService/src/test/java/com/xykj/omservice/testservices/TestCourseSevices.java" />
-        <option value="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/HomeController.java" />
-        <option value="$PROJECT_DIR$/omApp/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/omApp/pom.xml" />
         <option value="$PROJECT_DIR$/omAdmin/pom.xml" />
         <option value="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/OmappApplication.java" />
@@ -286,6 +270,29 @@
         <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseClassifyDao.java" />
         <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/bases/BaseJpaDao.java" />
         <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/OmServiceApplication.java" />
+        <option value="$PROJECT_DIR$/omAdmin/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/omApp/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/OmAdminApplication.java" />
+        <option value="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/TestController.java" />
+        <option value="$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/utils/PoConvertVo.java" />
+        <option value="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/SAJKDHKA.java" />
+        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/ICourService.java" />
+        <option value="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/HomeController.java" />
+        <option value="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/exceptions/ErrorInfo.java" />
+        <option value="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/exceptions/OceanException.java" />
+        <option value="$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/utils/error/OceanException.java" />
+        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/home/services/IHomeBannerService.java" />
+        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/home/services/impl/HomeBannerService.java" />
+        <option value="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/exceptions/GlobalExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/utils/error/ErrorInfo.java" />
+        <option value="$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/returnformat/OceanReturn.java" />
+        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/impl/CourseServiceImpl.java" />
+        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/IUserCourseCollectService.java" />
+        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/dao/UserCourseCollectDao.java" />
+        <option value="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/CourseController.java" />
+        <option value="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/vo/CourseVo.java" />
+        <option value="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/utils/PoConvertVo.java" />
+        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/po/TCoursePo.java" />
       </list>
     </option>
   </component>
@@ -444,6 +451,44 @@
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="omAdmin" type="cbb8eebc:String" user="omAdmin" />
+              <item name="omAdmin" type="cbb8eebc:String" user="omAdmin" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="omAdmin" type="cbb8eebc:String" user="omAdmin" />
+              <item name="omAdmin" type="cbb8eebc:String" user="omAdmin" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="omAdmin" type="cbb8eebc:String" user="omAdmin" />
+              <item name="omAdmin" type="cbb8eebc:String" user="omAdmin" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="omAdmin" type="cbb8eebc:String" user="omAdmin" />
+              <item name="omAdmin" type="cbb8eebc:String" user="omAdmin" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="omAdmin" type="cbb8eebc:String" user="omAdmin" />
+              <item name="omAdmin" type="cbb8eebc:String" user="omAdmin" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="resources" type="cbb8eebc:String" user="resources" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="omApp" type="cbb8eebc:String" user="omApp" />
             </path>
             <path>
@@ -501,6 +546,18 @@
               <item name="com" type="cbb8eebc:String" user="com" />
               <item name="xykj" type="cbb8eebc:String" user="xykj" />
               <item name="omapp" type="cbb8eebc:String" user="omapp" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="omApp" type="cbb8eebc:String" user="omApp" />
+              <item name="omApp" type="cbb8eebc:String" user="omApp" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+              <item name="xykj" type="cbb8eebc:String" user="xykj" />
+              <item name="omapp" type="cbb8eebc:String" user="omapp" />
+              <item name="business" type="cbb8eebc:String" user="business" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
@@ -513,6 +570,50 @@
               <item name="xykj" type="cbb8eebc:String" user="xykj" />
               <item name="omapp" type="cbb8eebc:String" user="omapp" />
               <item name="controller" type="cbb8eebc:String" user="controller" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="omApp" type="cbb8eebc:String" user="omApp" />
+              <item name="omApp" type="cbb8eebc:String" user="omApp" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+              <item name="xykj" type="cbb8eebc:String" user="xykj" />
+              <item name="omapp" type="cbb8eebc:String" user="omapp" />
+              <item name="exceptions" type="cbb8eebc:String" user="exceptions" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="omApp" type="cbb8eebc:String" user="omApp" />
+              <item name="omApp" type="cbb8eebc:String" user="omApp" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+              <item name="xykj" type="cbb8eebc:String" user="xykj" />
+              <item name="omapp" type="cbb8eebc:String" user="omapp" />
+              <item name="utils" type="cbb8eebc:String" user="utils" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="omApp" type="cbb8eebc:String" user="omApp" />
+              <item name="omApp" type="cbb8eebc:String" user="omApp" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+              <item name="xykj" type="cbb8eebc:String" user="xykj" />
+              <item name="omapp" type="cbb8eebc:String" user="omapp" />
+              <item name="vo" type="cbb8eebc:String" user="vo" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="omApp" type="cbb8eebc:String" user="omApp" />
+              <item name="omApp" type="cbb8eebc:String" user="omApp" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="resources" type="cbb8eebc:String" user="resources" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
@@ -600,23 +701,6 @@
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="omBase" type="cbb8eebc:String" user="omBase" />
-              <item name="omBase" type="cbb8eebc:String" user="omBase" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="main" type="cbb8eebc:String" user="main" />
-              <item name="resources" type="cbb8eebc:String" user="resources" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="omProject" type="cbb8eebc:String" user="omProject" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="omProject" type="cbb8eebc:String" user="omProject" />
-              <item name="omProject" type="cbb8eebc:String" user="omProject" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="omService" type="cbb8eebc:String" user="omService" />
             </path>
             <path>
@@ -674,18 +758,6 @@
               <item name="com" type="cbb8eebc:String" user="com" />
               <item name="xykj" type="cbb8eebc:String" user="xykj" />
               <item name="omservice" type="cbb8eebc:String" user="omservice" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="omService" type="cbb8eebc:String" user="omService" />
-              <item name="omService" type="cbb8eebc:String" user="omService" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="main" type="cbb8eebc:String" user="main" />
-              <item name="java" type="cbb8eebc:String" user="java" />
-              <item name="com" type="cbb8eebc:String" user="com" />
-              <item name="xykj" type="cbb8eebc:String" user="xykj" />
-              <item name="omservice" type="cbb8eebc:String" user="omservice" />
-              <item name="bases" type="cbb8eebc:String" user="bases" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
@@ -710,6 +782,43 @@
               <item name="xykj" type="cbb8eebc:String" user="xykj" />
               <item name="omservice" type="cbb8eebc:String" user="omservice" />
               <item name="course" type="cbb8eebc:String" user="course" />
+              <item name="po" type="cbb8eebc:String" user="po" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="omService" type="cbb8eebc:String" user="omService" />
+              <item name="omService" type="cbb8eebc:String" user="omService" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+              <item name="xykj" type="cbb8eebc:String" user="xykj" />
+              <item name="omservice" type="cbb8eebc:String" user="omservice" />
+              <item name="home" type="cbb8eebc:String" user="home" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="omService" type="cbb8eebc:String" user="omService" />
+              <item name="omService" type="cbb8eebc:String" user="omService" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+              <item name="xykj" type="cbb8eebc:String" user="xykj" />
+              <item name="omservice" type="cbb8eebc:String" user="omservice" />
+              <item name="user" type="cbb8eebc:String" user="user" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="omService" type="cbb8eebc:String" user="omService" />
+              <item name="omService" type="cbb8eebc:String" user="omService" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com" type="cbb8eebc:String" user="com" />
+              <item name="xykj" type="cbb8eebc:String" user="xykj" />
+              <item name="omservice" type="cbb8eebc:String" user="omservice" />
+              <item name="user" type="cbb8eebc:String" user="user" />
               <item name="dao" type="cbb8eebc:String" user="dao" />
             </path>
             <path>
@@ -718,79 +827,12 @@
               <item name="omService" type="cbb8eebc:String" user="omService" />
               <item name="src" type="cbb8eebc:String" user="src" />
               <item name="main" type="cbb8eebc:String" user="main" />
-              <item name="resources" type="cbb8eebc:String" user="resources" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="omService" type="cbb8eebc:String" user="omService" />
-              <item name="omService" type="cbb8eebc:String" user="omService" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="test" type="cbb8eebc:String" user="test" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="omService" type="cbb8eebc:String" user="omService" />
-              <item name="omService" type="cbb8eebc:String" user="omService" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="test" type="cbb8eebc:String" user="test" />
-              <item name="java" type="cbb8eebc:String" user="java" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="omService" type="cbb8eebc:String" user="omService" />
-              <item name="omService" type="cbb8eebc:String" user="omService" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="test" type="cbb8eebc:String" user="test" />
-              <item name="java" type="cbb8eebc:String" user="java" />
-              <item name="com" type="cbb8eebc:String" user="com" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="omService" type="cbb8eebc:String" user="omService" />
-              <item name="omService" type="cbb8eebc:String" user="omService" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="test" type="cbb8eebc:String" user="test" />
-              <item name="java" type="cbb8eebc:String" user="java" />
-              <item name="com" type="cbb8eebc:String" user="com" />
-              <item name="xykj" type="cbb8eebc:String" user="xykj" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="omService" type="cbb8eebc:String" user="omService" />
-              <item name="omService" type="cbb8eebc:String" user="omService" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="test" type="cbb8eebc:String" user="test" />
               <item name="java" type="cbb8eebc:String" user="java" />
               <item name="com" type="cbb8eebc:String" user="com" />
               <item name="xykj" type="cbb8eebc:String" user="xykj" />
               <item name="omservice" type="cbb8eebc:String" user="omservice" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="omService" type="cbb8eebc:String" user="omService" />
-              <item name="omService" type="cbb8eebc:String" user="omService" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="test" type="cbb8eebc:String" user="test" />
-              <item name="java" type="cbb8eebc:String" user="java" />
-              <item name="com" type="cbb8eebc:String" user="com" />
-              <item name="xykj" type="cbb8eebc:String" user="xykj" />
-              <item name="omservice" type="cbb8eebc:String" user="omservice" />
-              <item name="testservices" type="cbb8eebc:String" user="testservices" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="omProject" type="58d84e3e:PackageViewProjectNode" />
-              <item name="omApp" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="omProject" type="58d84e3e:PackageViewProjectNode" />
-              <item name="omService" type="616d4139:PackageViewModuleNode" />
+              <item name="user" type="cbb8eebc:String" user="user" />
+              <item name="services" type="cbb8eebc:String" user="services" />
             </path>
           </expand>
           <select />
@@ -813,6 +855,21 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="omProject" type="58d84e3e:PackageViewProjectNode" />
+              <item name="omApp" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="omProject" type="58d84e3e:PackageViewProjectNode" />
+              <item name="omService" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -822,6 +879,7 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SearchEverywhereHistoryKey" value="run&#9;ACTION&#9;ActivateRunDashboardToolWindow" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537280212503" />
@@ -833,7 +891,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="settings.editor.splitter.proportion" value="0.33799535" />
   </component>
   <component name="RecentsManager">
@@ -875,7 +933,7 @@
     </option>
     <option name="contentProportion" value="0.1769341" />
   </component>
-  <component name="RunManager" selected="JUnit.TestCourseSevices.test1">
+  <component name="RunManager" selected="Spring Boot.OmAppApplication">
     <configuration name="OmBaseApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.xykj.ombase.OmBaseApplication" />
       <module name="omBase" />
@@ -975,15 +1033,15 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Spring Boot.OmAppApplication" />
       <item itemvalue="Spring Boot.OmAdminApplication" />
+      <item itemvalue="Spring Boot.OmAppApplication" />
       <item itemvalue="JUnit.TestCourseSevices.test1" />
       <item itemvalue="Application.OmBaseApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestCourseSevices.test1" />
         <item itemvalue="Spring Boot.OmAppApplication" />
+        <item itemvalue="JUnit.TestCourseSevices.test1" />
         <item itemvalue="Application.OmBaseApplication" />
       </list>
     </recent_temporary>
@@ -1020,7 +1078,10 @@
       <workItem from="1537709890204" duration="136000" />
       <workItem from="1537710122258" duration="484000" />
       <workItem from="1537710880343" duration="408000" />
-      <workItem from="1537752161430" duration="2596000" />
+      <workItem from="1537752161430" duration="3004000" />
+      <workItem from="1537757491407" duration="8513000" />
+      <workItem from="1537954097590" duration="99000" />
+      <workItem from="1538117074777" duration="804000" />
     </task>
     <servers />
   </component>
@@ -1057,7 +1118,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64344000" />
+    <option name="totallyTimeSpent" value="74168000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1074,27 +1135,27 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.3279483" />
-      <window_info anchor="bottom" id="Database Changes" order="11" weight="0.32916668" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.3279483" />
+      <window_info anchor="bottom" id="Database Changes" order="11" weight="0.32905984" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Database" order="6" weight="0.3258427" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32552505" />
       <window_info id="Structure" order="1" sideWeight="0.50067115" side_tool="true" weight="0.23174158" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.59411764" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32885906" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32763532" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32763532" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="3" />
-      <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32885906" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32763532" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Run Dashboard" order="14" weight="0.75356126" />
-      <window_info anchor="bottom" id="Version Control" order="12" weight="0.328125" />
+      <window_info anchor="bottom" id="Run Dashboard" order="14" weight="0.54273504" />
+      <window_info anchor="bottom" id="Version Control" order="12" weight="0.32763532" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.6125356" />
-      <window_info anchor="bottom" id="Spring" order="7" weight="0.328125" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.32763532" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32478634" />
-      <window_info content_ui="combo" x="753" y="102" width="304" height="603" id="Project" order="0" sideWeight="0.49932885" visible="true" weight="0.28109854" />
+      <window_info content_ui="combo" x="753" y="102" width="304" height="603" id="Project" order="0" sideWeight="0.49932885" visible="true" weight="0.3828756" />
       <window_info anchor="right" id="Bean Validation" order="9" weight="0.32935393" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -1106,7 +1167,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1125,128 +1186,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/home/services/IHomeBannerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/home/services/impl/HomeBannerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="46" lean-forward="true" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/business/impl/UserBusinessImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/ICourService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/business/impl/CourseBusinessImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/home/po/THomeBannerPo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omApp/src/test/java/com/xykj/omapp/JavaEmailTest.java" />
-    <entry file="file://$PROJECT_DIR$/omApp/src/test/java/com/xykj/omapp/OmAppApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.0.4.RELEASE/spring-boot-autoconfigure-2.0.4.RELEASE.jar!/org/springframework/boot/autoconfigure/mail/MailSenderPropertiesConfiguration.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context-support/5.0.8.RELEASE/spring-context-support-5.0.8.RELEASE.jar!/org/springframework/mail/MailSender.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context-support/5.0.8.RELEASE/spring-context-support-5.0.8.RELEASE.jar!/org/springframework/mail/javamail/JavaMailSender.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context-support/5.0.8.RELEASE/spring-context-support-5.0.8.RELEASE-sources.jar!/org/springframework/mail/MailSender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/utils/email/IEmailCompoent.java" />
-    <entry file="file://$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/utils/email/impl/EmailCompoentImpl.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context-support/5.0.8.RELEASE/spring-context-support-5.0.8.RELEASE-sources.jar!/org/springframework/mail/javamail/JavaMailSenderImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="68" column="57" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/TestEmail.java" />
-    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/impl/CourseServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context-support/5.0.8.RELEASE/spring-context-support-5.0.8.RELEASE-sources.jar!/org/springframework/mail/javamail/JavaMailSender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-672">
-          <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/TestOcean.java" />
-    <entry file="file://$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/TestEmail.java" />
-    <entry file="file://$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/TestOcean.java" />
-    <entry file="file://$PROJECT_DIR$/omBase/src/test/java/com/xykj/ombase/OmBaseApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omAdmin/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.0.4.RELEASE/spring-boot-autoconfigure-2.0.4.RELEASE.jar!/org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="36" column="6" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/omService/mvnw.cmd">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
@@ -1267,9 +1206,6 @@
           <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omApp/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/ServletInitializer.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1292,26 +1228,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/AuthController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#1009#1010#0" expanded="true" />
-            <element signature="e#1036#1037#0" expanded="true" />
-            <element signature="e#1164#1165#0" expanded="true" />
-            <element signature="e#1191#1192#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/bases/BaseModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -1330,9 +1246,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="68" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1377,11 +1290,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseClassifyDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
+        <state relative-caret-position="84">
           <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1399,34 +1309,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/OmAppApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/2.0.9.RELEASE/spring-data-jpa-2.0.9.RELEASE-sources.jar!/org/springframework/data/jpa/repository/JpaRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="34" column="13" selection-start-line="34" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/bases/BaseJpaDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
+        <state relative-caret-position="105">
           <caret line="8" column="69" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1439,8 +1325,208 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/OmServiceApplication.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omAdmin/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/OmAdminApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omApp/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/vo/UserVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/utils/PoConvertVo.java" />
+    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/SAJKDHKA.java" />
+    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/dsada.java" />
+    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/qwe.java" />
+    <entry file="file://$PROJECT_DIR$/omApp/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/utils/error/OceanException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/utils/OceanOperationUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/ICourService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="69" lean-forward="true" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/home/services/IHomeBannerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/home/services/impl/HomeBannerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/exceptions/GlobalExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/utils/error/ErrorInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omBase/src/main/java/com/xykj/ombase/returnformat/OceanReturn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/AuthController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="19" column="17" lean-forward="true" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/2.0.9.RELEASE/spring-data-jpa-2.0.9.RELEASE-sources.jar!/org/springframework/data/jpa/repository/JpaRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/impl/CourseServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1854#1855#0" expanded="true" />
+            <element signature="e#1881#1882#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/IUserCourseCollectService.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/dao/UserCourseCollectDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/CourseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/vo/CourseVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/po/TCoursePo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2079">
+          <caret line="103" column="25" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/utils/PoConvertVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/OmAppApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="5" column="76" lean-forward="true" selection-start-line="5" selection-start-column="76" selection-end-line="5" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="87" column="6" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
         </state>
       </provider>
     </entry>

@@ -1,6 +1,7 @@
 package com.xykj.omservice.course.services.impl;
 
 import com.xykj.ombase.utils.OceanOperationUtil;
+import com.xykj.ombase.utils.error.OceanException;
 import com.xykj.omservice.course.dao.CourseClassifyDao;
 import com.xykj.omservice.course.dao.CourseDao;
 import com.xykj.omservice.course.po.TCourseClassifyPo;
@@ -26,12 +27,11 @@ public class CourseServiceImpl implements ICourService {
 
 
     @Override
-    public List<TCoursePo> findAllByWeightPage(Integer page, Integer size) throws Exception {
-        Pageable pageable = new PageRequest(page,size);
+    public List<TCoursePo> findAllByPage(Pageable pageable) throws Exception {
         Page<TCoursePo> poPage = courseDao.findAll(pageable);
         List<TCoursePo> coursePoList = poPage.getContent();
         if (OceanOperationUtil.isNullOrEmptyForCollection(coursePoList)){
-            throw new NullPointerException("获取所有课程列表为空");
+            throw new OceanException("findAllByWeightPage() 获取所有课程列表为空");
         }
         return coursePoList;
     }
@@ -41,11 +41,11 @@ public class CourseServiceImpl implements ICourService {
         List<TCoursePo> coursePoList;
         TCourseClassifyPo courseClassifyPo = courseClassifyDao.findById(classifyId).get();
         if (courseClassifyPo == null){
-            throw new NullPointerException("根据分类查询课程失败，分类不存在");
+            throw new OceanException("根据分类查询课程失败，分类不存在");
         }
         coursePoList = courseDao.findByClassifyId(classifyId);
         if (OceanOperationUtil.isNullOrEmptyForCollection(coursePoList)){
-            throw new NullPointerException("查无此分类课程");
+            throw new OceanException("查无此分类课程");
         }
         return coursePoList;
     }

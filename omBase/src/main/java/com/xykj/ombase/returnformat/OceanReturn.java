@@ -3,8 +3,8 @@ package com.xykj.ombase.returnformat;
 
 public class OceanReturn {
 
-    private static final Integer SUCCESS = 200;
-    private static final Integer ERROR = 400;
+    private static final Integer SUCCESS = 0;
+    private static final Integer ERROR = -1;
 
     public static Result successResult(String message,Object data){
         return Result.builder()

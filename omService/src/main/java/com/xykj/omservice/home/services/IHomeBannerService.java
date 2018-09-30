@@ -13,14 +13,14 @@ public interface IHomeBannerService {
      * 获取所有轮播
      * @return
      */
-    List<THomeBannerPo> findAll();
+    List<THomeBannerPo> findAll() throws Exception;
 
     /**
      * 根据id查询
      * @param bannerId
      * @return
      */
-    THomeBannerPo findById(int bannerId);
+    THomeBannerPo findById(int bannerId) throws Exception;
 
 
 }

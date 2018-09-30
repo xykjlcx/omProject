@@ -1,6 +1,7 @@
 package com.xykj.omservice.home.services.impl;
 
 import com.xykj.ombase.utils.OceanOperationUtil;
+import com.xykj.ombase.utils.error.OceanException;
 import com.xykj.omservice.home.dao.HomeBannerDao;
 import com.xykj.omservice.home.po.THomeBannerPo;
 import com.xykj.omservice.home.services.IHomeBannerService;
@@ -16,19 +17,19 @@ public class HomeBannerService implements IHomeBannerService {
     HomeBannerDao homeBannerDao;
 
     @Override
-    public List<THomeBannerPo> findAll() {
+    public List<THomeBannerPo> findAll() throws OceanException {
         List<THomeBannerPo> homeBannerPoList = homeBannerDao.findAll();
         if (OceanOperationUtil.isNullOrEmptyForCollection(homeBannerPoList)){
-            throw new NullPointerException("没有轮播数据");
+            throw new OceanException("没有轮播数据");
         }
         return homeBannerPoList;
     }
 
     @Override
-    public THomeBannerPo findById(int bannerId) {
+    public THomeBannerPo findById(int bannerId) throws OceanException {
         THomeBannerPo homeBannerPo = homeBannerDao.findById(bannerId).get();
         if (homeBannerPo == null){
-            throw new NullPointerException("没有id为" + bannerId + "的轮播数据");
+            throw new OceanException("没有id为" + bannerId + "的轮播数据");
         }
         return homeBannerPo;
     }

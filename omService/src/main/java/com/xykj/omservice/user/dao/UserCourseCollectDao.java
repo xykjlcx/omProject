@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserCourseCollectDao extends BaseJpaDao<TUserCourseCollectPo,Integer> {
+
+
+
 }

@@ -95,6 +95,12 @@ public class TCoursePo {
      * 价格
      */
     @Basic@Column(name = "price", nullable = true)
-    private Integer price;
+    private Double price;
+
+    /**
+     * 价格
+     */
+    @Basic@Column(name = "collect_count", nullable = true)
+    private Integer collectCount;
 
 }

@@ -1,6 +1,7 @@
 package com.xykj.omservice.course.services;
 
 import com.xykj.omservice.course.po.TCoursePo;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +13,7 @@ public interface ICourService {
      *
      * @return
      */
-    List<TCoursePo> findAllByWeightPage(Integer page,Integer size) throws Exception;
+    List<TCoursePo> findAllByPage(Pageable pageable) throws Exception;
 
     /**
      * 根据分类查询课程
