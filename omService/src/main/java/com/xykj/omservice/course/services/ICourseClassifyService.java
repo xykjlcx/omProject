@@ -13,7 +13,7 @@ public interface ICourseClassifyService {
      * @param parentId == 0为一级分类
      * @return
      */
-    List<TCourseClassifyPo> findAnyLevel(int parentId);
+    List<TCourseClassifyPo> findAnyLevel(int parentId) throws Exception;
 
     /**
      * 根据分类id查询

@@ -20,7 +20,8 @@ public interface ICourService {
      * @param classifyId
      * @return
      */
-    List<TCoursePo> findByClassifyId(int classifyId) throws Exception;
+    List<TCoursePo> findByClassifyIdAndPage(int classifyId,Pageable pageable) throws Exception;
+
 
 
 }

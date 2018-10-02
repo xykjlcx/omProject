@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface CourseClassifyDao extends BaseJpaDao<TCourseClassifyPo,Integer> {
 
-    List<TCourseClassifyPo> findByParentId(int parentId);
+    List<TCourseClassifyPo> findAllByParentIdOrderBySequenceAsc(int parentId);
 
 }

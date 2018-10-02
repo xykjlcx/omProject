@@ -1,5 +1,10 @@
 package com.xykj.omapp.business;
 
+import com.xykj.omapp.vo.UserCourseVo;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 /**
  * @author ocean
  * @Title: IUserCourseBusiness
@@ -7,5 +12,14 @@ package com.xykj.omapp.business;
  * @Description: TODO
  * @date 2018/10/1下午5:36
  */
-public class IUserCourseBusiness {
+@Service
+public interface IUserCourseBusiness {
+
+    /**
+     * 根据用户id返回我的课程数据
+     * @param userId
+     * @return
+     */
+    List<UserCourseVo> getMyCoursesByUserId(int userId) throws Exception;
+
 }

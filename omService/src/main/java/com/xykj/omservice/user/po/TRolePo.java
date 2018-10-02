@@ -81,4 +81,14 @@ public class TRolePo {
         result = 31 * result + (updateTime != null ? updateTime.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "TRolePo{" +
+                "id=" + id +
+                ", roleName='" + roleName + '\'' +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';
+    }
 }

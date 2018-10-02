@@ -1,4 +1,4 @@
-package com.xykj.omservice.notices.po;
+package com.xykj.omservice.home.po;
 
 import javax.persistence.*;
 import java.sql.Timestamp;

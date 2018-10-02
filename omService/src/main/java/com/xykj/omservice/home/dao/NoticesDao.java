@@ -1,9 +1,7 @@
-package com.xykj.omservice.notices.dao;
+package com.xykj.omservice.home.dao;
 
 import com.xykj.omservice.bases.BaseJpaDao;
-import com.xykj.omservice.notices.po.TNoticesPo;
-
-import java.util.List;
+import com.xykj.omservice.home.po.TNoticesPo;
 
 /**
  * @author ocean
@@ -14,6 +12,6 @@ import java.util.List;
  */
 public interface NoticesDao extends BaseJpaDao<TNoticesPo,Integer> {
 
-    
+
 
 }

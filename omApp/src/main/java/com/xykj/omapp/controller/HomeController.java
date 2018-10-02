@@ -7,6 +7,8 @@ import com.xykj.ombase.returnformat.Result;
 import com.xykj.omservice.course.po.TCoursePo;
 import com.xykj.omservice.course.services.impl.CourseServiceImpl;
 import com.xykj.omservice.home.services.impl.HomeBannerService;
+import com.xykj.omservice.home.dao.NoticesDao;
+import com.xykj.omservice.home.po.TNoticesPo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -14,9 +16,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/home")
@@ -27,6 +27,9 @@ public class HomeController {
 
     @Autowired
     CourseServiceImpl courseService;
+
+    @Autowired
+    NoticesDao noticesDao;
 
     /**
      * 获取banner轮播推荐
@@ -48,16 +51,30 @@ public class HomeController {
         }
     }
 
+    /**
+     * 获取首页公告
+     * @return
+     */
+    @RequestMapping("/getNotice")
+    public Result getNotice(){
+        List<TNoticesPo> list = noticesDao.findAll();
+        return OceanReturn.successResult(
+                "获取首页公告成功",
+                list
+        );
+    }
+
 
     /**
-     * 获取推荐好课(权值最高的课程)
+     * 获取精选课程(权值最高的课程)
+     * 4个
      * @return
      */
     @RequestMapping(value = "/getRecommendCourse",method = RequestMethod.GET)
     public Result getRecommendCourse(){
        try {
            Sort sort = new Sort(Sort.Direction.DESC,"weight");
-           Pageable pageable = new PageRequest(0,5,sort);
+           Pageable pageable = new PageRequest(0,4,sort);
            List<TCoursePo> coursePoList = courseService.findAllByPage(pageable);
            List<CourseVo> courseVoList = new ArrayList<>();
            coursePoList.forEach(tCoursePo -> {
@@ -108,30 +125,5 @@ public class HomeController {
     }
 
 
-    private String[] noticesStrs = {
-            "实现三栏布局的几种方法",
-            "Java集合框架",
-            "深入理解JAVA虚拟机",
-            "TensorFlow入门",
-            "Spark流式处理"
-    };
-
-    /**
-     * 获取首页公告
-     * @return
-     */
-    @RequestMapping("/getNotice")
-    public Result getNotice(){
-        List<Map<String,Object>> notices = new ArrayList<>();
-        for (int i = 0; i < noticesStrs.length; i++) {
-            Map<String,Object> item = new HashMap<>();
-            item.put("newsKey",noticesStrs[i]);
-            notices.add(item);
-        }
-        return OceanReturn.successResult(
-                "获取首页公告成功",
-                notices
-        );
-    }
 
 }

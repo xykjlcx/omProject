@@ -10,19 +10,19 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CouseClassifyService implements ICourseClassifyService {
+public class CouseClassifyServiceImpl implements ICourseClassifyService {
 
     @Autowired
     CourseClassifyDao courseClassifyDao;
 
 
     @Override
-    public List<TCourseClassifyPo> findAnyLevel(int parentId) {
+    public List<TCourseClassifyPo> findAnyLevel(int parentId) throws Exception {
         List<TCourseClassifyPo> courseClassifyPoList;
         if (parentId < 0){
             throw new NullPointerException("该分类不存在");
         }
-        courseClassifyPoList = courseClassifyDao.findByParentId(parentId);
+        courseClassifyPoList = courseClassifyDao.findAllByParentIdOrderBySequenceAsc(parentId);
         if (OceanOperationUtil.isNullOrEmptyForCollection(courseClassifyPoList)){
             throw new NullPointerException("该分类下不存在子分类");
         }

@@ -1,5 +1,6 @@
 package com.xykj.ombase;
 
+import com.xykj.ombase.utils.OceanDateUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ public class OmBaseApplicationTests {
 
     @Test
     public void contextLoads() {
+        System.out.println(OceanDateUtil.converDate(System.currentTimeMillis()));
     }
 
 
