@@ -1,12 +1,16 @@
 package com.xykj.omapp.controller;
 
+import com.xykj.omapp.business.impl.CourseBusinessImpl;
 import com.xykj.omapp.utils.PoConvertVo;
+import com.xykj.omapp.vo.CourseSectionVo;
 import com.xykj.omapp.vo.CourseVo;
 import com.xykj.ombase.returnformat.OceanReturn;
 import com.xykj.ombase.returnformat.Result;
 import com.xykj.omservice.course.dao.CourseClassifyDao;
 import com.xykj.omservice.course.po.TCourseClassifyPo;
 import com.xykj.omservice.course.po.TCoursePo;
+import com.xykj.omservice.course.po.TCourseSectionPo;
+import com.xykj.omservice.course.services.impl.CourseSectionServiceImpl;
 import com.xykj.omservice.course.services.impl.CourseServiceImpl;
 import com.xykj.omservice.course.services.impl.CouseClassifyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +41,8 @@ public class CourseController {
     CourseServiceImpl courseService;
     @Autowired
     CouseClassifyServiceImpl couseClassifyService;
-
+    @Autowired
+    CourseBusinessImpl courseBusiness;
 
     @RequestMapping(value = "/getAllCourseForPage", method = RequestMethod.POST)
     public Result getAllCourseForPage(
@@ -92,5 +97,21 @@ public class CourseController {
        }
     }
 
+    @RequestMapping(value = "/getCourseChapterAndSection",method = RequestMethod.POST)
+    public Result getCourseChapterAndSection(@RequestParam("courseId") int courseId){
+        try {
+            Map<String,Object> data = courseBusiness.getChapterAndSection(courseId);
+            return OceanReturn.successResult(
+                    "获取课程章节列表成功",
+                    data
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    "获取课程章节列表失败",
+                    null
+            );
+        }
+    }
 
 }

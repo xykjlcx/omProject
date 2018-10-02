@@ -13,14 +13,14 @@ public interface BaseService<T,ID extends Serializable> {
      * @param data
      * @return
      */
-    void save(T data);
+    void save(T data) throws Exception;
 
     /**
      * 使用id删除
      * @param id
      * @return
      */
-    void deleteById(ID id);
+    void deleteById(ID id) throws Exception;
 
     /**
      * 查询所有

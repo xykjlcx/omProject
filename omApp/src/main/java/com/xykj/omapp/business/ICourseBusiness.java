@@ -4,6 +4,7 @@ import com.xykj.omservice.course.po.TCoursePo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public interface ICourseBusiness {
@@ -20,5 +21,6 @@ public interface ICourseBusiness {
      */
     List<TCoursePo> getGuessLikeCourse();
 
+    Map<String,Object> getChapterAndSection(int courseId);
 
 }

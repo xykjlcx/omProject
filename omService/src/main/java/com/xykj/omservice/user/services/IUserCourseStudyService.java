@@ -16,5 +16,6 @@ public interface IUserCourseStudyService extends BaseService<TUserCourseStudyPo,
      */
     List<TUserCourseStudyPo> getMyStudyCourseByUserId(int userId) throws Exception;
 
+    boolean isStudyCourse(int userId,int courseId);
 
 }

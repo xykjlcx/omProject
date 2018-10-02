@@ -31,5 +31,20 @@ public interface UserCourseStudyDao extends BaseJpaDao<TUserCourseStudyPo,Intege
      */
     TUserCourseStudyPo findFirstByUserIdAndCourseIdOrderByLastStudyTimeDesc(int userId,int courseId);
 
+    /**
+     * 根据用户id和课程id和章节id查询
+     * @param userId
+     * @param courseId
+     * @return
+     */
+    List<TUserCourseStudyPo> findAllByUserIdAndCourseIdAndSectionId(int userId,int courseId,int sectionId);
+
+    /**
+     * 根据用户id和课程id查询
+     * @param userId
+     * @param courseId
+     * @return
+     */
+    List<TUserCourseStudyPo> findAllByUserIdAndCourseId(int userId,int courseId);
 
 }

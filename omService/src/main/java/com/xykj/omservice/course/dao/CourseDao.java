@@ -24,4 +24,6 @@ public interface CourseDao extends BaseJpaDao<TCoursePo,Integer> {
     )
     List<TCoursePo> findAllByClassifyId(int classifyId,Pageable pageable);
 
+    List<TCoursePo> findAllById(int courseId);
+
 }

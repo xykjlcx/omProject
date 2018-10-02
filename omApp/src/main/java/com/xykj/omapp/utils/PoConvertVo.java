@@ -1,7 +1,9 @@
 package com.xykj.omapp.utils;
 
+import com.xykj.omapp.vo.CourseSectionVo;
 import com.xykj.omapp.vo.CourseVo;
 import com.xykj.omservice.course.po.TCoursePo;
+import com.xykj.omservice.course.po.TCourseSectionPo;
 
 public class PoConvertVo {
 
@@ -18,6 +20,17 @@ public class PoConvertVo {
                 .isFree(tCoursePo.getIsFree())
                 .price(tCoursePo.getPrice())
                 .count(tCoursePo.getCollectCount())
+                .build();
+    }
+
+    public static CourseSectionVo convert(TCourseSectionPo tCourseSectionPo){
+        return CourseSectionVo.builder()
+                .id(tCourseSectionPo.getId())
+                .courseId(tCourseSectionPo.getCourseId())
+                .parentId(tCourseSectionPo.getParentId())
+                .sectionName(tCourseSectionPo.getSectionName())
+                .duration(tCourseSectionPo.getDuration())
+                .videoUrl(tCourseSectionPo.getVideoUrl())
                 .build();
     }
 
