@@ -1,5 +1,6 @@
 package com.xykj.omservice.home.services;
 
+import com.xykj.omservice.course.po.TCoursePo;
 import com.xykj.omservice.home.po.THomeBannerPo;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +11,10 @@ public interface IHomeBannerService {
 
 
     /**
-     * 获取所有轮播
+     * 获取所有轮播数据(取课程)
      * @return
      */
-    List<THomeBannerPo> findAll() throws Exception;
+    List<TCoursePo> findAll() throws Exception;
 
     /**
      * 根据id查询

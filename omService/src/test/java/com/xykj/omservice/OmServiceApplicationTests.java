@@ -1,5 +1,6 @@
 package com.xykj.omservice;
 
+import com.xykj.ombase.utils.OceanOperationUtil;
 import com.xykj.omservice.course.dao.CourseClassifyDao;
 import com.xykj.omservice.course.dao.CourseDao;
 import com.xykj.omservice.course.po.TCourseClassifyPo;
@@ -92,6 +93,15 @@ public class OmServiceApplicationTests {
         Pageable pageable = new PageRequest(1,2);
         List<TCoursePo> list = courseDao.findAllByClassifyId(3,pageable);
         System.out.println(list);
+    }
+
+    @Test
+    public void testmd5(){
+//        String account = "xykjlcx";
+//        String pwd = "zy1314521..";
+//        String encrypt = OceanOperationUtil.md5(OceanOperationUtil.md5(account) + OceanOperationUtil.md5(pwd));
+//        System.out.println(encrypt);
+        System.out.println(OceanOperationUtil.md5("zy1314521.."));
     }
 
 }

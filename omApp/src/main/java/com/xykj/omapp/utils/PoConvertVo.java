@@ -3,6 +3,7 @@ package com.xykj.omapp.utils;
 import com.xykj.omapp.vo.CourseCommentVo;
 import com.xykj.omapp.vo.CourseSectionVo;
 import com.xykj.omapp.vo.CourseVo;
+import com.xykj.omapp.vo.UserVo;
 import com.xykj.ombase.utils.OceanDateUtil;
 import com.xykj.omservice.course.po.TCourseCommentPo;
 import com.xykj.omservice.course.po.TCoursePo;
@@ -47,6 +48,21 @@ public class PoConvertVo {
                 .courseId(tCourseCommentPo.getCourseId())
                 .commentContent(tCourseCommentPo.getCommentContent())
                 .commentTime(OceanDateUtil.converDate(tCourseCommentPo.getCreateTime().getTime()))
+                .build();
+    }
+
+    public static UserVo convert(TUserPo tUserPo){
+        return UserVo.builder()
+                .id(tUserPo.getId())
+                .account(tUserPo.getUserName())
+                .realName(tUserPo.getRealName())
+                .signature(tUserPo.getSignature())
+                .email(tUserPo.getEmail())
+                .gender(tUserPo.getGender())
+                .education(tUserPo.getEducation())
+                .phone(tUserPo.getPhone())
+                .headImg(tUserPo.getHeadImg())
+                .lastLoginTime(OceanDateUtil.converDate(tUserPo.getLastLoginTime().getTime()))
                 .build();
     }
 

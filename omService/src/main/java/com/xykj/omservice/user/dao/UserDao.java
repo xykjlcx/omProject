@@ -11,4 +11,12 @@ public interface UserDao extends BaseJpaDao<TUserPo,Integer> {
 
     List<TUserPo> findAllById(int userId);
 
+    /**
+     * 根据用户名查询
+     * @param username
+     * @return
+     */
+    List<TUserPo> findAllByUserName(String username);
+
+
 }

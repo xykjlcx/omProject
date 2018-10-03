@@ -38,14 +38,24 @@ public class HomeController {
     @RequestMapping(value = "/getBannerData",method = RequestMethod.GET)
     public Result getBannerData(){
         try {
+            List<TCoursePo> tCoursePoList = homeBannerService.findAll();
+            List<CourseVo> courseVoList = new ArrayList<>();
+            tCoursePoList.forEach(tCoursePo -> {
+                courseVoList.add(PoConvertVo.convert(tCoursePo));
+            });
             return OceanReturn.successResult(
                     "获取课程轮播成功",
-                    homeBannerService.findAll()
+                    courseVoList
             );
-        }catch (Exception e){
+        }catch (RuntimeException e){
             e.printStackTrace();
             return OceanReturn.errorResult(
-                    "获取课程轮播失败",
+                    e.getMessage(),
+                    null
+            );
+        }catch (Exception e){
+            return OceanReturn.errorResult(
+                    "获取轮播失败",
                     null
             );
         }

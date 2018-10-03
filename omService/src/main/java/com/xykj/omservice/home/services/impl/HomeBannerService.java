@@ -2,12 +2,15 @@ package com.xykj.omservice.home.services.impl;
 
 import com.xykj.ombase.utils.OceanOperationUtil;
 import com.xykj.ombase.utils.error.OceanException;
+import com.xykj.omservice.course.dao.CourseDao;
+import com.xykj.omservice.course.po.TCoursePo;
 import com.xykj.omservice.home.dao.HomeBannerDao;
 import com.xykj.omservice.home.po.THomeBannerPo;
 import com.xykj.omservice.home.services.IHomeBannerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -15,14 +18,20 @@ public class HomeBannerService implements IHomeBannerService {
 
     @Autowired
     HomeBannerDao homeBannerDao;
+    @Autowired
+    CourseDao courseDao;
 
     @Override
-    public List<THomeBannerPo> findAll() throws OceanException {
+    public List<TCoursePo> findAll() throws OceanException {
+        List<TCoursePo> tCoursePoList = new ArrayList<>();
         List<THomeBannerPo> homeBannerPoList = homeBannerDao.findAll();
         if (OceanOperationUtil.isNullOrEmptyForCollection(homeBannerPoList)){
-            throw new OceanException("没有轮播数据");
+            throw new RuntimeException("暂无轮播数据!");
         }
-        return homeBannerPoList;
+        homeBannerPoList.forEach(tHomeBannerPo -> {
+            tCoursePoList.add(courseDao.findById(tHomeBannerPo.getCourseId()).get());
+        });
+        return tCoursePoList;
     }
 
     @Override

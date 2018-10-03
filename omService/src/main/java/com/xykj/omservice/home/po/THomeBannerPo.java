@@ -20,23 +20,9 @@ public class THomeBannerPo {
     @Column(name = "id", nullable = false)
     private int id;
 
-    /**
-     * 轮播文字
-     */
-    @Basic@Column(name = "banner_text", nullable = false, length = 255)
-    private String bannerText;
-
-    /**
-     * 轮播预览图
-     */
-    @Basic@Column(name = "banner_preview_img", nullable = false, length = 255)
-    private String bannerPreviewImg;
-
-    /**
-     * 点击url地址
-     */
-    @Basic@Column(name = "banner_url_address", nullable = false, length = 255)
-    private String bannerUrlAddress;
+    @Basic
+    @Column(name = "course_id",nullable = false)
+    private int courseId;
 
     /**
      * 权重
