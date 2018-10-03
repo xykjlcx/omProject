@@ -2,10 +2,12 @@ package com.xykj.omapp.controller;
 
 import com.xykj.omapp.business.impl.CourseBusinessImpl;
 import com.xykj.omapp.utils.PoConvertVo;
+import com.xykj.omapp.vo.CourseCommentVo;
 import com.xykj.omapp.vo.CourseSectionVo;
 import com.xykj.omapp.vo.CourseVo;
 import com.xykj.ombase.returnformat.OceanReturn;
 import com.xykj.ombase.returnformat.Result;
+import com.xykj.ombase.utils.OceanOperationUtil;
 import com.xykj.omservice.course.dao.CourseClassifyDao;
 import com.xykj.omservice.course.po.TCourseClassifyPo;
 import com.xykj.omservice.course.po.TCoursePo;
@@ -109,6 +111,27 @@ public class CourseController {
             e.printStackTrace();
             return OceanReturn.errorResult(
                     "获取课程章节列表失败",
+                    null
+            );
+        }
+    }
+
+    @RequestMapping(value = "/getCourseComments",method = RequestMethod.POST)
+    public Result getCourseComments(@RequestParam("courseId") int courseId,
+                                    @RequestParam("page") int page,
+                                    @RequestParam("size") int size){
+        List<CourseCommentVo> courseCommentVoList = null;
+        try {
+            Pageable pageable = new PageRequest(page,size);
+            courseCommentVoList = courseBusiness.getCourseCommentsByCourseIdForPage(courseId,pageable);
+            return OceanReturn.successResult(
+                    "获取评论列表成功",
+                    courseCommentVoList
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    "获取评论列表失败",
                     null
             );
         }
