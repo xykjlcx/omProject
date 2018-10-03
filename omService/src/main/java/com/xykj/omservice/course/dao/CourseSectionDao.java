@@ -25,4 +25,6 @@ public interface CourseSectionDao extends BaseJpaDao<TCourseSectionPo,Integer> {
      */
     List<TCourseSectionPo> findAllByCourseId(int courseId);
 
+    List<TCourseSectionPo> findAllByIdAndCourseId(int id,int courseId);
+
 }

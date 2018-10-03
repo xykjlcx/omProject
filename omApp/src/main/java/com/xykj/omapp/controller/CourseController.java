@@ -10,8 +10,10 @@ import com.xykj.ombase.returnformat.Result;
 import com.xykj.ombase.utils.OceanOperationUtil;
 import com.xykj.omservice.course.dao.CourseClassifyDao;
 import com.xykj.omservice.course.po.TCourseClassifyPo;
+import com.xykj.omservice.course.po.TCourseCommentPo;
 import com.xykj.omservice.course.po.TCoursePo;
 import com.xykj.omservice.course.po.TCourseSectionPo;
+import com.xykj.omservice.course.services.impl.CourseCommentServiceImpl;
 import com.xykj.omservice.course.services.impl.CourseSectionServiceImpl;
 import com.xykj.omservice.course.services.impl.CourseServiceImpl;
 import com.xykj.omservice.course.services.impl.CouseClassifyServiceImpl;
@@ -45,6 +47,8 @@ public class CourseController {
     CouseClassifyServiceImpl couseClassifyService;
     @Autowired
     CourseBusinessImpl courseBusiness;
+    @Autowired
+    CourseCommentServiceImpl courseCommentService;
 
     @RequestMapping(value = "/getAllCourseForPage", method = RequestMethod.POST)
     public Result getAllCourseForPage(
@@ -132,6 +136,32 @@ public class CourseController {
             e.printStackTrace();
             return OceanReturn.errorResult(
                     "获取评论列表失败",
+                    null
+            );
+        }
+    }
+
+    @RequestMapping(value = "/addComment",method = RequestMethod.POST)
+    public Result addComment(@RequestParam("userId") int userId,
+                             @RequestParam("courseId") int courseId,
+                             @RequestParam("sectionId") int sectionId,
+                             @RequestParam("content") String content){
+        try {
+            TCourseCommentPo courseCommentPo = TCourseCommentPo.builder()
+                    .userId(userId)
+                    .courseId(courseId)
+                    .sectionId(sectionId)
+                    .commentContent(content)
+                    .build();
+            courseCommentService.addComment(courseCommentPo);
+            return OceanReturn.successResult(
+                    "新增评论成功",
+                    null
+            );
+        }catch (Exception e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    "新增评论失败",
                     null
             );
         }

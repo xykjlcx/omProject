@@ -23,4 +23,11 @@ public interface ICourseCommentService {
      */
     List<TCourseCommentPo> getAllCommentByCourseIdForPage(int courseId,Pageable pageable);
 
+    /**
+     * 新增一条评论记录
+     * @param tCourseCommentPo
+     * @return
+     */
+    void addComment(TCourseCommentPo tCourseCommentPo) throws Exception;
+
 }
