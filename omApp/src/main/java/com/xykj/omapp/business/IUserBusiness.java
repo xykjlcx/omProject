@@ -44,7 +44,15 @@ public interface IUserBusiness {
     TUserPo alterUserInfo(TUserPo newuserinfo);
 
 
+    /**
+     * 激活
+     */
     void activate();
 
+    /**
+     * 忘记密码
+     * @param email
+     */
+    void forget(String email);
 
 }

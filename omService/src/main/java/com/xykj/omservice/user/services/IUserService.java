@@ -23,4 +23,5 @@ public interface IUserService extends BaseService<TUserPo,Integer> {
     void register(TUserPo registerUser);
 
 
+
 }

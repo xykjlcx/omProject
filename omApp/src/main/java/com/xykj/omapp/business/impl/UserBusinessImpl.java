@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
+import java.sql.Timestamp;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -84,6 +86,35 @@ public class UserBusinessImpl implements IUserBusiness {
 
     @Override
     public void activate() {
+        // 激活
+    }
 
+    @Override
+    public void forget(String email) {
+        List<TUserPo> tUserPoList = userDao.findAllByEmail(email);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(tUserPoList)){
+            throw new RuntimeException("没有与该邮箱关联的用户！");
+        }
+        Context context = new Context();
+        try {
+            TUserPo updateUser = tUserPoList.get(0);
+            // 生成一段随机数字
+            String newPwd = "";
+            int leng = random.nextInt(20);
+            for (int i = 0; i < leng; i++) {
+                newPwd += random.nextInt(100);
+            }
+            String entrityNewPwd = OceanOperationUtil.md5(newPwd);
+            entrityNewPwd = OceanOperationUtil.handleEncrypt(updateUser.getUserName(),entrityNewPwd);
+            updateUser.setPassword(entrityNewPwd);
+            updateUser.setUpdateUserTime(new Timestamp(System.currentTimeMillis()));
+            userDao.saveAndFlush(updateUser);
+            // 发送邮件
+            context.setVariable("username",updateUser.getUserName());
+            context.setVariable("newpwd",newPwd);
+            oceanEmial.sendHtmlEmial(email,"OceanMooc密码重置",templateEngine.process("resetPasswordTemplate",context));
+        }catch (Exception e){
+            throw new RuntimeException("未知错误，不能重置密码");
+        }
     }
 }

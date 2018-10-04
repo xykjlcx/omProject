@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @author ocean
@@ -24,6 +25,7 @@ public class UserServiceImpl implements IUserService {
 
     @Autowired
     UserDao userDao;
+    private Random random = new Random();
 
     @Override
     public TUserPo login(String username, String pwd) throws Exception {
@@ -70,6 +72,8 @@ public class UserServiceImpl implements IUserService {
         userDao.save(registerUser);
     }
 
+
+
     @Override
     public void save(TUserPo data) throws Exception {
         if (data != null){
@@ -88,10 +92,10 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public TUserPo findById(Integer id) {
+    public TUserPo findById(Integer id) throws RuntimeException {
         List<TUserPo> tUserPoList = userDao.findAllById(id);
         if (OceanOperationUtil.isNullOrEmptyForCollection(tUserPoList)){
-            throw new RuntimeException("查询失败，用户不存在");
+            throw new RuntimeException("查询不到用户");
         }
         return tUserPoList.get(0);
     }

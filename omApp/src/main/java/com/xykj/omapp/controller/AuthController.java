@@ -69,7 +69,7 @@ public class AuthController {
         try {
             userBusiness.register(registerUser,hostUrl);
             return OceanReturn.successResult(
-                    "注册成功",
+                    "注册成功,请等待邮件激活！",
                     null
             );
         }catch (RuntimeException e){
@@ -86,10 +86,13 @@ public class AuthController {
     public String activate(@RequestParam(value = "code",required = false) String code,
                            @RequestParam(value = "identifying",required = false) int userId){
         // 可以从url获取?name=value的参数
-        TUserPo userPo = userService.findById(userId);
-        String checkCode = userPo.getVerifyCode();
-        Context context = new Context();
+        TUserPo userPo = null;
+        String checkCode = null;
+        Context context = null;
         try {
+            userPo = userService.findById(userId);
+            checkCode = userPo.getVerifyCode();
+            context = new Context();
             if (checkCode.equals("-1")) {
                 // 激活成功后将值设置为-1表示已激活
                 context.setVariable("account",userPo.getUserName());
@@ -111,15 +114,35 @@ public class AuthController {
         }catch (RuntimeException e){
             e.printStackTrace();
             context.setVariable("account",userPo.getUserName());
-            context.setVariable("result","Sorry，账户激活失败。请联系管理员！");
+            context.setVariable("result","Sorry，账户激活失败：" + e.getMessage() + "。请联系管理员！");
             return templateEngine.process("resultTemplate",context);
         }catch (Exception e){
             e.printStackTrace();
             context.setVariable("account",userPo.getUserName());
-            context.setVariable("result","Sorry，账户激活失败。请联系管理员！");
+            context.setVariable("result","Sorry，账户激活失败：" + e.getMessage() + "。请联系管理员！");
             return templateEngine.process("resultTemplate",context);
         }
 
+    }
+
+    @RequestMapping(value = "/forget",method = RequestMethod.POST)
+    public Result forget(@RequestParam("email") String email){
+        // 忘记密码 -> 发送邮件 -> 获取重置后的密码
+        try {
+            if (!email.equals("")){
+                userBusiness.forget(email);
+            }
+            return OceanReturn.successResult(
+                    "重置密码成功，稍后以邮件形式发送新密码",
+                    null
+            );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    null
+            );
+        }
     }
 
 }
