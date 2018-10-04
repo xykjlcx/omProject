@@ -42,6 +42,12 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
+        <!-- 引入邮件发送 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
