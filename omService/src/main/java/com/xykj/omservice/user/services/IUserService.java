@@ -15,4 +15,12 @@ public interface IUserService extends BaseService<TUserPo,Integer> {
      */
     TUserPo login(String username,String pwd) throws Exception;
 
+    /**
+     * 注册
+     * @param registerUser
+     * @return
+     */
+    void register(TUserPo registerUser);
+
+
 }

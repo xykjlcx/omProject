@@ -61,6 +61,18 @@ public class OceanOperationUtil {
         return "";
     }
 
+    /**
+     * 二次加密
+     * account 账号
+     * password 客户端已经进行一次加密
+     * 将account加密后拼接password再进行加密
+     * @param account
+     * @param password
+     * @return
+     */
+    public static String handleEncrypt(String account,String password){
+        return md5(md5(account) + password);
+    }
 
 
 }

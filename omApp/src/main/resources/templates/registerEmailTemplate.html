@@ -1,0 +1,59 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>账户激活</title>
+    <style>
+        .activeDiv {
+            width: 100%;
+            height: 60px;
+            text-align: center;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: aliceblue;
+        }
+
+        .grad {
+            height: 60px;
+            background: -webkit-linear-gradient(left top, rgb(94, 252, 232), rgb(115, 110, 254));
+            /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(bottom right, rgb(94, 252, 232), rgb(115, 110, 254));
+            /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(bottom right, rgb(94, 252, 232), rgb(115, 110, 254));
+            /* Firefox 3.6 - 15 */
+            background: linear-gradient(to bottom right, rgb(94, 252, 232), rgb(115, 110, 254));
+            /* 标准的语法（必须放在最后） */
+        }
+
+        .aColor {
+            color: white;
+            font-size: 20px;
+            text-decoration: none
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div>
+    <p>亲爱的<b th:text="${username}"></b>, 欢迎加入OceanMooc!</p>
+    <p>当您收到这封信的时候，点击页面下方的激活按钮，即可激活您的账户。</p>
+    <p>如果您的email程序不支持链接点击，请将下面的激活链接地址拷贝至您的浏览器(如IE)的地址栏进入。</p>
+    <p>如果您还想申请管理员权限，可以联系管理员 <b th:text="${adminEmail}"></b></p>
+    <p>我们对您产生的不便，深表歉意。</p>
+    <p>希望您在OceanMooc进一步成长！</p>
+    <p></p>
+    <div class="activeDiv grad">
+        <a class="aColor" th:href="@{${activeUrl}}" >激活</a>
+    </div>
+    <p>-----------------------</p>
+    <p></p>
+    <p>(这是一封自动产生的email，请勿回复。)</p>
+</div>
+
+</body>
+
+</html>

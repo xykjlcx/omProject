@@ -14,4 +14,13 @@ public class OceanDateUtil {
         return format.format(date);
     }
 
+    /**
+     * 获取当前时间字符串
+     * @return
+     */
+    public static String getNowTimeForString(){
+        return converDate(System.currentTimeMillis());
+    }
+
+
 }

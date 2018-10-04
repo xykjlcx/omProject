@@ -78,5 +78,19 @@ public class TUserPo {
      */
     @Basic@Column(name = "update_user_time", nullable = true)
     private Timestamp updateUserTime;
+    /**
+     * 用户状态
+     * 0 未激活
+     * 1 激活
+     */
+    @Basic@Column(name = "status",nullable = true)
+    private int status;
+    /**
+     * 用于存储各种校验码
+     * 1. 注册时激活邮件
+     * 2. 找回(重置)密码时验证
+     */
+    @Basic@Column(name = "verify_code",nullable = true)
+    private String verifyCode;
 
 }

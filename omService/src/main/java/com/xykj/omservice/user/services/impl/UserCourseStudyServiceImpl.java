@@ -76,7 +76,7 @@ public class UserCourseStudyServiceImpl implements IUserCourseStudyService {
     }
 
     @Override
-    public TUserCourseStudyPo findById() {
+    public TUserCourseStudyPo findById(Integer id) {
         return null;
     }
 

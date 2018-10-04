@@ -1,12 +1,15 @@
 package com.xykj.omservice.user.services.impl;
 
+import com.xykj.ombase.utils.OceanDateUtil;
 import com.xykj.ombase.utils.OceanOperationUtil;
+import com.xykj.omservice.OmConstant;
 import com.xykj.omservice.user.dao.UserDao;
 import com.xykj.omservice.user.po.TUserPo;
 import com.xykj.omservice.user.services.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -23,21 +26,55 @@ public class UserServiceImpl implements IUserService {
     UserDao userDao;
 
     @Override
-    public TUserPo login(String username, String encrypt) throws Exception {
+    public TUserPo login(String username, String pwd) throws Exception {
         List<TUserPo> tUserPoList = userDao.findAllByUserName(username);
         if (OceanOperationUtil.isNullOrEmptyForCollection(tUserPoList)){
-            throw new RuntimeException("登录失败，该用户不存在");
+            throw new RuntimeException("登录失败，用户不存在");
         }
+        // 二次加密后校对
+        String encrypt = OceanOperationUtil.handleEncrypt(username,pwd);
         String dbPwd = tUserPoList.get(0).getPassword();
         if (!dbPwd.equals(encrypt)){
             throw new RuntimeException("登录失败，密码错误");
+        }
+        if (tUserPoList.get(0).getStatus() == 0){
+            throw new RuntimeException("登录失败，账户暂不可用！");
         }
         return tUserPoList.get(0);
     }
 
     @Override
-    public void save(TUserPo data) throws Exception {
+    public void register(TUserPo registerUser) {
+        List<TUserPo> checkIsExistList = userDao.findAllByUserName(registerUser.getUserName());
+        if (OceanOperationUtil.isNotNullOrEmptyForCollection(checkIsExistList)){
+            throw new RuntimeException("注册失败，该账户已存在");
+        }
+        checkIsExistList = userDao.findAllByEmail(registerUser.getEmail());
+        if (OceanOperationUtil.isNotNullOrEmptyForCollection(checkIsExistList)){
+            throw new RuntimeException("注册失败，该邮箱已被注册");
+        }
+        // 设置默认值
+        Timestamp nowTime = new Timestamp(System.currentTimeMillis());
+        registerUser.setPassword(OceanOperationUtil.handleEncrypt(registerUser.getUserName(),registerUser.getPassword()));
+        registerUser.setRealName(OmConstant.UserPropertyDefault.REAL_NAME);
+        registerUser.setSignature(OmConstant.UserPropertyDefault.SIGNATURE);
+        registerUser.setPhone(OmConstant.UserPropertyDefault.PHONE);
+        registerUser.setHeadImg(OmConstant.UserPropertyDefault.HEAD_IMG);
+        registerUser.setEducation(OmConstant.UserPropertyDefault.EDUCATION);
+        registerUser.setGender(OmConstant.UserPropertyDefault.GENDER);
+        registerUser.setCreateUserTime(nowTime);
+        registerUser.setUpdateUserTime(nowTime);
+        registerUser.setLastLoginTime(nowTime);
+        registerUser.setStatus(OmConstant.UserPropertyDefault.STATUS);
+        registerUser.setVerifyCode(OmConstant.UserPropertyDefault.VERIFY_CODE);
+        userDao.save(registerUser);
+    }
 
+    @Override
+    public void save(TUserPo data) throws Exception {
+        if (data != null){
+            userDao.saveAndFlush(data);
+        }
     }
 
     @Override
@@ -51,7 +88,11 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public TUserPo findById() {
-        return null;
+    public TUserPo findById(Integer id) {
+        List<TUserPo> tUserPoList = userDao.findAllById(id);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(tUserPoList)){
+            throw new RuntimeException("查询失败，用户不存在");
+        }
+        return tUserPoList.get(0);
     }
 }

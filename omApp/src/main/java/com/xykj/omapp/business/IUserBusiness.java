@@ -10,7 +10,7 @@ public interface IUserBusiness {
      * 注册
      * @param userPo
      */
-    boolean register(TUserPo userPo);
+    void register(TUserPo userPo,String hostStr);
 
     /**
      * 登录
@@ -43,6 +43,8 @@ public interface IUserBusiness {
      */
     TUserPo alterUserInfo(TUserPo newuserinfo);
 
+
+    void activate();
 
 
 }

@@ -8,8 +8,11 @@ import com.xykj.omservice.course.po.TCoursePo;
 import com.xykj.omservice.home.dao.NoticesDao;
 import com.xykj.omservice.user.dao.RoleDao;
 import com.xykj.omservice.user.dao.UserCourseStudyDao;
+import com.xykj.omservice.user.dao.UserDao;
 import com.xykj.omservice.user.po.TUserCourseStudyPo;
+import com.xykj.omservice.user.po.TUserPo;
 import com.xykj.omservice.user.services.impl.UserCourseStudyServiceImpl;
+import com.xykj.omservice.user.services.impl.UserServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -102,6 +105,47 @@ public class OmServiceApplicationTests {
 //        String encrypt = OceanOperationUtil.md5(OceanOperationUtil.md5(account) + OceanOperationUtil.md5(pwd));
 //        System.out.println(encrypt);
         System.out.println(OceanOperationUtil.md5("zy1314521.."));
+    }
+
+    @Autowired
+    UserServiceImpl userService;
+
+    @Test
+    public void testUserRegister(){
+        TUserPo tUserPo = new TUserPo();
+        tUserPo.setUserName("newAccount");
+        tUserPo.setPassword(OceanOperationUtil.md5("jass"));
+        tUserPo.setEmail("313143431!qq.com");
+        userService.register(tUserPo);
+    }
+
+    @Test
+    public void testLogin(){
+        try {
+            System.out.println(userService.login("newAccount",OceanOperationUtil.md5("jass")));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Autowired
+    UserDao userDao;
+
+    @Test
+    public void testUpdateUser(){
+        try {
+            TUserPo userPo = userService.login("xykjlcx",OceanOperationUtil.md5("zy1314521.."));
+            System.out.println(userPo);
+            userPo.setRealName("新的名字");
+            userDao.saveAndFlush(userPo);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testMd5123(){
+        System.out.println(OceanOperationUtil.md5("123456"));
     }
 
 }
