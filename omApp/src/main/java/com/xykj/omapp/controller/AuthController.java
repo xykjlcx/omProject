@@ -17,6 +17,7 @@ import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 
 @RestController
@@ -135,6 +136,23 @@ public class AuthController {
             return OceanReturn.successResult(
                     "重置密码成功，稍后以邮件形式发送新密码",
                     null
+            );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    null
+            );
+        }
+    }
+
+    @RequestMapping(value = "/getUserInfo",method = RequestMethod.POST)
+    public Result getUserInfo(@RequestParam("userId") int userId){
+        try {
+            TUserPo checkUser = userService.findById(userId);
+            return OceanReturn.successResult(
+                    "获取用户信息成功",
+                    PoConvertVo.convert(checkUser)
             );
         }catch (RuntimeException e){
             e.printStackTrace();

@@ -42,6 +42,9 @@ public class UserServiceImpl implements IUserService {
         if (tUserPoList.get(0).getStatus() == 0){
             throw new RuntimeException("登录失败，账户暂不可用！");
         }
+        // 登录成功
+        tUserPoList.get(0).setLastLoginTime(new Timestamp(System.currentTimeMillis()));
+        userDao.saveAndFlush(tUserPoList.get(0));
         return tUserPoList.get(0);
     }
 

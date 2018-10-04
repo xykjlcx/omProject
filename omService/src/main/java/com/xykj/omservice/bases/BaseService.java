@@ -32,7 +32,7 @@ public interface BaseService<T,ID extends Serializable> {
      * 使用id查询
      * @return
      */
-    T findById(ID id);
+    T findById(ID id) throws Exception;
 
 
 }

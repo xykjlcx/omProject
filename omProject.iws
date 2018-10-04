@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ba2f577-5a67-417a-a93c-1098c2b86da9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/omApp/src/main/resources/templates/resetPasswordTemplate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/business/IUserBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/business/IUserBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/business/impl/UserBusinessImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/business/impl/UserBusinessImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/bases/BaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/bases/BaseService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -97,20 +93,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AuthController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AuthController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/AuthController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="137" column="14" lean-forward="true" selection-start-line="137" selection-start-column="14" selection-end-line="137" selection-end-column="14" />
+            <state relative-caret-position="300">
+              <caret line="154" column="44" lean-forward="true" selection-start-line="154" selection-start-column="44" selection-end-line="154" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserBusinessImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserBusinessImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/business/impl/UserBusinessImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="100" column="21" selection-start-line="100" selection-start-column="21" selection-end-line="100" selection-end-column="21" />
+            <state relative-caret-position="216">
+              <caret line="110" column="45" lean-forward="true" selection-start-line="110" selection-start-column="45" selection-end-line="110" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,28 +114,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resetPasswordTemplate.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/omApp/src/main/resources/templates/resetPasswordTemplate.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="32" column="11" lean-forward="true" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="resultTemplate.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/omApp/src/main/resources/templates/resultTemplate.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1008">
-              <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="IUserBusiness.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/business/IUserBusiness.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="-709">
               <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
             </state>
           </provider>
@@ -149,7 +127,25 @@
         <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/dao/UserDao.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="392">
-              <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+              <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1058">
+              <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CourseController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/CourseController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="512">
+              <caret line="61" column="57" selection-start-line="61" selection-start-column="57" selection-end-line="61" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -157,8 +153,8 @@
       <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="74" selection-start-line="74" selection-end-line="74" />
+            <state relative-caret-position="236">
+              <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -178,17 +174,17 @@
       <file leaf-file-name="IUserService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/IUserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="120">
+              <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registerEmailTemplate.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/omApp/src/main/resources/templates/registerEmailTemplate.html">
+      <file leaf-file-name="BaseService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/bases/BaseService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+            <state relative-caret-position="671">
+              <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -255,7 +251,6 @@
         <option value="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/OmAppApplication.java" />
         <option value="$PROJECT_DIR$/omApp/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/omApp/src/main/resources/templates/emailTemplate.html" />
-        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/bases/BaseService.java" />
         <option value="$PROJECT_DIR$/omApp/src/main/resources/templates/resultTemplate.html" />
         <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/impl/UserCourseStudyServiceImpl.java" />
         <option value="$PROJECT_DIR$/omService/src/test/java/com/xykj/omservice/OmServiceApplicationTests.java" />
@@ -266,8 +261,9 @@
         <option value="$PROJECT_DIR$/omApp/src/main/resources/templates/resetPasswordTemplate.html" />
         <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/IUserService.java" />
         <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/AuthController.java" />
         <option value="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/business/impl/UserBusinessImpl.java" />
+        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/bases/BaseService.java" />
+        <option value="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/AuthController.java" />
       </list>
     </option>
   </component>
@@ -1140,7 +1136,7 @@
       <workItem from="1538645591891" duration="3546000" />
       <workItem from="1538649300733" duration="1221000" />
       <workItem from="1538650543134" duration="2170000" />
-      <workItem from="1538660515399" duration="4124000" />
+      <workItem from="1538660515399" duration="4750000" />
     </task>
     <servers />
   </component>
@@ -1177,7 +1173,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154584000" />
+    <option name="totallyTimeSpent" value="155210000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1213,7 +1209,7 @@
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32763532" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.53102624" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32696897" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.31980908" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.31825796" />
       <window_info id="Persistence" order="1" sideWeight="0.50250626" side_tool="true" weight="0.2617801" />
       <window_info active="true" content_ui="combo" x="753" y="102" width="304" height="603" id="Project" order="0" sideWeight="0.49749374" visible="true" weight="0.30936995" />
       <window_info anchor="right" id="Bean Validation" order="9" weight="0.32935393" />
@@ -1372,13 +1368,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/2.0.9.RELEASE/spring-data-jpa-2.0.9.RELEASE-sources.jar!/org/springframework/data/jpa/repository/JpaRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
@@ -1422,13 +1411,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/CourseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="61" column="57" selection-start-line="61" selection-start-column="57" selection-end-line="61" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -1485,13 +1467,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/bases/BaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1563,13 +1538,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/omApp/src/main/resources/templates/resultTemplate.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1008">
@@ -1591,30 +1559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/IUserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/business/IUserBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/IUserCourseCollectService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -1622,20 +1566,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/AuthController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="137" column="14" lean-forward="true" selection-start-line="137" selection-start-column="14" selection-end-line="137" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/business/impl/UserBusinessImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="100" column="21" selection-start-line="100" selection-start-column="21" selection-end-line="100" selection-end-column="21" />
+        <state relative-caret-position="216">
+          <caret line="110" column="45" lean-forward="true" selection-start-line="110" selection-start-column="45" selection-end-line="110" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/business/IUserBusiness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-709">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1058">
+          <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/CourseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="61" column="57" selection-start-line="61" selection-start-column="57" selection-end-line="61" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/user/services/IUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/bases/BaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="671">
+          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/AuthController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="154" column="44" lean-forward="true" selection-start-line="154" selection-start-column="44" selection-end-line="154" selection-end-column="44" />
         </state>
       </provider>
     </entry>
