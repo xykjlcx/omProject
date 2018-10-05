@@ -75,6 +75,41 @@ public class UserServiceImpl implements IUserService {
         userDao.save(registerUser);
     }
 
+    @Override
+    public TUserPo updateInfo(TUserPo userPo) throws RuntimeException {
+        List<TUserPo> checkUserList = userDao.findAllById(userPo.getId());
+        if (OceanOperationUtil.isNullOrEmptyForCollection(checkUserList)){
+            throw new RuntimeException("失败，用户不存在");
+        }
+        List<TUserPo> checkEmailList = userDao.findAllByEmail(userPo.getEmail());
+        if (OceanOperationUtil.isNotNullOrEmptyForCollection(checkEmailList)
+                && checkEmailList.get(0).getId() != userPo.getId()){
+            throw new RuntimeException("失败，该邮箱以与其他账户绑定");
+        }
+        // 更新用户信息
+        checkUserList.get(0).setRealName(userPo.getRealName());
+        checkUserList.get(0).setSignature(userPo.getSignature());
+        checkUserList.get(0).setEducation(userPo.getEducation());
+        checkUserList.get(0).setGender(userPo.getGender());
+        checkUserList.get(0).setEmail(userPo.getEmail());
+        userDao.save(checkUserList.get(0));
+        return userDao.findAllById(userPo.getId()).get(0);
+    }
+
+    @Override
+    public void modifyPassWord(int userId, String oldPwd, String newPwd) throws RuntimeException {
+        List<TUserPo> checkUserList = userDao.findAllById(userId);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(checkUserList)){
+            throw new RuntimeException("用户不存在");
+        }
+        TUserPo userPo = checkUserList.get(0);
+        String checkEncrypt = OceanOperationUtil.handleEncrypt(userPo.getUserName(),oldPwd);
+        if (!checkEncrypt.equals(userPo.getPassword())){
+            throw new RuntimeException("原密码错误");
+        }
+        userPo.setPassword(OceanOperationUtil.handleEncrypt(userPo.getUserName(),newPwd));
+        userDao.save(userPo);
+    }
 
 
     @Override

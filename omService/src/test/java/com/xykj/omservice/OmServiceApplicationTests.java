@@ -133,14 +133,14 @@ public class OmServiceApplicationTests {
 
     @Test
     public void testUpdateUser(){
-        try {
-            TUserPo userPo = userService.login("xykjlcx",OceanOperationUtil.md5("zy1314521.."));
-            System.out.println(userPo);
-            userPo.setRealName("新的名字");
-            userDao.saveAndFlush(userPo);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+       try {
+           TUserPo userPo = new TUserPo();
+           userPo.setId(1);
+           userPo.setUserName("jass");
+           userService.updateInfo(userPo);
+       }catch (Exception e){
+           e.printStackTrace();
+       }
     }
 
     @Test

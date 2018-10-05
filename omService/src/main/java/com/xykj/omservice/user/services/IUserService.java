@@ -23,5 +23,14 @@ public interface IUserService extends BaseService<TUserPo,Integer> {
     void register(TUserPo registerUser);
 
 
+    /**
+     * 修改用户信息
+     * @param userPo
+     * @return
+     * @throws RuntimeException
+     */
+    TUserPo updateInfo(TUserPo userPo) throws RuntimeException;
+
+    void modifyPassWord(int userId,String oldPwd,String newPwd) throws RuntimeException;
 
 }

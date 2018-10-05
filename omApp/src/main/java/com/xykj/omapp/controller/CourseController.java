@@ -158,10 +158,16 @@ public class CourseController {
                     "新增评论成功",
                     null
             );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    null
+            );
         }catch (Exception e){
             e.printStackTrace();
             return OceanReturn.errorResult(
-                    "新增评论失败",
+                    "评论失败，未知错误",
                     null
             );
         }

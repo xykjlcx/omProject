@@ -100,7 +100,7 @@ public class UserBusinessImpl implements IUserBusiness {
             TUserPo updateUser = tUserPoList.get(0);
             // 生成一段随机数字
             String newPwd = "";
-            int leng = random.nextInt(20);
+            int leng = random.nextInt(10);
             for (int i = 0; i < leng; i++) {
                 newPwd += random.nextInt(100);
             }

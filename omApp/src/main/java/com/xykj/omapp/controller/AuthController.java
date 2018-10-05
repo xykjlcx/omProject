@@ -4,6 +4,9 @@ import com.xykj.omapp.business.impl.CourseBusinessImpl;
 import com.xykj.omapp.business.impl.UserBusinessImpl;
 import com.xykj.omapp.utils.AppUtil;
 import com.xykj.omapp.utils.PoConvertVo;
+import com.xykj.omapp.utils.VoConvertPo;
+import com.xykj.omapp.vo.CourseVo;
+import com.xykj.omapp.vo.UserVo;
 import com.xykj.ombase.returnformat.OceanReturn;
 import com.xykj.ombase.returnformat.Result;
 import com.xykj.ombase.utils.OceanOperationUtil;
@@ -158,6 +161,56 @@ public class AuthController {
             e.printStackTrace();
             return OceanReturn.errorResult(
                     e.getMessage(),
+                    null
+            );
+        }
+    }
+
+    @RequestMapping(value = "/updateUserInfo",method = RequestMethod.POST)
+    public Result updateUserInfo(UserVo userVo){
+        try {
+            if (userVo != null){
+                TUserPo userPo = VoConvertPo.convert(userVo);
+                UserVo resultVo = PoConvertVo.convert(userService.updateInfo(userPo));
+                return OceanReturn.successResult(
+                        "用户资料更新成功",
+                        resultVo
+                );
+            }else {
+                return OceanReturn.errorResult(
+                        "传参有误",
+                        null
+                );
+            }
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    null
+            );
+        }
+    }
+
+    @RequestMapping(value = "/modifyUserPwd",method = RequestMethod.POST)
+    public Result modifyUserPwd(@RequestParam("userId") int userId,
+                                @RequestParam("oldPwd") String oldPwd,
+                                @RequestParam("newPwd") String newPwd){
+        try {
+            userService.modifyPassWord(userId,oldPwd,newPwd);
+            return OceanReturn.successResult(
+                    "密码修改成功,请重新登录",
+                    null
+            );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    null
+            );
+        }catch (Exception e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    "修改失败，未知错误",
                     null
             );
         }
