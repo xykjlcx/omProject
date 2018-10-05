@@ -1,12 +1,16 @@
 package com.xykj.omapp.controller;
 
 import com.xykj.omapp.business.impl.UserCourseBusinessImpl;
+import com.xykj.omapp.utils.PoConvertVo;
+import com.xykj.omapp.vo.CourseVo;
 import com.xykj.omapp.vo.UserCourseVo;
 import com.xykj.ombase.returnformat.OceanReturn;
 import com.xykj.ombase.returnformat.Result;
 import com.xykj.omservice.course.dao.CourseDao;
+import com.xykj.omservice.course.po.TCoursePo;
 import com.xykj.omservice.user.dao.UserDao;
 import com.xykj.omservice.user.po.TUserCourseStudyPo;
+import com.xykj.omservice.user.services.impl.UserCourseCollectServiceImpl;
 import com.xykj.omservice.user.services.impl.UserCourseStudyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,6 +36,8 @@ public class UserController {
     UserCourseBusinessImpl userCourseBusiness;
     @Autowired
     UserCourseStudyServiceImpl userCourseStudyService;
+    @Autowired
+    UserCourseCollectServiceImpl userCourseCollectService;
 
     /**
      * 获取用户(我的课程)学习课程
@@ -83,6 +90,12 @@ public class UserController {
         }
     }
 
+    /**
+     * 是否学习过该课程
+     * @param userId
+     * @param courseId
+     * @return
+     */
     @RequestMapping(value = "/isStudyCourse",method = RequestMethod.POST)
     public Result isStudyCourse(
             @RequestParam("userId") int userId,
@@ -97,6 +110,69 @@ public class UserController {
         }catch (Exception e){
             return OceanReturn.errorResult(
                     "判断失败",
+                    null
+            );
+        }
+    }
+
+    /**
+     * 添加课程收藏
+     * @param userId
+     * @param courseId
+     * @return
+     */
+    @RequestMapping(value = "/addCollectCourse",method = RequestMethod.POST)
+    public Result addCollectCourse(@RequestParam("userId") int userId,
+                                   @RequestParam("courseId") int courseId){
+        // 添加课程收藏
+        try {
+            userCourseCollectService.addCollectCourses(userId,courseId);
+            return OceanReturn.successResult(
+                    "收藏成功",
+                    null
+            );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    null
+            );
+        }catch (Exception e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    "收藏失败，未知错误",
+                    null
+            );
+        }
+    }
+
+    /**
+     * 获取我的收藏列表
+     * @param userId
+     * @return
+     */
+    @RequestMapping(value = "/getCollectCourses",method = RequestMethod.POST)
+    public Result getCollectCourses(@RequestParam("userId") int userId){
+        try {
+            List<TCoursePo> tCoursePoList = userCourseCollectService.queryCollectCourseByUserId(userId);
+            List<CourseVo> resultCourseList = new ArrayList<>();
+            tCoursePoList.forEach(tCoursePo -> {
+                resultCourseList.add(PoConvertVo.convert(tCoursePo));
+            });
+            return OceanReturn.successResult(
+                    "查询我的收藏成功",
+                    resultCourseList
+            );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    null
+            );
+        }catch (Exception e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    "查询我的收藏失败,未知错误",
                     null
             );
         }
