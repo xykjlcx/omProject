@@ -100,10 +100,11 @@ public class UserBusinessImpl implements IUserBusiness {
             TUserPo updateUser = tUserPoList.get(0);
             // 生成一段随机数字
             String newPwd = "";
-            int leng = random.nextInt(10);
+            int leng = 5 +  random.nextInt(10);
             for (int i = 0; i < leng; i++) {
-                newPwd += random.nextInt(100);
+                newPwd += random.nextInt(88);
             }
+            newPwd = newPwd.substring(0,newPwd.length()/2);
             String entrityNewPwd = OceanOperationUtil.md5(newPwd);
             entrityNewPwd = OceanOperationUtil.handleEncrypt(updateUser.getUserName(),entrityNewPwd);
             updateUser.setPassword(entrityNewPwd);
