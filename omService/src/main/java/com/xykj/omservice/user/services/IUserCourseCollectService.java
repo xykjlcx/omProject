@@ -24,4 +24,19 @@ public interface IUserCourseCollectService extends BaseService<TUserCourseCollec
      */
     void addCollectCourses(int userId,int courseId) throws RuntimeException;
 
+    /**
+     * 判断是否收藏过
+     * @param userId
+     * @param courseId
+     * @throws RuntimeException
+     */
+    boolean isCollectCourse(int userId,int courseId) throws RuntimeException;
+
+    /**
+     * 取消收藏课程
+     * @param userId
+     * @param courseId
+     */
+    void deleteCollectCourse(int userId,int courseId)throws RuntimeException;
+
 }

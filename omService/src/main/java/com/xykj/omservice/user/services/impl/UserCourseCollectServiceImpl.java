@@ -73,6 +73,40 @@ public class UserCourseCollectServiceImpl implements IUserCourseCollectService {
     }
 
     @Override
+    public boolean isCollectCourse(int userId, int courseId) throws RuntimeException {
+        List<TUserPo> checkUserList = userDao.findAllById(userId);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(checkUserList)){
+            throw new RuntimeException("判断失败，用户不存在");
+        }
+        List<TCoursePo> checkCourseList = courseDao.findAllById(courseId);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(checkCourseList)){
+            throw new RuntimeException("判断失败，课程不存在");
+        }
+        List<TUserCourseCollectPo> userCourseCollectPoList = userCourseCollectDao.findAllByUserIdAndCourseId(userId,courseId);
+        if (OceanOperationUtil.isNotNullOrEmptyForCollection(userCourseCollectPoList)){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void deleteCollectCourse(int userId, int courseId) throws RuntimeException {
+        List<TUserPo> checkUserList = userDao.findAllById(userId);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(checkUserList)){
+            throw new RuntimeException("取消收藏失败，用户不存在");
+        }
+        List<TCoursePo> checkCourseList = courseDao.findAllById(courseId);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(checkCourseList)){
+            throw new RuntimeException("取消收藏失败，课程不存在");
+        }
+        List<TUserCourseCollectPo> userCourseCollectPoList = userCourseCollectDao.findAllByUserIdAndCourseId(userId,courseId);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(userCourseCollectPoList)){
+            throw new RuntimeException("不存在该收藏记录");
+        }
+        userCourseCollectDao.deleteById(userCourseCollectPoList.get(0).getId());
+    }
+
+    @Override
     public void save(TUserCourseCollectPo data) throws Exception {
 
     }

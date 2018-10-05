@@ -33,4 +33,11 @@ public interface UserCourseCollectDao extends BaseJpaDao<TUserCourseCollectPo,In
      */
     List<TUserCourseCollectPo> findAllByUserIdAndCourseId(int userId,int courseId);
 
+    /**
+     * 删除收藏记录
+     * @param userId
+     * @param courseId
+     */
+    void deleteByUserIdAndCourseId(int userId,int courseId);
+
 }

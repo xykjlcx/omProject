@@ -147,6 +147,28 @@ public class UserController {
     }
 
     /**
+     * 判断是否收藏过该课程
+     * @return
+     */
+    @RequestMapping(value = "/isCollect",method = RequestMethod.POST)
+    public Result isCollect(@RequestParam("userId") int userId,
+                            @RequestParam("courseId") int courseId){
+        try {
+            boolean isExist = userCourseCollectService.isCollectCourse(userId,courseId);
+            return OceanReturn.successResult(
+                    "判断成功",
+                    isExist
+            );
+        }catch (Exception e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    "判断失败",
+                    null
+            );
+        }
+    }
+
+    /**
      * 获取我的收藏列表
      * @param userId
      * @return
@@ -173,6 +195,36 @@ public class UserController {
             e.printStackTrace();
             return OceanReturn.errorResult(
                     "查询我的收藏失败,未知错误",
+                    null
+            );
+        }
+    }
+
+    /**
+     * 取消收藏记录
+     * @param userId
+     * @param courseId
+     * @return
+     */
+    @RequestMapping(value = "/deleteCollectCourse",method = RequestMethod.POST)
+    public Result deleteCollectCourse(@RequestParam("userId") int userId,
+                                      @RequestParam("courseId") int courseId){
+        try {
+            userCourseCollectService.deleteCollectCourse(userId,courseId);
+            return OceanReturn.successResult(
+                    "取消收藏成功",
+                    null
+            );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    null
+            );
+        }catch (Exception e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    "取消收藏失败，未知错误",
                     null
             );
         }
