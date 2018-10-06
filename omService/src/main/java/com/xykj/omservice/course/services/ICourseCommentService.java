@@ -30,4 +30,11 @@ public interface ICourseCommentService {
      */
     void addComment(TCourseCommentPo tCourseCommentPo) throws Exception;
 
+    /**
+     * 查询某用户的所有评论
+     * @param userId
+     * @return
+     */
+    List<TCourseCommentPo> findAllByUserId(int userId) throws RuntimeException;
+
 }

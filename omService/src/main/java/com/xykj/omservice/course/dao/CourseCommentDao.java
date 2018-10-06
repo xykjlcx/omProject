@@ -18,4 +18,11 @@ public interface CourseCommentDao extends BaseJpaDao<TCourseCommentPo,Integer> {
 
     List<TCourseCommentPo> findAllByCourseIdOrderByCreateTimeDesc(int courseId, org.springframework.data.domain.Pageable pageable);
 
+    /**
+     * 按照用户id查询，并按时间倒序排序
+     * @param userId
+     * @return
+     */
+    List<TCourseCommentPo> findAllByUserIdOrderByCreateTimeDesc(int userId);
+
 }

@@ -3,6 +3,7 @@ package com.xykj.omapp.controller;
 import com.xykj.omapp.business.impl.UserCourseBusinessImpl;
 import com.xykj.omapp.utils.PoConvertVo;
 import com.xykj.omapp.vo.CourseVo;
+import com.xykj.omapp.vo.MyCommentVo;
 import com.xykj.omapp.vo.UserCourseVo;
 import com.xykj.ombase.returnformat.OceanReturn;
 import com.xykj.ombase.returnformat.Result;
@@ -225,6 +226,23 @@ public class UserController {
             e.printStackTrace();
             return OceanReturn.errorResult(
                     "取消收藏失败，未知错误",
+                    null
+            );
+        }
+    }
+
+    @RequestMapping(value = "/getMyComments",method = RequestMethod.POST)
+    public Result getMyComments(@RequestParam("userId") int userId){
+        try {
+            List<MyCommentVo> myCommentVoList = userCourseBusiness.getMyCommentsByUserId(userId);
+            return OceanReturn.successResult(
+                    "获取我的评论列表成功",
+                    myCommentVoList
+            );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
                     null
             );
         }

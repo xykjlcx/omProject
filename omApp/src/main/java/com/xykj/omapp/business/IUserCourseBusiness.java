@@ -1,5 +1,6 @@
 package com.xykj.omapp.business;
 
+import com.xykj.omapp.vo.MyCommentVo;
 import com.xykj.omapp.vo.UserCourseVo;
 import org.springframework.stereotype.Service;
 
@@ -21,5 +22,7 @@ public interface IUserCourseBusiness {
      * @return
      */
     List<UserCourseVo> getMyCoursesByUserId(int userId) throws Exception;
+
+    List<MyCommentVo> getMyCommentsByUserId(int userId) throws Exception;
 
 }

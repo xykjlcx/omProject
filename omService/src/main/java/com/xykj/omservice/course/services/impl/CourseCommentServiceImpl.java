@@ -68,4 +68,17 @@ public class CourseCommentServiceImpl implements ICourseCommentService {
         courseCommentDao.save(tCourseCommentPo);
     }
 
+    @Override
+    public List<TCourseCommentPo> findAllByUserId(int userId) throws RuntimeException {
+        List<TUserPo> checkUserList = userDao.findAllById(userId);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(checkUserList)){
+            throw new RuntimeException("失败，用户不存在");
+        }
+        List<TCourseCommentPo> courseCommentPoList = courseCommentDao.findAllByUserIdOrderByCreateTimeDesc(userId);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(courseCommentPoList)){
+            throw new RuntimeException("该用户未发表任何评论");
+        }
+        return courseCommentPoList;
+    }
+
 }

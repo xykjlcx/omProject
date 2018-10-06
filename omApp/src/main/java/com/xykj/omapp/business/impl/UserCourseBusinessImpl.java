@@ -3,12 +3,15 @@ package com.xykj.omapp.business.impl;
 import com.xykj.omapp.business.IUserCourseBusiness;
 import com.xykj.omapp.utils.PoConvertVo;
 import com.xykj.omapp.vo.CourseVo;
+import com.xykj.omapp.vo.MyCommentVo;
 import com.xykj.omapp.vo.UserCourseVo;
 import com.xykj.ombase.utils.OceanDateUtil;
 import com.xykj.omservice.course.dao.CourseDao;
 import com.xykj.omservice.course.dao.CourseSectionDao;
+import com.xykj.omservice.course.po.TCourseCommentPo;
 import com.xykj.omservice.course.po.TCoursePo;
 import com.xykj.omservice.course.po.TCourseSectionPo;
+import com.xykj.omservice.course.services.impl.CourseCommentServiceImpl;
 import com.xykj.omservice.user.po.TUserCourseStudyPo;
 import com.xykj.omservice.user.services.impl.UserCourseStudyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +36,8 @@ public class UserCourseBusinessImpl implements IUserCourseBusiness {
     CourseDao courseDao;
     @Autowired
     CourseSectionDao courseSectionDao;
+    @Autowired
+    CourseCommentServiceImpl courseCommentService;
 
     @Override
     public List<UserCourseVo> getMyCoursesByUserId(int userId) throws Exception{
@@ -59,6 +64,25 @@ public class UserCourseBusinessImpl implements IUserCourseBusiness {
             throw new RuntimeException("UserCourseBusinessImpl getMyCoursesByUserId()我的课程数据转换失败!");
         }
         return userCourseVoList;
+    }
+
+    @Override
+    public List<MyCommentVo> getMyCommentsByUserId(int userId) throws RuntimeException {
+        List<MyCommentVo> resultMyCommentVoList = new ArrayList<>();
+        try {
+            List<TCourseCommentPo> courseCommentPoList = courseCommentService.findAllByUserId(userId);
+            courseCommentPoList.forEach(tCourseCommentPo -> {
+                CourseVo courseVo = PoConvertVo.convert(courseDao.findAllById(tCourseCommentPo.getCourseId()).get(0));
+                resultMyCommentVoList.add(PoConvertVo.convert(tCourseCommentPo,courseVo));
+            });
+            return resultMyCommentVoList;
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            throw e;
+        }catch (Exception e){
+            e.printStackTrace();
+            throw new RuntimeException("获取我的评论，未知异常");
+        }
     }
 
 }
