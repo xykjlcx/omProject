@@ -26,4 +26,11 @@ public interface CourseDao extends BaseJpaDao<TCoursePo,Integer> {
 
     List<TCoursePo> findAllById(int courseId);
 
+    /**
+     * 根据课程名称，模糊查询(分页)
+     * @param searchCourseName
+     * @return
+     */
+    List<TCoursePo> findAllByCourseNameLike(String searchCourseName,Pageable pageable);
+
 }

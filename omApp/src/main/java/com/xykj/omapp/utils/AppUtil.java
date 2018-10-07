@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class AppUtil {
 
+    public static final String ADMIN_EMAIL = "348686686@qq.com";
+
     public static String getUrlHost(HttpServletRequest request){
         String url = request.getRequestURL().toString();
         String auth = request.getRequestURI();

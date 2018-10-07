@@ -1,5 +1,6 @@
 package com.xykj.omapp.business;
 
+import com.xykj.omservice.user.po.TIdeaBackPo;
 import com.xykj.omservice.user.po.TUserPo;
 import org.springframework.stereotype.Service;
 
@@ -54,5 +55,7 @@ public interface IUserBusiness {
      * @param email
      */
     void forget(String email);
+
+    void addIdeaBack(TIdeaBackPo ideaBackPo) throws RuntimeException;
 
 }

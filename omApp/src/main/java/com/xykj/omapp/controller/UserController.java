@@ -1,5 +1,6 @@
 package com.xykj.omapp.controller;
 
+import com.xykj.omapp.business.impl.UserBusinessImpl;
 import com.xykj.omapp.business.impl.UserCourseBusinessImpl;
 import com.xykj.omapp.utils.PoConvertVo;
 import com.xykj.omapp.vo.CourseVo;
@@ -10,7 +11,9 @@ import com.xykj.ombase.returnformat.Result;
 import com.xykj.omservice.course.dao.CourseDao;
 import com.xykj.omservice.course.po.TCoursePo;
 import com.xykj.omservice.user.dao.UserDao;
+import com.xykj.omservice.user.po.TIdeaBackPo;
 import com.xykj.omservice.user.po.TUserCourseStudyPo;
+import com.xykj.omservice.user.services.impl.IdeaBackServiceImpl;
 import com.xykj.omservice.user.services.impl.UserCourseCollectServiceImpl;
 import com.xykj.omservice.user.services.impl.UserCourseStudyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,6 +43,8 @@ public class UserController {
     UserCourseStudyServiceImpl userCourseStudyService;
     @Autowired
     UserCourseCollectServiceImpl userCourseCollectService;
+    @Autowired
+    UserBusinessImpl userBusiness;
 
     /**
      * 获取用户(我的课程)学习课程
@@ -54,10 +60,10 @@ public class UserController {
                     "获取我的课程成功",
                     userCourseVoList
             );
-        } catch (Exception e) {
+        } catch (RuntimeException e) {
             e.printStackTrace();
             return OceanReturn.errorResult(
-                    "获取我的课程失败",
+                    e.getMessage(),
                     null
             );
         }
@@ -246,6 +252,34 @@ public class UserController {
                     null
             );
         }
+    }
+
+    @RequestMapping(value = "/addIdeaBack",method = RequestMethod.POST)
+    public Result addIdeaBack(@RequestParam("userId") int userId,
+                              @RequestParam("address") String address,
+                              @RequestParam("contact") String contact,
+                              @RequestParam("content") String content){
+       try {
+           TIdeaBackPo ideaBackPo = TIdeaBackPo.builder()
+                   .address(address)
+                   .contact(contact)
+                   .content(content)
+                   .userId(userId)
+                   .createTime(new Timestamp(System.currentTimeMillis()))
+                   .build();
+           userBusiness.addIdeaBack(ideaBackPo);
+           return OceanReturn.successResult(
+                   "意见提交成功",
+                   null
+           );
+       }catch (Exception e){
+           e.printStackTrace();
+           return OceanReturn.errorResult(
+                   "意见提交失败",
+                   null
+           );
+       }
+
     }
 
 }

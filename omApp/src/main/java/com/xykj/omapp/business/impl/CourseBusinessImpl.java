@@ -4,6 +4,7 @@ import com.xykj.omapp.business.ICourseBusiness;
 import com.xykj.omapp.utils.PoConvertVo;
 import com.xykj.omapp.vo.CourseCommentVo;
 import com.xykj.omapp.vo.CourseSectionVo;
+import com.xykj.ombase.utils.OceanOperationUtil;
 import com.xykj.ombase.utils.error.OceanException;
 import com.xykj.omservice.course.po.TCourseCommentPo;
 import com.xykj.omservice.course.po.TCoursePo;
@@ -60,21 +61,22 @@ public class CourseBusinessImpl implements ICourseBusiness {
     }
 
     @Override
-    public List<CourseCommentVo> getCourseCommentsByCourseIdForPage(int courseId, Pageable pageable) throws Exception {
+    public List<CourseCommentVo> getCourseCommentsByCourseIdForPage(int courseId, Pageable pageable) throws RuntimeException {
         List<CourseCommentVo> courseCommentVoList = new ArrayList<>();
         try {
             List<TCourseCommentPo> tCourseCommentPoList = courseCommentService.getAllCommentByCourseIdForPage(courseId,pageable);
             tCourseCommentPoList.forEach(tCourseCommentPo -> {
-                TUserPo tUserPo = userDao.findById(tCourseCommentPo.getUserId()).get();
-                if (tUserPo != null){
-                    courseCommentVoList.add(PoConvertVo.convert(tCourseCommentPo,tUserPo));
+                 System.out.println("随便我:" + tCourseCommentPo.getUserId());       // 测试是否获取用户id
+                List<TUserPo> getUserList = userDao.findAllById(tCourseCommentPo.getUserId());
+                if (OceanOperationUtil.isNotNullOrEmptyForCollection(getUserList)){
+                        courseCommentVoList.add(PoConvertVo.convert(tCourseCommentPo,getUserList.get(0)));
                 }else {
-                    // 该评论的用户已经不存在
+                    // 评论的主人用户已经不存在le
                 }
             });
         }catch (RuntimeException e){
             e.printStackTrace();
-            throw new OceanException("评论获取异常");
+            throw e;
         }
         return courseCommentVoList;
     }

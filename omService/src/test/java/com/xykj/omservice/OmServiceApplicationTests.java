@@ -5,6 +5,7 @@ import com.xykj.omservice.course.dao.CourseClassifyDao;
 import com.xykj.omservice.course.dao.CourseDao;
 import com.xykj.omservice.course.po.TCourseClassifyPo;
 import com.xykj.omservice.course.po.TCoursePo;
+import com.xykj.omservice.course.services.impl.CourseServiceImpl;
 import com.xykj.omservice.home.dao.NoticesDao;
 import com.xykj.omservice.user.dao.RoleDao;
 import com.xykj.omservice.user.dao.UserCourseStudyDao;
@@ -146,6 +147,16 @@ public class OmServiceApplicationTests {
     @Test
     public void testMd5123(){
         System.out.println(OceanOperationUtil.md5("123456"));
+    }
+
+    @Autowired
+    CourseServiceImpl courseService;
+
+    @Test
+    public void testSearch(){
+        Pageable pageable = new PageRequest(1,1);
+        List<TCoursePo> coursePoList = courseService.searchCourseByNameForPage("s",pageable);
+        System.out.println(coursePoList);
     }
 
 }

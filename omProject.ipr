@@ -217,7 +217,7 @@
     </bytecodeTargetLevel>
   </component>
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="omdb@localhost" uuid="717d5c40-b3f6-4161-bbde-3ef195dd4f56">
+    <data-source source="LOCAL" name="omdb@localhost" uuid="f5bee667-087c-4393-9c09-3f9d9a34f73e">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
@@ -401,7 +401,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
   <component name="dataSourceStorageLocal">
-    <data-source name="omdb@localhost" uuid="717d5c40-b3f6-4161-bbde-3ef195dd4f56">
+    <data-source name="omdb@localhost" uuid="f5bee667-087c-4393-9c09-3f9d9a34f73e">
       <database-info product="MySQL" version="8.0.12" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>

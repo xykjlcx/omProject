@@ -132,10 +132,10 @@ public class CourseController {
                     "获取评论列表成功",
                     courseCommentVoList
             );
-        } catch (Exception e) {
+        } catch (RuntimeException e) {
             e.printStackTrace();
             return OceanReturn.errorResult(
-                    "获取评论列表失败",
+                    e.getMessage(),
                     null
             );
         }
@@ -168,6 +168,30 @@ public class CourseController {
             e.printStackTrace();
             return OceanReturn.errorResult(
                     "评论失败，未知错误",
+                    null
+            );
+        }
+    }
+
+    @RequestMapping(value = "/searchCourses",method = RequestMethod.POST)
+    public Result searchCourses(@RequestParam("courseName") String courseName,
+                                @RequestParam("page") int page,
+                                @RequestParam("size") int size){
+        try {
+            Pageable pageable = new PageRequest(page,size);
+            List<TCoursePo> coursePoList = courseService.searchCourseByNameForPage(courseName,pageable);
+            List<CourseVo> resultCourseVoList = new ArrayList<>();
+            coursePoList.forEach(tCoursePo -> {
+                resultCourseVoList.add(PoConvertVo.convert(tCoursePo));
+            });
+            return OceanReturn.successResult(
+                    "搜索课程成功",
+                    resultCourseVoList
+            );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
                     null
             );
         }

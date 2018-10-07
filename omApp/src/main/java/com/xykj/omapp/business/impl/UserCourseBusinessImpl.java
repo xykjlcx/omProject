@@ -40,7 +40,7 @@ public class UserCourseBusinessImpl implements IUserCourseBusiness {
     CourseCommentServiceImpl courseCommentService;
 
     @Override
-    public List<UserCourseVo> getMyCoursesByUserId(int userId) throws Exception{
+    public List<UserCourseVo> getMyCoursesByUserId(int userId) throws RuntimeException{
         List<UserCourseVo> userCourseVoList = new ArrayList<>();
         try {
             List<TUserCourseStudyPo> userCourseStudyPoList = userCourseStudyService.getMyStudyCourseByUserId(userId);
@@ -59,9 +59,9 @@ public class UserCourseBusinessImpl implements IUserCourseBusiness {
                         .build();
                 userCourseVoList.add(userCourseVo);
             }
-        } catch (Exception e) {
+        }catch (RuntimeException e){
             e.printStackTrace();
-            throw new RuntimeException("UserCourseBusinessImpl getMyCoursesByUserId()我的课程数据转换失败!");
+            throw e;
         }
         return userCourseVoList;
     }

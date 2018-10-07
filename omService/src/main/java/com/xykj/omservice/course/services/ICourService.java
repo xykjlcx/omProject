@@ -23,5 +23,12 @@ public interface ICourService {
     List<TCoursePo> findByClassifyIdAndPage(int classifyId,Pageable pageable) throws Exception;
 
 
+    /**
+     * 搜索课程
+     * @param courseName
+     * @param pageable
+     * @return
+     */
+    List<TCoursePo> searchCourseByNameForPage(String courseName,Pageable pageable)throws RuntimeException;
 
 }

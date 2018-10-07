@@ -53,4 +53,13 @@ public class CourseServiceImpl implements ICourService {
         }
         return coursePoList;
     }
+
+    @Override
+    public List<TCoursePo> searchCourseByNameForPage(String courseName, Pageable pageable) throws RuntimeException {
+        List<TCoursePo> resultCourseList = courseDao.findAllByCourseNameLike("%" + courseName + "%",pageable);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(resultCourseList)){
+            throw new RuntimeException("没有搜索到课程");
+        }
+        return resultCourseList;
+    }
 }

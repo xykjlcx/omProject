@@ -81,18 +81,22 @@ public class UserCourseStudyServiceImpl implements IUserCourseStudyService {
     }
 
     @Override
-    public List<TUserCourseStudyPo> getMyStudyCourseByUserId(int userId) throws Exception {
+    public List<TUserCourseStudyPo> getMyStudyCourseByUserId(int userId) throws RuntimeException {
+        List<TUserPo> checkUserList = userDao.findAllById(userId);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(checkUserList)){
+            throw new RuntimeException("查询我的课程失败，用户不存在");
+        }
         List<Object[]> rows = userCourseStudyDao.findTUserCourseStudyPosByUserId(userId);
         List<TUserCourseStudyPo> userCourseStudyPoList = new ArrayList<>();
-        if (OceanOperationUtil.isNotNullOrEmptyForCollection(rows)){
-            rows.forEach(row -> {
-                // row[0] 分组处理后的 courseId
-                // row[1] 分组处理后的 last_study_time
-                userCourseStudyPoList.add(userCourseStudyDao.findFirstByUserIdAndCourseIdOrderByLastStudyTimeDesc(userId, (Integer) row[0]));
-            });
-        }else {
-            throw new RuntimeException( "用户：" + userId + ",并没有学习任何课程！");
+        if (OceanOperationUtil.isNullOrEmptyForCollection(rows)){
+           throw new RuntimeException("该用户并未学习任何课程");
         }
+        // 根据查询的数据，查询最近学习的课程数据
+        rows.forEach(row -> {
+            // row[0] 分组处理后的 courseId
+            // row[1] 分组处理后的 last_study_time
+            userCourseStudyPoList.add(userCourseStudyDao.findFirstByUserIdAndCourseIdOrderByLastStudyTimeDesc(userId, (Integer) row[0]));
+        });
         // rows非空，这里就肯定非空
 //        if (OceanOperationUtil.isNullOrEmptyForCollection(userCourseStudyPoList))
 //            throw new RuntimeException("");

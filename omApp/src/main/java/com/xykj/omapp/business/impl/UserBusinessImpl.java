@@ -1,11 +1,14 @@
 package com.xykj.omapp.business.impl;
 
 import com.xykj.omapp.business.IUserBusiness;
+import com.xykj.omapp.utils.AppUtil;
 import com.xykj.omapp.utils.OceanEmial;
 import com.xykj.ombase.utils.OceanOperationUtil;
 import com.xykj.omservice.course.services.impl.CourseServiceImpl;
 import com.xykj.omservice.user.dao.UserDao;
+import com.xykj.omservice.user.po.TIdeaBackPo;
 import com.xykj.omservice.user.po.TUserPo;
+import com.xykj.omservice.user.services.impl.IdeaBackServiceImpl;
 import com.xykj.omservice.user.services.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,6 +34,8 @@ public class UserBusinessImpl implements IUserBusiness {
     OceanEmial oceanEmial;
     @Autowired
     TemplateEngine templateEngine;
+    @Autowired
+    IdeaBackServiceImpl ideaBackService;
 
     @Override
     public void register(TUserPo userPo,String hostStr) throws RuntimeException{
@@ -117,5 +122,26 @@ public class UserBusinessImpl implements IUserBusiness {
         }catch (Exception e){
             throw new RuntimeException("未知错误，不能重置密码");
         }
+    }
+
+    @Override
+    public void addIdeaBack(TIdeaBackPo ideaBackPo) throws RuntimeException {
+       try {
+           if (ideaBackPo == null){
+               throw new RuntimeException("提交内容有误");
+           }
+           // 添加新的反馈
+           TUserPo userPo = ideaBackService.addNewIdeaBack(ideaBackPo);
+           // 发送邮件通知管理员
+           Context context = new Context();
+           context.setVariable("username",userPo.getUserName());
+           context.setVariable("address",ideaBackPo.getAddress());
+           context.setVariable("content",ideaBackPo.getContent());
+           context.setVariable("contact",ideaBackPo.getContact());
+           String emailContent = templateEngine.process("ideaBackInform",context);
+           oceanEmial.sendHtmlEmial(AppUtil.ADMIN_EMAIL,"用户反馈",emailContent);
+       }catch (Exception e){
+           throw e;
+       }
     }
 }

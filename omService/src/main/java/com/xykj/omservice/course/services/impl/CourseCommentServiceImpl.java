@@ -41,12 +41,13 @@ public class CourseCommentServiceImpl implements ICourseCommentService {
         List<TCourseCommentPo> tCourseCommentPoList = null;
         List<TCoursePo> tCoursePoList = courseDao.findAllById(courseId);
         if (OceanOperationUtil.isNullOrEmptyForCollection(tCoursePoList)){
-            throw new NullPointerException("无法查询该课程的评论，因为该课程不存在");
+            throw new RuntimeException("无法查询该课程的评论，因为该课程不存在");
         }
         tCourseCommentPoList = courseCommentDao.findAllByCourseIdOrderByCreateTimeDesc(courseId,pageable);
         if (OceanOperationUtil.isNullOrEmptyForCollection(tCourseCommentPoList)){
             throw new RuntimeException("该课程暂时没有评论");
         }
+        System.out.println("随便我" + tCourseCommentPoList);
         return tCourseCommentPoList;
     }
 
@@ -62,7 +63,9 @@ public class CourseCommentServiceImpl implements ICourseCommentService {
         }
         List<TCourseSectionPo> checkSectionList = courseSectionDao.findAllByIdAndCourseId(tCourseCommentPo.getSectionId(),tCourseCommentPo.getCourseId());
         if (OceanOperationUtil.isNullOrEmptyForCollection(checkSectionList)){
-            throw new RuntimeException("添加评论失败，该课程章节不存在");
+            // throw new RuntimeException("添加评论失败，该课程章节不存在");
+            // 由抛出异常改为 将sectionid设为默认值0，然后添加这条记录
+            tCourseCommentPo.setSectionId(0);
         }
         tCourseCommentPo.setCreateTime(new Timestamp(System.currentTimeMillis()));
         courseCommentDao.save(tCourseCommentPo);
