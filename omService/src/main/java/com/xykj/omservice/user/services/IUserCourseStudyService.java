@@ -18,4 +18,11 @@ public interface IUserCourseStudyService extends BaseService<TUserCourseStudyPo,
 
     boolean isStudyCourse(int userId,int courseId);
 
+    /**
+     * 获取某课程学习人数
+     * @param courseId
+     * @return
+     */
+    Integer getCourseStudyCount(int courseId) throws RuntimeException;
+
 }

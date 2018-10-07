@@ -56,6 +56,12 @@ public class UserController {
     ){
         try {
             List<UserCourseVo> userCourseVoList = userCourseBusiness.getMyCoursesByUserId(userId);
+            userCourseVoList.forEach(userCourseVo -> {
+                CourseVo courseVo = userCourseVo.getCourseVo();
+                int count = userCourseStudyService.getCourseStudyCount(courseVo.getId());
+                courseVo.setCount(count);
+                userCourseVo.setCourseVo(courseVo);
+            });
             return OceanReturn.successResult(
                     "获取我的课程成功",
                     userCourseVoList
@@ -186,7 +192,10 @@ public class UserController {
             List<TCoursePo> tCoursePoList = userCourseCollectService.queryCollectCourseByUserId(userId);
             List<CourseVo> resultCourseList = new ArrayList<>();
             tCoursePoList.forEach(tCoursePo -> {
-                resultCourseList.add(PoConvertVo.convert(tCoursePo));
+                CourseVo courseVo = PoConvertVo.convert(tCoursePo);
+                int count = userCourseStudyService.getCourseStudyCount(courseVo.getId());
+                courseVo.setCount(count);
+                resultCourseList.add(courseVo);
             });
             return OceanReturn.successResult(
                     "查询我的收藏成功",
@@ -241,6 +250,11 @@ public class UserController {
     public Result getMyComments(@RequestParam("userId") int userId){
         try {
             List<MyCommentVo> myCommentVoList = userCourseBusiness.getMyCommentsByUserId(userId);
+            myCommentVoList.forEach(myCommentVo -> {
+                CourseVo courseVo = myCommentVo.getCourseVo();
+                courseVo.setCount(userCourseStudyService.getCourseStudyCount(courseVo.getId()));
+                myCommentVo.setCourseVo(courseVo);
+            });
             return OceanReturn.successResult(
                     "获取我的评论列表成功",
                     myCommentVoList

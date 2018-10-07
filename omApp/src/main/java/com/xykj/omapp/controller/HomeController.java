@@ -9,6 +9,7 @@ import com.xykj.omservice.course.services.impl.CourseServiceImpl;
 import com.xykj.omservice.home.services.impl.HomeBannerService;
 import com.xykj.omservice.home.dao.NoticesDao;
 import com.xykj.omservice.home.po.TNoticesPo;
+import com.xykj.omservice.user.services.impl.UserCourseStudyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -29,6 +30,9 @@ public class HomeController {
     CourseServiceImpl courseService;
 
     @Autowired
+    UserCourseStudyServiceImpl userCourseStudyService;
+
+    @Autowired
     NoticesDao noticesDao;
 
     /**
@@ -41,7 +45,10 @@ public class HomeController {
             List<TCoursePo> tCoursePoList = homeBannerService.findAll();
             List<CourseVo> courseVoList = new ArrayList<>();
             tCoursePoList.forEach(tCoursePo -> {
-                courseVoList.add(PoConvertVo.convert(tCoursePo));
+                CourseVo courseVo = PoConvertVo.convert(tCoursePo);
+                int count = userCourseStudyService.getCourseStudyCount(courseVo.getId());
+                courseVo.setCount(count);
+                courseVoList.add(courseVo);
             });
             return OceanReturn.successResult(
                     "获取课程轮播成功",
@@ -88,7 +95,10 @@ public class HomeController {
            List<TCoursePo> coursePoList = courseService.findAllByPage(pageable);
            List<CourseVo> courseVoList = new ArrayList<>();
            coursePoList.forEach(tCoursePo -> {
-               courseVoList.add(PoConvertVo.convert(tCoursePo));
+               CourseVo courseVo = PoConvertVo.convert(tCoursePo);
+               int count = userCourseStudyService.getCourseStudyCount(courseVo.getId());
+               courseVo.setCount(count);
+               courseVoList.add(courseVo);
            });
            return OceanReturn.successResult(
                    "获取推荐好课成功",
@@ -119,7 +129,10 @@ public class HomeController {
             List<TCoursePo> coursePoList = courseService.findAllByPage(pageable);
             List<CourseVo> courseVoList = new ArrayList<>();
             coursePoList.forEach(tCoursePo -> {
-                courseVoList.add(PoConvertVo.convert(tCoursePo));
+                CourseVo courseVo = PoConvertVo.convert(tCoursePo);
+                int count = userCourseStudyService.getCourseStudyCount(courseVo.getId());
+                courseVo.setCount(count);
+                courseVoList.add(courseVo);
             });
             return OceanReturn.successResult(
                     "获取课程数据成功,当前页:" + page + ",每页显示：" + size,

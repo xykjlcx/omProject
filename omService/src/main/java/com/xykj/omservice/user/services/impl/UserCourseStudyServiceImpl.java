@@ -119,4 +119,19 @@ public class UserCourseStudyServiceImpl implements IUserCourseStudyService {
         }
         return false;
     }
+
+    @Override
+    public Integer getCourseStudyCount(int courseId) throws RuntimeException {
+        List<TCoursePo> checkCourseList = courseDao.findAllById(courseId);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(checkCourseList)){
+            throw new RuntimeException("该课程不存在");
+        }
+        int studyCount = -1;
+        studyCount = userCourseStudyDao.countAllByCourseId(courseId);
+        if (studyCount == -1){
+            return 0;
+        }else {
+            return studyCount;
+        }
+    }
 }

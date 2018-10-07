@@ -17,6 +17,7 @@ import com.xykj.omservice.course.services.impl.CourseCommentServiceImpl;
 import com.xykj.omservice.course.services.impl.CourseSectionServiceImpl;
 import com.xykj.omservice.course.services.impl.CourseServiceImpl;
 import com.xykj.omservice.course.services.impl.CouseClassifyServiceImpl;
+import com.xykj.omservice.user.services.impl.UserCourseStudyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -49,6 +50,8 @@ public class CourseController {
     CourseBusinessImpl courseBusiness;
     @Autowired
     CourseCommentServiceImpl courseCommentService;
+    @Autowired
+    UserCourseStudyServiceImpl userCourseStudyService;
 
     @RequestMapping(value = "/getAllCourseForPage", method = RequestMethod.POST)
     public Result getAllCourseForPage(
@@ -61,7 +64,12 @@ public class CourseController {
             Pageable pageable = new PageRequest(page, size);
             List<TCoursePo> coursePoList = courseService.findByClassifyIdAndPage(classify,pageable);
             List<CourseVo> courseVoList = new ArrayList<>();
-            coursePoList.forEach(tCoursePo -> courseVoList.add(PoConvertVo.convert(tCoursePo)));
+            coursePoList.forEach(tCoursePo -> {
+                CourseVo courseVo = PoConvertVo.convert(tCoursePo);
+                int count = userCourseStudyService.getCourseStudyCount(courseVo.getId());
+                courseVo.setCount(count);
+                courseVoList.add(courseVo);
+            });
             return OceanReturn.successResult(
                     "获取课程数据成功,当前页:" + page + ",每页显示：" + size,
                     courseVoList
@@ -182,11 +190,31 @@ public class CourseController {
             List<TCoursePo> coursePoList = courseService.searchCourseByNameForPage(courseName,pageable);
             List<CourseVo> resultCourseVoList = new ArrayList<>();
             coursePoList.forEach(tCoursePo -> {
-                resultCourseVoList.add(PoConvertVo.convert(tCoursePo));
+                CourseVo courseVo = PoConvertVo.convert(tCoursePo);
+                int count = userCourseStudyService.getCourseStudyCount(courseVo.getId());
+                courseVo.setCount(count);
+                resultCourseVoList.add(courseVo);
             });
             return OceanReturn.successResult(
                     "搜索课程成功",
                     resultCourseVoList
+            );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    null
+            );
+        }
+    }
+
+    @RequestMapping(value = "/getCourseStudyCount",method = RequestMethod.POST)
+    public Result getCourseStudyCount(@RequestParam("courseId") int courseId){
+        try {
+            int studyCount = userCourseStudyService.getCourseStudyCount(courseId);
+            return OceanReturn.successResult(
+                    "查询学习人数成功",
+                    studyCount
             );
         }catch (RuntimeException e){
             e.printStackTrace();
