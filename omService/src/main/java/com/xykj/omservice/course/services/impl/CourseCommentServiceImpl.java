@@ -65,7 +65,7 @@ public class CourseCommentServiceImpl implements ICourseCommentService {
         if (OceanOperationUtil.isNullOrEmptyForCollection(checkSectionList)){
             // throw new RuntimeException("添加评论失败，该课程章节不存在");
             // 由抛出异常改为 将sectionid设为默认值0，然后添加这条记录
-            tCourseCommentPo.setSectionId(0);
+            tCourseCommentPo.setSectionId(-1);
         }
         tCourseCommentPo.setCreateTime(new Timestamp(System.currentTimeMillis()));
         courseCommentDao.save(tCourseCommentPo);

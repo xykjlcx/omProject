@@ -80,7 +80,7 @@ public class UserController {
             // 传参
             @RequestParam("userId") int userId,
             @RequestParam("courseId") int courseId,
-            // sectionId == 0时，为首次学习该课程
+            // sectionId == -1时，为首次学习该课程
             @RequestParam("sectionId") int sectionId
     ){
         try {

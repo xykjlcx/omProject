@@ -30,7 +30,7 @@ public class CourseSectionServiceImpl implements ICourseSectionService {
     CourseDao courseDao;
 
     @Override
-    public Map<String,Object> getAllChapterAndSection(int courseId) throws Exception {
+    public Map<String,Object> getAllChapterAndSection(int courseId) throws RuntimeException {
         Map<String,Object> data = new HashMap<>();
         List<TCourseSectionPo> chapterPoList = null;                              // 章PO
         List<List<TCourseSectionPo>> sectionPoList = new ArrayList<>();            // 节PO

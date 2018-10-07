@@ -149,6 +149,14 @@ public class CourseController {
         }
     }
 
+    /**
+     * 添加评论接口
+     * @param userId
+     * @param courseId
+     * @param sectionId
+     * @param content
+     * @return
+     */
     @RequestMapping(value = "/addComment",method = RequestMethod.POST)
     public Result addComment(@RequestParam("userId") int userId,
                              @RequestParam("courseId") int courseId,

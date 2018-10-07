@@ -54,8 +54,9 @@ public class CourseBusinessImpl implements ICourseBusiness {
             });
             data.put("chapter",chapterVoList);
             data.put("section",sectionVoList);
-        } catch (Exception e) {
+        } catch (RuntimeException e) {
             e.printStackTrace();
+            throw e;
         }
         return data;
     }

@@ -46,7 +46,11 @@ public class UserCourseStudyServiceImpl implements IUserCourseStudyService {
         try {
             TUserPo checkUser = userDao.findById(userId).get();
             TCoursePo checkCourse = courseDao.findById(courseId).get();
-            TCourseSectionPo checkSection = courseSectionDao.findById(sectionId).get();
+            if (sectionId == -1){
+
+            }else {
+                TCourseSectionPo checkSection = courseSectionDao.findById(sectionId).get();
+            }
         }catch (Exception e){
             e.printStackTrace();
             throw new RuntimeException("添加用户课程学习关联失败，参数不合法");

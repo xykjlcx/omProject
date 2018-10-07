@@ -47,7 +47,15 @@ public class UserCourseBusinessImpl implements IUserCourseBusiness {
             for (int i = 0; i < userCourseStudyPoList.size(); i++) {
                 TUserCourseStudyPo tUserCourseStudyPo = userCourseStudyPoList.get(i);
                 TCoursePo tCoursePo = courseDao.findById(tUserCourseStudyPo.getCourseId()).get();
-                TCourseSectionPo tCourseSectionPo = courseSectionDao.findById(tUserCourseStudyPo.getSectionId()).get();
+                TCourseSectionPo tCourseSectionPo = new TCourseSectionPo();
+                if (tUserCourseStudyPo.getSectionId() == -1){
+                    // todo 仅仅是进入课程点击了开始学习，并未进行具体章节的学习
+                    // 赋默认值
+                    tCourseSectionPo.setId(-1);
+                    tCourseSectionPo.setSectionName("课程概览，待进行具体章节学习");
+                }else {
+                    tCourseSectionPo = courseSectionDao.findById(tUserCourseStudyPo.getSectionId()).get();
+                }
                 CourseVo courseVo = PoConvertVo.convert(tCoursePo);
                 UserCourseVo userCourseVo = UserCourseVo.builder()
                         .id(i+1)
