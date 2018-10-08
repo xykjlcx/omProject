@@ -65,7 +65,9 @@ public class UserCourseStudyServiceImpl implements IUserCourseStudyService {
             userCourseStudyDao.save(data);
         }else {
             // 存在相同的记录，不可插入
-            throw new RuntimeException("id为：《" + userId + "》的用户已经学习了课程：《" + courseId + "》不可重复学习该课程！");
+//            throw new RuntimeException("id为：《" + userId + "》的用户已经学习了课程：《" + courseId + "》不可重复学习该课程！");
+            checkAlreadyExist.get(0).setLastStudyTime(new Timestamp(System.currentTimeMillis()));
+            userCourseStudyDao.save(checkAlreadyExist.get(0));
         }
     }
 
@@ -131,7 +133,10 @@ public class UserCourseStudyServiceImpl implements IUserCourseStudyService {
             throw new RuntimeException("该课程不存在");
         }
         int studyCount = -1;
-        studyCount = userCourseStudyDao.countAllByCourseId(courseId);
+        List<Object[]> rows = userCourseStudyDao.countAllByCourseId(courseId);
+        if (rows != null){
+            studyCount = rows.size();
+        }
         if (studyCount == -1){
             return 0;
         }else {

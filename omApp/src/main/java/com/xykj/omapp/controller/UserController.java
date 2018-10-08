@@ -172,10 +172,10 @@ public class UserController {
                     "判断成功",
                     isExist
             );
-        }catch (Exception e){
+        }catch (RuntimeException e){
             e.printStackTrace();
             return OceanReturn.errorResult(
-                    "判断失败",
+                    e.getMessage(),
                     null
             );
         }

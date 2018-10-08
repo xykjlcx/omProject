@@ -111,6 +111,11 @@ public class CourseController {
        }
     }
 
+    /**
+     * 获取课程章节
+     * @param courseId
+     * @return
+     */
     @RequestMapping(value = "/getCourseChapterAndSection",method = RequestMethod.POST)
     public Result getCourseChapterAndSection(@RequestParam("courseId") int courseId){
         try {

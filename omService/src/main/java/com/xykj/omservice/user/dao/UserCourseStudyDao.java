@@ -47,6 +47,9 @@ public interface UserCourseStudyDao extends BaseJpaDao<TUserCourseStudyPo,Intege
      */
     List<TUserCourseStudyPo> findAllByUserIdAndCourseId(int userId,int courseId);
 
-    int countAllByCourseId(int courseId);
+    @Query(
+            "SELECT DISTINCT tucs.userId FROM TUserCourseStudyPo tucs WHERE tucs.courseId=?1"
+    )
+    List<Object[]> countAllByCourseId(int courseId);
 
 }
