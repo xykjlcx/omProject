@@ -1,9 +1,10 @@
 spring:
   datasource:
-    password: root123
+    password: Zy1314521..
     username: root
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/omdb
+    url: jdbc:mysql://139.199.212.202:3306/omdb?useUnicode=true&characterEncoding=utf-8
+#    url: jdbc:mysql://localhost:3306/omdb
   jpa:
     hibernate:
       ddl-auto: update

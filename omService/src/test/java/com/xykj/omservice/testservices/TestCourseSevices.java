@@ -15,15 +15,15 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @SpringBootTest
 public class TestCourseSevices {
 
-    @Autowired
-    CourseDao courseDao;
-
-    @Test
-    public void test1(){
-        Sort sort = new Sort(Sort.Direction.DESC,"weight");
-        Pageable pageable = new PageRequest(0,5,sort);
-        System.out.println(courseDao.findAll(pageable).getContent());
-    }
+//    @Autowired
+//    CourseDao courseDao;
+//
+//    @Test
+//    public void test1(){
+//        Sort sort = new Sort(Sort.Direction.DESC,"weight");
+//        Pageable pageable = new PageRequest(0,5,sort);
+//        System.out.println(courseDao.findAll(pageable).getContent());
+//    }
 
 
 }

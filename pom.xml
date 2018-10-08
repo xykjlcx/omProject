@@ -53,6 +53,12 @@
             <version>2.3.0</version>
         </dependency>
 
+        <!-- 安全退出 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
 
 
         <!--&lt;!&ndash; 权限 start&ndash;&gt;-->

@@ -72,6 +72,7 @@ public class UserServiceImpl implements IUserService {
         registerUser.setLastLoginTime(nowTime);
         registerUser.setStatus(OmConstant.UserPropertyDefault.STATUS);
         registerUser.setVerifyCode(OmConstant.UserPropertyDefault.VERIFY_CODE);
+        System.out.println("输出注册信息：" + registerUser);
         userDao.save(registerUser);
     }
 
