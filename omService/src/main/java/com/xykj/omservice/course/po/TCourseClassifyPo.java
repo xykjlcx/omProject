@@ -35,7 +35,7 @@ public class TCourseClassifyPo {
      * 同级别分类排序
      */
     @Basic@Column(name = "sequence", nullable = true, length = 255)
-    private String sequence;
+    private Integer sequence;
 
     /**
      * 创建时间

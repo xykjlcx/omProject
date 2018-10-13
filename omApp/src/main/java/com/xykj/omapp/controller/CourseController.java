@@ -1,30 +1,25 @@
 package com.xykj.omapp.controller;
 
+import com.alibaba.fastjson.JSONObject;
+import com.google.gson.Gson;
 import com.xykj.omapp.business.impl.CourseBusinessImpl;
 import com.xykj.omapp.utils.PoConvertVo;
 import com.xykj.omapp.vo.CourseCommentVo;
-import com.xykj.omapp.vo.CourseSectionVo;
 import com.xykj.omapp.vo.CourseVo;
+import com.xykj.omapp.vo.TestVo;
 import com.xykj.ombase.returnformat.OceanReturn;
 import com.xykj.ombase.returnformat.Result;
-import com.xykj.ombase.utils.OceanOperationUtil;
-import com.xykj.omservice.course.dao.CourseClassifyDao;
 import com.xykj.omservice.course.po.TCourseClassifyPo;
 import com.xykj.omservice.course.po.TCourseCommentPo;
 import com.xykj.omservice.course.po.TCoursePo;
-import com.xykj.omservice.course.po.TCourseSectionPo;
 import com.xykj.omservice.course.services.impl.CourseCommentServiceImpl;
-import com.xykj.omservice.course.services.impl.CourseSectionServiceImpl;
 import com.xykj.omservice.course.services.impl.CourseServiceImpl;
 import com.xykj.omservice.course.services.impl.CouseClassifyServiceImpl;
 import com.xykj.omservice.user.services.impl.UserCourseStudyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -60,7 +55,7 @@ public class CourseController {
             @RequestParam("classify") int classify
     ) {
         try {
-//            System.out.println("page:" + page + ",size:" + size);
+            System.out.println("page:" + page + ",size:" + size);
             Pageable pageable = new PageRequest(page, size);
             List<TCoursePo> coursePoList = courseService.findByClassifyIdAndPage(classify,pageable);
             List<CourseVo> courseVoList = new ArrayList<>();
@@ -237,5 +232,42 @@ public class CourseController {
             );
         }
     }
+
+
+//    @RequestMapping(value = "/testjass",method = RequestMethod.POST)
+//    public Result testjass(@RequestBody JSONObject jsonObject){
+//        String str = jsonObject.toString();
+//        TestVo testVo = new Gson().fromJson(str,TestVo.class);
+//        int page = testVo.getPage();
+//        int size = testVo.getSize();
+//        int classify = testVo.getClassify();
+//        try {
+//            System.out.println("page:" + page + ",size:" + size);
+//            Pageable pageable = new PageRequest(page, size);
+//            List<TCoursePo> coursePoList = courseService.findByClassifyIdAndPage(classify,pageable);
+//            List<CourseVo> courseVoList = new ArrayList<>();
+//            coursePoList.forEach(tCoursePo -> {
+//                CourseVo courseVo = PoConvertVo.convert(tCoursePo);
+//                int count = userCourseStudyService.getCourseStudyCount(courseVo.getId());
+//                courseVo.setCount(count);
+//                courseVoList.add(courseVo);
+//            });
+//            return OceanReturn.successResult(
+//                    "获取课程数据成功,当前页:" + page + ",每页显示：" + size,
+//                    courseVoList
+//            );
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return OceanReturn.errorResult(
+//                    "获取课程数据失败，当前页：" + page + ",每页显示：" + size,
+//                    null
+//            );
+//        }
+//    }
+
+//    @RequestMapping(value = "/test888",method = RequestMethod.POST)
+//    public void test888(@RequestParam int page){
+//        System.out.println(new Gson().fromJson(page,TestVo.class).);
+//    }
 
 }

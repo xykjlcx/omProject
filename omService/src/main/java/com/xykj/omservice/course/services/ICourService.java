@@ -31,4 +31,13 @@ public interface ICourService {
      */
     List<TCoursePo> searchCourseByNameForPage(String courseName,Pageable pageable)throws RuntimeException;
 
+    /**
+     * 添加新课程
+     * @param tCoursePo
+     * @throws RuntimeException
+     */
+    void addNewCourse(TCoursePo tCoursePo) throws RuntimeException;
+
+    void editCourse(TCoursePo tCoursePo) throws RuntimeException;
+
 }

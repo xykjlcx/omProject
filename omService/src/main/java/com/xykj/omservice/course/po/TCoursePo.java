@@ -98,7 +98,7 @@ public class TCoursePo {
     private Double price;
 
     /**
-     * 价格
+     * 收藏数
      */
     @Basic@Column(name = "collect_count", nullable = true)
     private Integer collectCount;

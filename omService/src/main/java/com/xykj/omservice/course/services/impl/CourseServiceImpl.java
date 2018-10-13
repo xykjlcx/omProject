@@ -13,6 +13,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 @Service
@@ -61,5 +62,24 @@ public class CourseServiceImpl implements ICourService {
             throw new RuntimeException("没有搜索到课程");
         }
         return resultCourseList;
+    }
+
+    @Override
+    public void addNewCourse(TCoursePo tCoursePo) throws RuntimeException {
+        if (tCoursePo == null){
+            throw new RuntimeException("传参有误");
+        }
+        tCoursePo.setCreateCourseTime(new Timestamp(System.currentTimeMillis()));
+        tCoursePo.setUpdateCourseTime(new Timestamp(System.currentTimeMillis()));
+        courseDao.save(tCoursePo);
+    }
+
+    @Override
+    public void editCourse(TCoursePo tCoursePo) throws RuntimeException {
+        if (tCoursePo == null){
+            throw new RuntimeException("传参有误");
+        }
+        tCoursePo.setUpdateCourseTime(new Timestamp(System.currentTimeMillis()));
+        courseDao.saveAndFlush(tCoursePo);
     }
 }
