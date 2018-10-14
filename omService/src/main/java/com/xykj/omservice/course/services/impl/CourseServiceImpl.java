@@ -82,4 +82,9 @@ public class CourseServiceImpl implements ICourService {
         tCoursePo.setUpdateCourseTime(new Timestamp(System.currentTimeMillis()));
         courseDao.saveAndFlush(tCoursePo);
     }
+
+    @Override
+    public Long getCourseCount() {
+        return courseDao.count();
+    }
 }

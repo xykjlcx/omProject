@@ -15,6 +15,7 @@ import com.xykj.omservice.user.services.impl.UserCourseStudyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -51,24 +52,43 @@ public class CourseController {
      */
     @RequestMapping(value = "/getAllCourses",method = RequestMethod.POST)
     public Result getAllCourses(@RequestBody JSONObject jsonObject){
-        int page = jsonObject.getInteger("page");
-        int size = jsonObject.getInteger("size");
-        int classify = jsonObject.getInteger("classify");
+        int page = 0,size = 0,classify = 0,sort = 0;
+        String sortProp;
         try {
+            page = jsonObject.getInteger("page");
+            size = jsonObject.getInteger("size");
+            classify = jsonObject.getInteger("classify");
+            sort = jsonObject.getInteger("sort");       // 0为正序，1位倒序
+            sortProp = jsonObject.getString("sortProp"); // 以什么字段排序
             System.out.println("page:" + page + ",size:" + size);
-            Pageable pageable = new PageRequest(page, size);
+            Pageable pageable = null;
+            if (sortProp.equals("none")){
+                sortProp = "id";
+            }
+            if (sort == 0){
+                // 默认为0 为正序
+                Sort orders1 = new Sort(Sort.Direction.ASC,sortProp);
+                pageable = new PageRequest(page,size,orders1);
+            }else {
+                // 倒序
+                Sort orders2 = new Sort(Sort.Direction.DESC,sortProp);
+                pageable = new PageRequest(page, size,orders2);
+            }
             List<TCoursePo> coursePoList = courseService.findByClassifyIdAndPage(classify,pageable);
             List<CourseVoAdmin> courseVoList = new ArrayList<>();
             for (int i = 0; i < coursePoList.size(); i++) {
                 TCoursePo tCoursePo = coursePoList.get(i);
                 CourseVoAdmin courseVo = PoConvertVo.convert(tCoursePo,page*size + (i+1));
-                int count = userCourseStudyService.getCourseStudyCount(courseVo.getId());
-                courseVo.setCount(count);
+                int count = userCourseStudyService.getCourseStudyCount(tCoursePo.getId());
+                courseVo.setStudyCount(count);
                 courseVoList.add(courseVo);
             }
+            Map<String,Object> data = new HashMap<>();
+            data.put("courseList",courseVoList);
+            data.put("count",courseService.getCourseCount());
             return OceanReturn.successResult(
                     "获取课程数据成功,当前页:" + page + ",每页显示：" + size,
-                    courseVoList
+                    data
             );
         } catch (Exception e) {
             e.printStackTrace();
@@ -159,6 +179,59 @@ public class CourseController {
             e.printStackTrace();
             return OceanReturn.errorResult(
                     "获取所有分类失败",
+                    null
+            );
+        }
+    }
+
+
+    @RequestMapping(value = "/searchCourses",method = RequestMethod.POST)
+    public Result searchCourses(@RequestBody JSONObject jsonObject){
+        String courseName = "";
+        int page = 0;
+        int size = 0;
+        int sort = 0;
+        String sortProp = "";
+        try {
+            sort = jsonObject.getInteger("sort");       // 0为正序，1位倒序
+            sortProp = jsonObject.getString("sortProp"); // 以什么字段排序
+            courseName = jsonObject.getString("courseName");
+            page = jsonObject.getInteger("page");
+            size = jsonObject.getInteger("size");
+
+            Pageable pageable = null;
+            if (sortProp.equals("none")){
+                sortProp = "id";
+            }
+            if (sort == 0){
+                // 默认为0 为正序
+                Sort orders1 = new Sort(Sort.Direction.ASC,sortProp);
+                pageable = new PageRequest(page,size,orders1);
+            }else {
+                // 倒序
+                Sort orders2 = new Sort(Sort.Direction.DESC,sortProp);
+                pageable = new PageRequest(page, size,orders2);
+            }
+            List<TCoursePo> coursePoList = courseService.searchCourseByNameForPage(courseName,pageable);
+            List<CourseVoAdmin> resultCourseVoList = new ArrayList<>();
+            for (int i = 0; i < coursePoList.size(); i++) {
+                TCoursePo tCoursePo = coursePoList.get(i);
+                CourseVoAdmin courseVo = PoConvertVo.convert(tCoursePo,page*size + (i+1));
+                int count = userCourseStudyService.getCourseStudyCount(courseVo.getId());
+                courseVo.setStudyCount(count);
+                resultCourseVoList.add(courseVo);
+            }
+            Map<String,Object> data = new HashMap<>();
+            data.put("courseList",resultCourseVoList);
+            data.put("count",coursePoList.size());
+            return OceanReturn.successResult(
+                    "搜索课程成功",
+                    data
+            );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
                     null
             );
         }

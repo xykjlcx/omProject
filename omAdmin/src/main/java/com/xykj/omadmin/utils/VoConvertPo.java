@@ -28,23 +28,29 @@ public class VoConvertPo {
     }
 
     public static TCoursePo convert(JSONObject jsonObject){
-        Integer id = null;
-        id = jsonObject.getInteger("id");
-        return TCoursePo.builder()
-                .id(id)
-                .courseName(jsonObject.getString(CoursePoKey.COURSE_NAME))
-                .courseDesc(jsonObject.getString(CoursePoKey.COURSE_DESC))
-                .classifyId(jsonObject.getInteger(CoursePoKey.CLASSIFY_ID))
-                .duration(jsonObject.getString(CoursePoKey.DURATION))
-                .level(jsonObject.getString(CoursePoKey.LEVEL))
-                .previewImg(jsonObject.getString(CoursePoKey.IMG_URL))
-                .videoUrl(jsonObject.getString(CoursePoKey.VIDEO_URL))
-                .isPutaway(jsonObject.getInteger(CoursePoKey.IS_PUTWAY))
-                .weight(jsonObject.getInteger(CoursePoKey.WEIGHT))
-                .isFree(jsonObject.getInteger(CoursePoKey.IS_FREE))
-                .price(jsonObject.getDouble(CoursePoKey.PRICE))
-                .build();
-
+        TCoursePo tCoursePo = null;
+        try {
+            Integer id = id = jsonObject.getInteger("id");
+            tCoursePo = TCoursePo.builder()
+                    .courseName(jsonObject.getString(CoursePoKey.COURSE_NAME))
+                    .courseDesc(jsonObject.getString(CoursePoKey.COURSE_DESC))
+                    .classifyId(jsonObject.getInteger(CoursePoKey.CLASSIFY_ID))
+                    .duration(jsonObject.getString(CoursePoKey.DURATION))
+                    .level(jsonObject.getString(CoursePoKey.LEVEL))
+                    .previewImg(jsonObject.getString(CoursePoKey.IMG_URL))
+                    .videoUrl(jsonObject.getString(CoursePoKey.VIDEO_URL))
+                    .isPutaway(jsonObject.getInteger(CoursePoKey.IS_PUTWAY))
+                    .weight(jsonObject.getInteger(CoursePoKey.WEIGHT))
+                    .isFree(jsonObject.getInteger(CoursePoKey.IS_FREE))
+                    .price(jsonObject.getDouble(CoursePoKey.PRICE))
+                    .build();
+            if (id != null){
+                tCoursePo.setId(id);
+            }
+        }catch (Exception e){
+            throw new RuntimeException("数据有误");
+        }
+        return tCoursePo;
     }
 
 }

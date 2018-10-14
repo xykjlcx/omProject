@@ -158,5 +158,13 @@ public class OmServiceApplicationTests {
 //        List<TCoursePo> coursePoList = courseService.searchCourseByNameForPage("s",pageable);
 //        System.out.println(coursePoList);
 //    }
+//
+//    @Autowired
+//    CourseDao courseDao;
+//
+//    @Test
+//    public void testCount(){
+//        System.out.println(courseDao.count());
+//    }
 
 }

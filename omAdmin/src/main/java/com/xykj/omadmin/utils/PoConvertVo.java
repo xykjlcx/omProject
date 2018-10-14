@@ -2,6 +2,7 @@ package com.xykj.omadmin.utils;
 
 import com.xykj.omadmin.vo.CourseClassifyVoAdmin;
 import com.xykj.omadmin.vo.CourseVoAdmin;
+import com.xykj.ombase.utils.OceanDateUtil;
 import com.xykj.omservice.course.po.TCourseClassifyPo;
 import com.xykj.omservice.course.po.TCoursePo;
 
@@ -23,12 +24,16 @@ public class PoConvertVo {
                 .classifyId(tCoursePo.getClassifyId())
                 .duration(tCoursePo.getDuration())
                 .level(tCoursePo.getLevel())
-                .imgUrl(tCoursePo.getPreviewImg())
+                .previewImg(tCoursePo.getPreviewImg())
                 .videoUrl(tCoursePo.getVideoUrl())
                 .isFree(tCoursePo.getIsFree())
+                .isPutaway(tCoursePo.getIsPutaway())
                 .price(tCoursePo.getPrice())
-                .count(tCoursePo.getCollectCount())
+                .weight(tCoursePo.getWeight())
+                .createCourseTime(OceanDateUtil.converDate(tCoursePo.getCreateCourseTime().getTime()))
+                .updateCourseTime(OceanDateUtil.converDate(tCoursePo.getUpdateCourseTime().getTime()))
                 .build();
+        // studyCount属性，controller中赋值
     }
 
     public static CourseClassifyVoAdmin convert(TCourseClassifyPo tCourseClassifyPo,int id){

@@ -25,10 +25,14 @@ public class CourseVoAdmin {
     private Integer classifyId;
     private String duration;
     private String level;
-    private String imgUrl;
+    private String previewImg;
     private String videoUrl;
     private Integer isFree;
+    private Integer isPutaway;
+    private Integer weight;
     private Double price;
-    private Integer count;
+    private Integer studyCount;     // 后端做好关联后返回，有多少人学习这门课
+    private String createCourseTime;
+    private String updateCourseTime;
 
 }

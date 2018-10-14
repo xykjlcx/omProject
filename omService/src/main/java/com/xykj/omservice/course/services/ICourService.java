@@ -40,4 +40,10 @@ public interface ICourService {
 
     void editCourse(TCoursePo tCoursePo) throws RuntimeException;
 
+    /**
+     * 获取课程总数量
+     * @return
+     */
+    Long getCourseCount();
+
 }
