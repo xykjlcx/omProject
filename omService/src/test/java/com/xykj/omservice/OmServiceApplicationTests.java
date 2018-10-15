@@ -6,7 +6,10 @@ import com.xykj.omservice.course.dao.CourseDao;
 import com.xykj.omservice.course.po.TCourseClassifyPo;
 import com.xykj.omservice.course.po.TCoursePo;
 import com.xykj.omservice.course.services.impl.CourseServiceImpl;
+import com.xykj.omservice.home.dao.HomeBannerDao;
 import com.xykj.omservice.home.dao.NoticesDao;
+import com.xykj.omservice.home.po.THomeBannerPo;
+import com.xykj.omservice.home.services.impl.HomeBannerService;
 import com.xykj.omservice.user.dao.RoleDao;
 import com.xykj.omservice.user.dao.UserCourseStudyDao;
 import com.xykj.omservice.user.dao.UserDao;
@@ -23,6 +26,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -166,5 +170,44 @@ public class OmServiceApplicationTests {
 //    public void testCount(){
 //        System.out.println(courseDao.count());
 //    }
+
+//    @Autowired
+////    HomeBannerService homeBannerService;
+////    @Autowired
+////    HomeBannerDao homeBannerDao;
+////
+////    @Test
+////    public void testBanner(){
+//////        List<THomeBannerPo> tHomeBannerPoList = homeBannerDao.findAllByCourseId(21);
+////        homeBannerService.deleteCourseFromBanner(21);
+////    }
+
+    @Autowired
+    CourseServiceImpl courseService;
+//
+//    @Test
+//    public void testCourseIsPutAway(){
+//        courseService.editCourseIsPutAway(21,true);
+//    }
+
+    @Test
+    public void testSaveAndEdit(){
+        /**
+         * 测试发现，带有id且该id在数据库中已存在一条记录则更新，否则插入一条以该id为id的新纪录
+         * id字段为null时，自增插入
+         */
+       TCoursePo tCoursePo =  TCoursePo.builder()
+                .id(18)
+                .courseName("qwe")
+                .courseDesc("123")
+                .classifyId(19)
+                .previewImg("img")
+                .videoUrl("video")
+                .createCourseTime(new Timestamp(System.currentTimeMillis()))
+                .isPutaway(0)
+                .build();
+        courseService.addNewCourse(tCoursePo);
+    }
+
 
 }

@@ -16,6 +16,12 @@ import com.xykj.omservice.course.po.TCoursePo;
 public class PoConvertVo {
 
     public static CourseVoAdmin convert(TCoursePo tCoursePo,int id){
+        boolean isPutawayBoolean = false;
+        if (tCoursePo.getIsPutaway() == 0){
+            isPutawayBoolean = true;
+        }else {
+            isPutawayBoolean = false;
+        }
         return CourseVoAdmin.builder()
                 .id(id)
                 .dbId(tCoursePo.getId())
@@ -28,6 +34,7 @@ public class PoConvertVo {
                 .videoUrl(tCoursePo.getVideoUrl())
                 .isFree(tCoursePo.getIsFree())
                 .isPutaway(tCoursePo.getIsPutaway())
+                .isPutawayS(isPutawayBoolean)
                 .price(tCoursePo.getPrice())
                 .weight(tCoursePo.getWeight())
                 .createCourseTime(OceanDateUtil.converDate(tCoursePo.getCreateCourseTime().getTime()))

@@ -7,6 +7,7 @@ import com.xykj.omservice.course.dao.CourseDao;
 import com.xykj.omservice.course.po.TCourseClassifyPo;
 import com.xykj.omservice.course.po.TCoursePo;
 import com.xykj.omservice.course.services.ICourService;
+import org.omg.CORBA.TCKind;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -86,5 +87,41 @@ public class CourseServiceImpl implements ICourService {
     @Override
     public Long getCourseCount() {
         return courseDao.count();
+    }
+
+    @Override
+    public void editCourseIsPutAway(int courseId,boolean isPutAway) throws RuntimeException {
+        List<TCoursePo> checkCourseList = courseDao.findAllById(courseId);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(checkCourseList)){
+            throw new RuntimeException("课程不存在");
+        }
+        TCoursePo updateCoursePo = checkCourseList.get(0);
+        if (isPutAway){
+            // 上架
+            updateCoursePo.setIsPutaway(0);
+        }else {
+            // 下架
+            updateCoursePo.setIsPutaway(1);
+        }
+        editCourse(updateCoursePo);
+    }
+
+    @Override
+    public void deleteCourseItem(int courseId) throws RuntimeException {
+        List<TCoursePo> checkCourseList = courseDao.findAllById(courseId);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(checkCourseList)){
+            throw new RuntimeException("课程不存在");
+        }
+        TCoursePo coursePo = checkCourseList.get(0);
+        courseDao.delete(coursePo);
+    }
+
+    @Override
+    public TCoursePo getCourseInfoById(int courseId) throws RuntimeException {
+        List<TCoursePo> checkCourseList = courseDao.findAllById(courseId);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(checkCourseList)){
+            throw new RuntimeException("课程不存在");
+        }
+        return checkCourseList.get(0);
     }
 }

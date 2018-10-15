@@ -23,4 +23,13 @@ public class OceanDateUtil {
     }
 
 
+    /**
+     * 获取当前时间戳
+     * @return
+     */
+    public static Long getCurrentTime() {
+        return System.currentTimeMillis();
+    }
+
+
 }

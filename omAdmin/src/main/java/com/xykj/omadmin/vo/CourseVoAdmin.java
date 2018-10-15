@@ -29,6 +29,8 @@ public class CourseVoAdmin {
     private String videoUrl;
     private Integer isFree;
     private Integer isPutaway;
+    private boolean isPutawayS;     // 用作显示
+    private boolean isHomeBannerS;  // 是否添加至首页轮播，用作显示
     private Integer weight;
     private Double price;
     private Integer studyCount;     // 后端做好关联后返回，有多少人学习这门课

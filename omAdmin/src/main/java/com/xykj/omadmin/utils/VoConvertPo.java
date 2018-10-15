@@ -30,7 +30,6 @@ public class VoConvertPo {
     public static TCoursePo convert(JSONObject jsonObject){
         TCoursePo tCoursePo = null;
         try {
-            Integer id = id = jsonObject.getInteger("id");
             tCoursePo = TCoursePo.builder()
                     .courseName(jsonObject.getString(CoursePoKey.COURSE_NAME))
                     .courseDesc(jsonObject.getString(CoursePoKey.COURSE_DESC))
@@ -44,9 +43,6 @@ public class VoConvertPo {
                     .isFree(jsonObject.getInteger(CoursePoKey.IS_FREE))
                     .price(jsonObject.getDouble(CoursePoKey.PRICE))
                     .build();
-            if (id != null){
-                tCoursePo.setId(id);
-            }
         }catch (Exception e){
             throw new RuntimeException("数据有误");
         }

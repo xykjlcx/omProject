@@ -7,10 +7,12 @@ import com.xykj.omadmin.vo.CourseClassifyVoAdmin;
 import com.xykj.omadmin.vo.CourseVoAdmin;
 import com.xykj.ombase.returnformat.OceanReturn;
 import com.xykj.ombase.returnformat.Result;
+import com.xykj.ombase.utils.OceanDateUtil;
 import com.xykj.omservice.course.po.TCourseClassifyPo;
 import com.xykj.omservice.course.po.TCoursePo;
 import com.xykj.omservice.course.services.impl.CourseServiceImpl;
 import com.xykj.omservice.course.services.impl.CouseClassifyServiceImpl;
+import com.xykj.omservice.home.services.impl.HomeBannerService;
 import com.xykj.omservice.user.services.impl.UserCourseStudyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -43,6 +45,8 @@ public class CourseController {
     UserCourseStudyServiceImpl userCourseStudyService;
     @Autowired
     CouseClassifyServiceImpl couseClassifyService;
+    @Autowired
+    HomeBannerService homeBannerService;
 
     /**
      * 获取所有课程(分页)
@@ -52,6 +56,7 @@ public class CourseController {
      */
     @RequestMapping(value = "/getAllCourses",method = RequestMethod.POST)
     public Result getAllCourses(@RequestBody JSONObject jsonObject){
+        long firstTime = OceanDateUtil.getCurrentTime();
         int page = 0,size = 0,classify = 0,sort = 0;
         String sortProp;
         try {
@@ -79,13 +84,17 @@ public class CourseController {
             for (int i = 0; i < coursePoList.size(); i++) {
                 TCoursePo tCoursePo = coursePoList.get(i);
                 CourseVoAdmin courseVo = PoConvertVo.convert(tCoursePo,page*size + (i+1));
-                int count = userCourseStudyService.getCourseStudyCount(tCoursePo.getId());
+                int count = userCourseStudyService.getCourseStudyCount(courseVo.getDbId());
+                // 设置是否已经推荐至首页轮播
+                courseVo.setHomeBannerS(homeBannerService.isCourseBelongToBanner(courseVo.getDbId()));
                 courseVo.setStudyCount(count);
                 courseVoList.add(courseVo);
             }
             Map<String,Object> data = new HashMap<>();
             data.put("courseList",courseVoList);
             data.put("count",courseService.getCourseCount());
+            long endTime = OceanDateUtil.getCurrentTime();
+            System.out.println("查询所有课程的用时：" + (endTime - firstTime));
             return OceanReturn.successResult(
                     "获取课程数据成功,当前页:" + page + ",每页显示：" + size,
                     data
@@ -96,30 +105,68 @@ public class CourseController {
                     "获取课程数据失败，当前页：" + page + ",每页显示：" + size,
                     null
             );
-        }    }
+        }
+    }
+
 
     /**
-     * 添加新的课程
+     * 获取一条课程信息
      * @param jsonObject
      * @return
      */
-    @RequestMapping(value = "/addCourse",method = RequestMethod.POST)
+    @RequestMapping(value = "/getCourseOneById",method = RequestMethod.POST)
+    public Result getCourseOneById(@RequestBody JSONObject jsonObject){
+        int courseId = 0;
+        try {
+            courseId = jsonObject.getInteger("courseId");
+            TCoursePo tCoursePo = courseService.getCourseInfoById(courseId);
+            CourseVoAdmin courseVo = PoConvertVo.convert(tCoursePo,1);
+            int count = userCourseStudyService.getCourseStudyCount(courseVo.getDbId());
+            // 设置是否已经推荐至首页轮播
+            courseVo.setHomeBannerS(homeBannerService.isCourseBelongToBanner(courseVo.getDbId()));
+            courseVo.setStudyCount(count);
+            return OceanReturn.successResult(
+                    "获取课程信息成功",
+                    courseVo
+            );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    null
+            );
+        }
+    }
+
+    /**
+     * 添加/编辑的课程
+     * @param jsonObject
+     * @return
+     */
+    @RequestMapping(value = "/addAndEditCourse",method = RequestMethod.POST)
     public Result addCourse(@RequestBody JSONObject jsonObject){
         try {
-            TCoursePo newCoursePo = VoConvertPo.convert(jsonObject);
-            courseService.addNewCourse(newCoursePo);
+            TCoursePo tCoursePo = VoConvertPo.convert(jsonObject);
+            Integer id = jsonObject.getInteger("dbId");
+            if (id != null){
+                tCoursePo.setId(id);
+                courseService.editCourse(tCoursePo);
+            }else {
+                courseService.addNewCourse(tCoursePo);
+            }
             return OceanReturn.successResult(
-                    "添加课程成功",
+                    "操作成功",
                     null
             );
         }catch (RuntimeException e){
             e.printStackTrace();
             return OceanReturn.errorResult(
-                    "添加课程失败" + e.getMessage(),
+                    "操作失败" + e.getMessage(),
                     null
             );
         }
     }
+
 
     /**
      * 修改课程信息
@@ -185,8 +232,14 @@ public class CourseController {
     }
 
 
+    /**
+     * 课程搜索
+     * @param jsonObject
+     * @return
+     */
     @RequestMapping(value = "/searchCourses",method = RequestMethod.POST)
     public Result searchCourses(@RequestBody JSONObject jsonObject){
+        long firstTime = OceanDateUtil.getCurrentTime();
         String courseName = "";
         int page = 0;
         int size = 0;
@@ -217,13 +270,17 @@ public class CourseController {
             for (int i = 0; i < coursePoList.size(); i++) {
                 TCoursePo tCoursePo = coursePoList.get(i);
                 CourseVoAdmin courseVo = PoConvertVo.convert(tCoursePo,page*size + (i+1));
-                int count = userCourseStudyService.getCourseStudyCount(courseVo.getId());
+                int count = userCourseStudyService.getCourseStudyCount(courseVo.getDbId());
                 courseVo.setStudyCount(count);
+                // 设置是否已经推荐至首页轮播
+                courseVo.setHomeBannerS(homeBannerService.isCourseBelongToBanner(courseVo.getDbId()));
                 resultCourseVoList.add(courseVo);
             }
             Map<String,Object> data = new HashMap<>();
             data.put("courseList",resultCourseVoList);
             data.put("count",coursePoList.size());
+            long endTime = OceanDateUtil.getCurrentTime();
+            System.out.println("本次搜索接口耗时：< " + (endTime - firstTime) + " >毫秒");
             return OceanReturn.successResult(
                     "搜索课程成功",
                     data
@@ -236,6 +293,89 @@ public class CourseController {
             );
         }
     }
+
+    /**
+     * 操作课程是否推荐至轮播
+     * @param jsonObject
+     * @return
+     */
+    @RequestMapping(value = "/operateCourseToBanner",method = RequestMethod.POST)
+    public Result operateCourseToBanner(@RequestBody JSONObject jsonObject){
+        int courseId = 0;
+        boolean isRecommend = false;
+        try {
+            courseId = jsonObject.getInteger("courseId");
+            /**
+             * true 为推荐轮播
+             * false 为下架轮播
+             */
+            isRecommend = jsonObject.getBoolean("isRecommend");
+            if (isRecommend){
+                homeBannerService.addCourseToBanner(courseId);
+            }else {
+                homeBannerService.deleteCourseFromBanner(courseId);
+            }
+            return OceanReturn.successResult(
+                    "操作成功",
+                    null
+            );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    !isRecommend
+            );
+        }
+    }
+
+    @RequestMapping(value = "/operateCourseIsPutAway",method = RequestMethod.POST)
+    public Result operateCourseIsPutAway(@RequestBody JSONObject jsonObject){
+        int courseId = 0;
+        boolean isPutAway = false;
+        try {
+            courseId = jsonObject.getInteger("courseId");
+            isPutAway = jsonObject.getBoolean("isPutAway");
+            /**
+             * true 为上架
+             * false 为下架
+             */
+            courseService.editCourseIsPutAway(courseId,isPutAway);
+            return OceanReturn.successResult(
+                    "操作成功",
+                    null
+            );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    !isPutAway
+            );
+        }
+    }
+
+    /**
+     * 删除一条课程记录
+     * @param jsonObject
+     * @return
+     */
+    @RequestMapping(value = "/deleteCourseItem",method = RequestMethod.POST)
+    public Result deleteCourseItem(@RequestBody JSONObject jsonObject){
+        int courseId = 0;
+        try {
+            courseId = jsonObject.getInteger("courseId");
+            courseService.deleteCourseItem(courseId);
+            return OceanReturn.successResult(
+                    "删除成功",
+                    null
+            );        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    null
+            );
+        }
+    }
+
 
 
 }
