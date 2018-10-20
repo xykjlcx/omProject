@@ -25,10 +25,9 @@ public class UserServiceImpl implements IUserService {
 
     @Autowired
     UserDao userDao;
-    private Random random = new Random();
 
     @Override
-    public TUserPo login(String username, String pwd) throws Exception {
+    public TUserPo login(String username, String pwd) throws RuntimeException {
         List<TUserPo> tUserPoList = userDao.findAllByUserName(username);
         if (OceanOperationUtil.isNullOrEmptyForCollection(tUserPoList)){
             throw new RuntimeException("登录失败，用户不存在");

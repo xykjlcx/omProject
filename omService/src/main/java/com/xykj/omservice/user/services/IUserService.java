@@ -13,7 +13,7 @@ public interface IUserService extends BaseService<TUserPo,Integer> {
      * @param pwd
      * @return
      */
-    TUserPo login(String username,String pwd) throws Exception;
+    TUserPo login(String username,String pwd) throws RuntimeException;
 
     /**
      * 注册
