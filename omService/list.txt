@@ -1,0 +1,42 @@
+.
+├── list.txt
+├── mvnw
+├── mvnw.cmd
+├── omservice.iml
+├── pom.xml
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── com
+    │   │       └── xykj
+    │   │           └── omservice
+    │   │               ├── OmConstant.java
+    │   │               ├── OmServiceApplication.java
+    │   │               ├── bases
+    │   │               │   ├── BaseJpaDao.java
+    │   │               │   ├── BaseModel.java
+    │   │               │   └── BaseService.java
+    │   │               ├── course
+    │   │               │   ├── dao
+    │   │               │   ├── po
+    │   │               │   └── services
+    │   │               ├── home
+    │   │               │   ├── dao
+    │   │               │   ├── po
+    │   │               │   └── services
+    │   │               └── user
+    │   │                   ├── dao
+    │   │                   ├── po
+    │   │                   └── services
+    │   └── resources
+    │       └── application.yml
+    └── test
+        └── java
+            └── com
+                └── xykj
+                    └── omservice
+                        ├── OmServiceApplicationTests.java
+                        └── testservices
+                            └── TestCourseSevices.java
+
+26 directories, 13 files

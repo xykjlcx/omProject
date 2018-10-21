@@ -1,9 +1,11 @@
 package com.xykj.omadmin.controllers;
 
 import com.alibaba.fastjson.JSONObject;
+import com.xykj.omadmin.business.impl.CourseBusinessImpl;
 import com.xykj.omadmin.utils.PoConvertVo;
 import com.xykj.omadmin.utils.VoConvertPo;
 import com.xykj.omadmin.vo.CourseClassifyVoAdmin;
+import com.xykj.omadmin.vo.CourseSectionVo;
 import com.xykj.omadmin.vo.CourseVoAdmin;
 import com.xykj.ombase.returnformat.OceanReturn;
 import com.xykj.ombase.returnformat.Result;
@@ -18,10 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,6 +46,8 @@ public class CourseController {
     CouseClassifyServiceImpl couseClassifyService;
     @Autowired
     HomeBannerService homeBannerService;
+    @Autowired
+    CourseBusinessImpl courseBusiness;
 
     /**
      * 获取所有课程(分页)
@@ -144,7 +145,7 @@ public class CourseController {
      * @return
      */
     @RequestMapping(value = "/addAndEditCourse",method = RequestMethod.POST)
-    public Result addCourse(@RequestBody JSONObject jsonObject){
+    public Result addAndEditCourse(@RequestBody JSONObject jsonObject){
         try {
             TCoursePo tCoursePo = VoConvertPo.convert(jsonObject);
             Integer id = jsonObject.getInteger("dbId");
@@ -374,6 +375,34 @@ public class CourseController {
                     null
             );
         }
+    }
+
+    /**
+     * 获取课程章节
+     * @return
+     */
+    @RequestMapping(value = "/getCourseChapterAndSection",method = RequestMethod.POST)
+    public Result getCourseChapterAndSection(@RequestBody JSONObject jsonObject){
+        Integer courseId = null;
+        try {
+            courseId = jsonObject.getInteger("courseId");
+            Map<String,Object> data = courseBusiness.getChapterAndSection(courseId);
+            return OceanReturn.successResult(
+                    "获取课程章节列表成功",
+                    data
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    "获取课程章节列表失败",
+                    null
+            );
+        }
+    }
+
+    @RequestMapping(value = "/addChapterAndSection",method = RequestMethod.POST)
+    public Result addChapterAndSection(CourseSectionVo courseSectionVo){
+        return null;
     }
 
 

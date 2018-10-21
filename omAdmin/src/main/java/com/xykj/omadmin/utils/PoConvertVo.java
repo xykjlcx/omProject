@@ -1,10 +1,12 @@
 package com.xykj.omadmin.utils;
 
 import com.xykj.omadmin.vo.CourseClassifyVoAdmin;
+import com.xykj.omadmin.vo.CourseSectionVo;
 import com.xykj.omadmin.vo.CourseVoAdmin;
 import com.xykj.ombase.utils.OceanDateUtil;
 import com.xykj.omservice.course.po.TCourseClassifyPo;
 import com.xykj.omservice.course.po.TCoursePo;
+import com.xykj.omservice.course.po.TCourseSectionPo;
 
 /**
  * @author ocean
@@ -50,6 +52,17 @@ public class PoConvertVo {
                 .classifyName(tCourseClassifyPo.getClassifyName())
                 .parentId(tCourseClassifyPo.getParentId())
                 .sequence(tCourseClassifyPo.getSequence())
+                .build();
+    }
+
+    public static CourseSectionVo convert(TCourseSectionPo tCourseSectionPo){
+        return CourseSectionVo.builder()
+                .dbId(tCourseSectionPo.getId())
+                .courseId(tCourseSectionPo.getCourseId())
+                .parentId(tCourseSectionPo.getParentId())
+                .sectionName(tCourseSectionPo.getSectionName())
+                .duration(tCourseSectionPo.getDuration())
+                .videoUrl(tCourseSectionPo.getVideoUrl())
                 .build();
     }
 

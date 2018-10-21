@@ -1,0 +1,36 @@
+.
+├── list.txt
+├── mvnw
+├── mvnw.cmd
+├── ombase.iml
+├── pom.xml
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── com
+    │   │       └── xykj
+    │   │           └── ombase
+    │   │               ├── OmBaseApplication.java
+    │   │               ├── returnformat
+    │   │               │   ├── OceanReturn.java
+    │   │               │   └── Result.java
+    │   │               ├── storage
+    │   │               └── utils
+    │   │                   ├── OceanDateUtil.java
+    │   │                   ├── OceanOperationUtil.java
+    │   │                   ├── error
+    │   │                   │   ├── ErrorInfo.java
+    │   │                   │   └── OceanException.java
+    │   │                   └── redis
+    │   │                       ├── IRedisClient.java
+    │   │                       └── RedisComponent.java
+    │   └── resources
+    │       └── application.yml
+    └── test
+        └── java
+            └── com
+                └── xykj
+                    └── ombase
+                        └── OmBaseApplicationTests.java
+
+17 directories, 16 files
