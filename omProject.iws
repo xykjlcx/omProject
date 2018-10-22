@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ba2f577-5a67-417a-a93c-1098c2b86da9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/business/ICourseBusiness.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/business/impl/CourseBusinessImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/vo/CourseSectionVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/business/ICourseBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/business/ICourseBusiness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/business/impl/CourseBusinessImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/business/impl/CourseBusinessImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/controllers/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/controllers/CourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/utils/PoConvertVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/utils/PoConvertVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/utils/VoConvertPo.java" beforeDir="false" afterPath="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/utils/VoConvertPo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseSectionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseSectionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/ICourseSectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/ICourseSectionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/impl/CourseSectionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/impl/CourseSectionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omService/src/test/java/com/xykj/omservice/testservices/TestCourseSevices.java" beforeDir="false" afterPath="$PROJECT_DIR$/omService/src/test/java/com/xykj/omservice/testservices/TestCourseSevices.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -96,42 +99,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CourseController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CourseController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/controllers/CourseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="383" column="44" selection-start-line="383" selection-start-column="44" selection-end-line="383" selection-end-column="44" />
-              <folding>
-                <element signature="e#14694#14695#0" expanded="true" />
-                <element signature="e#14721#14722#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourseController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/controller/CourseController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1656">
-              <caret line="116" column="63" selection-start-line="116" selection-start-column="63" selection-end-line="116" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourseBusinessImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/business/impl/CourseBusinessImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="46" column="74" selection-start-line="46" selection-start-column="74" selection-end-line="46" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PoConvertVo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/utils/PoConvertVo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="36" column="5" selection-start-line="27" selection-start-column="3" selection-end-line="36" selection-end-column="5" />
+            <state relative-caret-position="10080">
+              <caret line="445" column="52" selection-start-line="445" selection-start-column="48" selection-end-line="445" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -139,47 +111,17 @@
       <file leaf-file-name="VoConvertPo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/utils/VoConvertPo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+            <state relative-caret-position="1272">
+              <caret line="56" column="29" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PoConvertVo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/utils/PoConvertVo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="972">
-              <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourseSectionVo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/vo/CourseSectionVo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ICourseBusiness.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/business/ICourseBusiness.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="16" column="82" selection-start-line="16" selection-start-column="82" selection-end-line="16" selection-end-column="82" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourseBusinessImpl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CourseBusinessImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/business/impl/CourseBusinessImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="59" column="13" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
+            <state relative-caret-position="425">
+              <caret line="98" selection-start-line="98" selection-end-line="98" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -190,8 +132,68 @@
       <file leaf-file-name="CourseSectionServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/impl/CourseSectionServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+            <state relative-caret-position="1752">
+              <caret line="73" column="40" selection-start-line="73" selection-start-column="40" selection-end-line="73" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ICourseBusiness.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/business/ICourseBusiness.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CourseSectionDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseSectionDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="696">
+              <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CourseDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestCourseSevices.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omService/src/test/java/com/xykj/omservice/testservices/TestCourseSevices.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ICourseSectionService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/ICourseSectionService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TCourseSectionPo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/po/TCourseSectionPo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -229,6 +231,7 @@
       <find>课程</find>
       <find>login</find>
       <find>chap</find>
+      <find>getall</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -237,10 +240,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/omApp/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/OmAppApplication.java" />
-        <option value="$PROJECT_DIR$/omService/pom.xml" />
-        <option value="$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/vo/TestVo.java" />
         <option value="$PROJECT_DIR$/omAdmin/src/main/resources/static/upload.html" />
         <option value="$PROJECT_DIR$/omAdmin/src/test/java/com/xykj/omadmin/OmAdminApplicationTests.java" />
         <option value="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/OmAdminApplication.java" />
@@ -264,7 +263,6 @@
         <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/home/services/impl/HomeBannerService.java" />
         <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/impl/CourseServiceImpl.java" />
         <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/ICourService.java" />
-        <option value="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/utils/VoConvertPo.java" />
         <option value="$PROJECT_DIR$/omService/src/test/java/com/xykj/omservice/OmServiceApplicationTests.java" />
         <option value="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/utils/RedisClient.java" />
         <option value="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/utils/IRedisClient.java" />
@@ -283,11 +281,16 @@
         <option value="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/vo/UserVoAdmin.java" />
         <option value="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/business/impl/UserBusinessImpl.java" />
         <option value="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/controllers/UserController.java" />
-        <option value="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/business/ICourseBusiness.java" />
         <option value="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/vo/CourseSectionVo.java" />
         <option value="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/utils/PoConvertVo.java" />
-        <option value="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/business/impl/CourseBusinessImpl.java" />
+        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseSectionDao.java" />
+        <option value="$PROJECT_DIR$/omService/src/test/java/com/xykj/omservice/testservices/TestCourseSevices.java" />
+        <option value="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/utils/VoConvertPo.java" />
+        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/ICourseSectionService.java" />
+        <option value="$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/impl/CourseSectionServiceImpl.java" />
+        <option value="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/business/ICourseBusiness.java" />
         <option value="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/controllers/CourseController.java" />
+        <option value="$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/business/impl/CourseBusinessImpl.java" />
       </list>
     </option>
   </component>
@@ -317,9 +320,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="208" />
-    <option name="y" value="48" />
-    <option name="width" value="1452" />
+    <option name="x" value="387" />
+    <option name="y" value="83" />
+    <option name="width" value="1499" />
     <option name="height" value="854" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -337,6 +340,34 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="omProject" type="58d84e3e:PackageViewProjectNode" />
+              <item name="omBase" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="omProject" type="58d84e3e:PackageViewProjectNode" />
+              <item name="omBase" type="616d4139:PackageViewModuleNode" />
+              <item name="com.xykj.ombase" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="omProject" type="58d84e3e:PackageViewProjectNode" />
+              <item name="omBase" type="616d4139:PackageViewModuleNode" />
+              <item name="com.xykj.ombase" type="1f31426a:PackageElementNode" />
+              <item name="returnformat" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="omProject" type="58d84e3e:PackageViewProjectNode" />
+              <item name="omBase" type="616d4139:PackageViewModuleNode" />
+              <item name="com.xykj.ombase" type="1f31426a:PackageElementNode" />
+              <item name="utils" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -584,7 +615,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="omservice" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="course" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="omProject" type="b2602c69:ProjectViewProjectNode" />
@@ -594,7 +625,18 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="omservice" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="course" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="omProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="omProject" type="462c0819:PsiDirectoryNode" />
+              <item name="omService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="omservice" type="462c0819:PsiDirectoryNode" />
+              <item name="course" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -605,37 +647,43 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="omservice" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="course" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
             <path>
-              <item name="omProject" type="58d84e3e:PackageViewProjectNode" />
-              <item name="omBase" type="616d4139:PackageViewModuleNode" />
+              <item name="omProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="omProject" type="462c0819:PsiDirectoryNode" />
+              <item name="omService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="omProject" type="58d84e3e:PackageViewProjectNode" />
-              <item name="omBase" type="616d4139:PackageViewModuleNode" />
-              <item name="com.xykj.ombase" type="1f31426a:PackageElementNode" />
+              <item name="omProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="omProject" type="462c0819:PsiDirectoryNode" />
+              <item name="omService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="omProject" type="58d84e3e:PackageViewProjectNode" />
-              <item name="omBase" type="616d4139:PackageViewModuleNode" />
-              <item name="com.xykj.ombase" type="1f31426a:PackageElementNode" />
-              <item name="returnformat" type="1f31426a:PackageElementNode" />
+              <item name="omProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="omProject" type="462c0819:PsiDirectoryNode" />
+              <item name="omService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="omservice" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="omProject" type="58d84e3e:PackageViewProjectNode" />
-              <item name="omBase" type="616d4139:PackageViewModuleNode" />
-              <item name="com.xykj.ombase" type="1f31426a:PackageElementNode" />
-              <item name="utils" type="1f31426a:PackageElementNode" />
+              <item name="omProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="omProject" type="462c0819:PsiDirectoryNode" />
+              <item name="omService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="omservice" type="462c0819:PsiDirectoryNode" />
+              <item name="testservices" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -875,7 +923,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.33799535" />
   </component>
   <component name="RecentsManager">
@@ -1019,6 +1067,29 @@
       </option>
       <patterns />
     </configuration>
+    <configuration name="TestCourseSevices.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="omService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xykj.omservice.testservices.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.xykj.omservice.testservices" />
+      <option name="MAIN_CLASS_NAME" value="com.xykj.omservice.testservices.TestCourseSevices" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -1041,16 +1112,6 @@
     <configuration name="OmAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="omAdmin" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.xykj.omadmin.OmAdminApplication" />
-    </configuration>
-    <configuration name="OmAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="omApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xykj.omapp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xykj.omapp.OmAppApplication" />
     </configuration>
     <configuration name="OmServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="omService" />
@@ -1084,19 +1145,19 @@
     <list>
       <item itemvalue="Spring Boot.OmAdminApplication" />
       <item itemvalue="Spring Boot.OmServiceApplication" />
-      <item itemvalue="Spring Boot.OmAppApplication" />
       <item itemvalue="JUnit.OmServiceApplicationTests.testCount" />
       <item itemvalue="JUnit.OmServiceApplicationTests.testBanner" />
       <item itemvalue="JUnit.OmServiceApplicationTests.testCourseIsPutAway" />
       <item itemvalue="JUnit.OmServiceApplicationTests.testSaveAndEdit" />
+      <item itemvalue="JUnit.TestCourseSevices.test1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestCourseSevices.test1" />
         <item itemvalue="JUnit.OmServiceApplicationTests.testSaveAndEdit" />
         <item itemvalue="JUnit.OmServiceApplicationTests.testCourseIsPutAway" />
         <item itemvalue="JUnit.OmServiceApplicationTests.testBanner" />
         <item itemvalue="JUnit.OmServiceApplicationTests.testCount" />
-        <item itemvalue="Spring Boot.OmAppApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -1178,17 +1239,16 @@
       <workItem from="1540043698450" duration="1663000" />
       <workItem from="1540090771969" duration="1242000" />
       <workItem from="1540102006559" duration="4060000" />
-      <workItem from="1540119349455" duration="1699000" />
+      <workItem from="1540119349455" duration="1975000" />
+      <workItem from="1540128719704" duration="1327000" />
+      <workItem from="1540133868764" duration="4000" />
+      <workItem from="1540167945890" duration="5461000" />
+      <workItem from="1540196754572" duration="700000" />
+      <workItem from="1540198518851" duration="19000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="OmAdminApplicationTests_testFileSave - 2018.10.13 at 12h 03m 48s.xml">
-      <configuration name="OmAdminApplicationTests.testFileSave" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OmServiceApplicationTests_testCount - 2018.10.14 at 15h 35m 54s.xml">
-      <configuration name="OmServiceApplicationTests.testCount" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="OmServiceApplicationTests_testCount - 2018.10.14 at 15h 36m 55s.xml">
       <configuration name="OmServiceApplicationTests.testCount" configurationId="JUnit" />
     </history-entry>
@@ -1213,9 +1273,15 @@
     <history-entry file="OmServiceApplicationTests_testSaveAndEdit - 2018.10.15 at 14h 35m 46s.xml">
       <configuration name="OmServiceApplicationTests.testSaveAndEdit" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestCourseSevices_test1 - 2018.10.22 at 08h 32m 47s.xml">
+      <configuration name="TestCourseSevices.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCourseSevices_test1 - 2018.10.22 at 08h 35m 16s.xml">
+      <configuration name="TestCourseSevices.test1" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258510000" />
+    <option name="totallyTimeSpent" value="266297000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1227,8 +1293,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="208" y="48" width="1452" height="854" extended-state="0" />
-    <editor active="true" />
+    <frame x="387" y="83" width="1499" height="854" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5011848" side_tool="true" weight="0.3293556" />
@@ -1243,22 +1308,22 @@
       <window_info id="UI Designer" order="5" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.59307873" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3271028" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.3119891" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="4" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32663316" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="14" sideWeight="0.49881518" visible="true" weight="0.45776567" />
+      <window_info anchor="bottom" id="Run Dashboard" order="14" sideWeight="0.49881518" weight="0.45640326" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32663316" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.5307443" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.52997273" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32663316" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.6069652" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.60588235" />
       <window_info id="Persistence" order="1" sideWeight="0.5041876" side_tool="true" weight="0.30936995" />
-      <window_info content_ui="combo" x="753" y="102" width="304" height="603" id="Project" order="0" sideWeight="0.4958124" visible="true" weight="0.24468085" />
+      <window_info content_ui="combo" x="753" y="102" width="304" height="603" id="Project" order="0" sideWeight="0.4958124" visible="true" weight="0.24571036" />
       <window_info anchor="right" id="Bean Validation" order="9" weight="0.32935393" />
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Favorites" order="6" sideWeight="0.5014245" side_tool="true" weight="0.2819063" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.3119891" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Database Console" order="15" weight="0.32885906" />
@@ -1284,45 +1349,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/business/impl/FileOperateBusinessImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/vo/CourseVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="23" column="26" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="23" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/po/TCourseClassifyPo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-128">
-          <caret line="18" column="71" lean-forward="true" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/vo/CourseClassifyVoAdmin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.47/fastjson-1.2.47.jar!/com/alibaba/fastjson/util/TypeUtils.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="539" column="26" selection-start-line="539" selection-start-column="26" selection-end-line="539" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1550,16 +1580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/business/ICourseBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="16" column="82" selection-start-line="16" selection-start-column="82" selection-end-line="16" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/omApp/src/main/java/com/xykj/omapp/business/impl/CourseBusinessImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -1571,13 +1591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
           <caret line="36" column="5" selection-start-line="27" selection-start-column="3" selection-end-line="36" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/utils/VoConvertPo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1595,30 +1608,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/impl/CourseSectionServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+        <state relative-caret-position="576">
+          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/business/impl/CourseBusinessImpl.java">
+    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/dao/CourseSectionDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="59" column="13" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
+        <state relative-caret-position="696">
+          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omService/src/test/java/com/xykj/omservice/testservices/TestCourseSevices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/ICourseSectionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/services/impl/CourseSectionServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1752">
+          <caret line="73" column="40" selection-start-line="73" selection-start-column="40" selection-end-line="73" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/business/ICourseBusiness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omService/src/main/java/com/xykj/omservice/course/po/TCourseSectionPo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/utils/VoConvertPo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1272">
+          <caret line="56" column="29" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/controllers/CourseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="383" column="44" selection-start-line="383" selection-start-column="44" selection-end-line="383" selection-end-column="44" />
+        <state relative-caret-position="10080">
+          <caret line="445" column="52" selection-start-line="445" selection-start-column="48" selection-end-line="445" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omAdmin/src/main/java/com/xykj/omadmin/business/impl/CourseBusinessImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
           <folding>
-            <element signature="e#14694#14695#0" expanded="true" />
-            <element signature="e#14721#14722#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

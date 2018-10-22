@@ -2,6 +2,7 @@ package com.xykj.omadmin.business.impl;
 
 import com.xykj.omadmin.business.ICourseBusiness;
 import com.xykj.omadmin.utils.PoConvertVo;
+import com.xykj.omadmin.utils.VoConvertPo;
 import com.xykj.omadmin.vo.CourseSectionVo;
 import com.xykj.omservice.course.po.TCourseSectionPo;
 import com.xykj.omservice.course.services.ICourseCommentService;
@@ -66,6 +67,37 @@ public class CourseBusinessImpl implements ICourseBusiness {
         }
         return data;
     }
+
+    @Override
+    public void addNewChapterAndSection(CourseSectionVo sectionVo) throws RuntimeException {
+       try {
+           if (sectionVo == null){
+               throw new RuntimeException("新增章节不能为空");
+           }
+           TCourseSectionPo tCourseSectionPo = VoConvertPo.convert(sectionVo);
+           courseSectionService.addNewSection(tCourseSectionPo);
+       }catch (RuntimeException e){
+           e.printStackTrace();
+           throw e;
+       }
+    }
+
+    @Override
+    public void editChapterAndSection(CourseSectionVo courseSectionVo) throws RuntimeException {
+        try {
+            if (courseSectionVo == null){
+                throw new RuntimeException("编辑章节信息不完整");
+            }
+            TCourseSectionPo tCourseSectionPo = VoConvertPo.convert(courseSectionVo);
+            tCourseSectionPo.setId(courseSectionVo.getDbId());
+            courseSectionService.editSection(tCourseSectionPo);
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+
 
 
 }

@@ -400,9 +400,79 @@ public class CourseController {
         }
     }
 
+    /**
+     * 新增章节
+     * @return
+     */
     @RequestMapping(value = "/addChapterAndSection",method = RequestMethod.POST)
-    public Result addChapterAndSection(CourseSectionVo courseSectionVo){
-        return null;
+    public Result addChapterAndSection(@RequestBody JSONObject jsonObject){
+        try {
+            CourseSectionVo courseSectionVo  = CourseSectionVo.builder()
+                    .courseId(jsonObject.getInteger("courseId"))
+                    .parentId(jsonObject.getInteger("parentId"))
+                    .sectionName(jsonObject.getString("sectionName"))
+                    .videoUrl(jsonObject.getString("videoUrl"))
+                    .build();
+            courseBusiness.addNewChapterAndSection(courseSectionVo);
+            return OceanReturn.successResult(
+                    "新增章节成功",
+                    null
+            );
+        } catch (NullPointerException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    "新增章节失败，参数有误",
+                    null
+            );
+        } catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    null
+            );
+        }catch (Exception e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    "新增章节失败,未知异常",
+                    null
+            );
+        }
+    }
+
+    @RequestMapping(value = "/editChapterAndSection",method = RequestMethod.POST)
+    public Result editChapterAndSection(@RequestBody JSONObject jsonObject){
+       try {
+           CourseSectionVo courseSectionVo  = CourseSectionVo.builder()
+                   .dbId(jsonObject.getInteger("dbId"))
+                   .courseId(jsonObject.getInteger("courseId"))
+                   .parentId(jsonObject.getInteger("parentId"))
+                   .sectionName(jsonObject.getString("sectionName"))
+                   .videoUrl(jsonObject.getString("videoUrl"))
+                   .build();
+           courseBusiness.editChapterAndSection(courseSectionVo);
+           return OceanReturn.successResult(
+                   "编辑课程成功",
+                   null
+           );
+       } catch (NullPointerException e){
+           e.printStackTrace();
+           return OceanReturn.errorResult(
+                   "编辑章节失败，参数有误",
+                   null
+           );
+       } catch (RuntimeException e){
+           e.printStackTrace();
+           return OceanReturn.errorResult(
+                   e.getMessage(),
+                   null
+           );
+       }catch (Exception e){
+           e.printStackTrace();
+           return OceanReturn.errorResult(
+                   "编辑章节失败,未知异常",
+                   null
+           );
+       }
     }
 
 

@@ -1,7 +1,9 @@
 package com.xykj.omadmin.utils;
 
 import com.alibaba.fastjson.JSONObject;
+import com.xykj.omadmin.vo.CourseSectionVo;
 import com.xykj.omservice.course.po.TCoursePo;
+import com.xykj.omservice.course.po.TCourseSectionPo;
 
 /**
  * @author ocean
@@ -47,6 +49,15 @@ public class VoConvertPo {
             throw new RuntimeException("数据有误");
         }
         return tCoursePo;
+    }
+
+    public static TCourseSectionPo convert(CourseSectionVo courseSectionVo) {
+        return TCourseSectionPo.builder()
+                .courseId(courseSectionVo.getCourseId())
+                .sectionName(courseSectionVo.getSectionName())
+                .parentId(courseSectionVo.getParentId())
+                .videoUrl(courseSectionVo.getVideoUrl())
+                .build();
     }
 
 }

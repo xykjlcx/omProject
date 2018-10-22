@@ -24,4 +24,13 @@ public interface ICourseSectionService {
      */
     Map<String,Object> getAllChapterAndSection(int courseId) throws Exception;
 
+    /**
+     * 为课程添加新的章节
+     * @param tCourseSectionPo
+     * @throws RuntimeException
+     */
+    void addNewSection(TCourseSectionPo tCourseSectionPo) throws RuntimeException;
+
+    void editSection(TCourseSectionPo tCourseSectionPo) throws RuntimeException;
+
 }
