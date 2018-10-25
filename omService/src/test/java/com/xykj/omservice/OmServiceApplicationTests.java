@@ -182,32 +182,40 @@ public class OmServiceApplicationTests {
 ////        homeBannerService.deleteCourseFromBanner(21);
 ////    }
 
-    @Autowired
-    CourseServiceImpl courseService;
+//    @Autowired
+//    CourseServiceImpl courseService;
 //
 //    @Test
 //    public void testCourseIsPutAway(){
 //        courseService.editCourseIsPutAway(21,true);
 //    }
 
-    @Test
-    public void testSaveAndEdit(){
-        /**
-         * 测试发现，带有id且该id在数据库中已存在一条记录则更新，否则插入一条以该id为id的新纪录
-         * id字段为null时，自增插入
-         */
-       TCoursePo tCoursePo =  TCoursePo.builder()
-                .id(18)
-                .courseName("qwe")
-                .courseDesc("123")
-                .classifyId(19)
-                .previewImg("img")
-                .videoUrl("video")
-                .createCourseTime(new Timestamp(System.currentTimeMillis()))
-                .isPutaway(0)
-                .build();
-        courseService.addNewCourse(tCoursePo);
-    }
+//    @Test
+//    public void testSaveAndEdit(){
+//        /**
+//         * 测试发现，带有id且该id在数据库中已存在一条记录则更新，否则插入一条以该id为id的新纪录
+//         * id字段为null时，自增插入
+//         */
+//       TCoursePo tCoursePo =  TCoursePo.builder()
+//                .id(18)
+//                .courseName("qwe")
+//                .courseDesc("123")
+//                .classifyId(19)
+//                .previewImg("img")
+//                .videoUrl("video")
+//                .createCourseTime(new Timestamp(System.currentTimeMillis()))
+//                .isPutaway(0)
+//                .build();
+//        courseService.addNewCourse(tCoursePo);
+//    }
 
+    @Autowired
+    UserServiceImpl userService;
+
+    @Test
+    public void test10(){
+        Pageable pageable = new PageRequest(0,10);
+        userService.getAllUserByStatus(0,pageable);
+    }
 
 }

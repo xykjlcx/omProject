@@ -12,6 +12,7 @@ import com.xykj.ombase.returnformat.Result;
 import com.xykj.ombase.utils.OceanDateUtil;
 import com.xykj.omservice.course.po.TCourseClassifyPo;
 import com.xykj.omservice.course.po.TCoursePo;
+import com.xykj.omservice.course.services.impl.CourseSectionServiceImpl;
 import com.xykj.omservice.course.services.impl.CourseServiceImpl;
 import com.xykj.omservice.course.services.impl.CouseClassifyServiceImpl;
 import com.xykj.omservice.home.services.impl.HomeBannerService;
@@ -48,6 +49,8 @@ public class CourseController {
     HomeBannerService homeBannerService;
     @Autowired
     CourseBusinessImpl courseBusiness;
+    @Autowired
+    CourseSectionServiceImpl courseSectionService;
 
     /**
      * 获取所有课程(分页)
@@ -473,6 +476,30 @@ public class CourseController {
                    null
            );
        }
+    }
+
+    /**
+     * 删除章节
+     * @param jsonObject
+     * @return
+     */
+    @RequestMapping(value = "/deleteChapterAndSection",method = RequestMethod.POST)
+    public Result deleteChapterAndSection(@RequestBody JSONObject jsonObject) {
+        Integer sectionDbId = null;
+        try {
+            sectionDbId = jsonObject.getInteger("dbId");
+            courseSectionService.deleteSection(sectionDbId);
+            return OceanReturn.successResult(
+                    "删除成功",
+                    null
+            );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    null
+            );
+        }
     }
 
 

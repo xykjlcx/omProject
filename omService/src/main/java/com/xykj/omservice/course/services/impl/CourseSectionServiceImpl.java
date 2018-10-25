@@ -95,4 +95,13 @@ public class CourseSectionServiceImpl implements ICourseSectionService {
         checkOldCourseSectionPo.setUpdateSectionTime(new Timestamp(System.currentTimeMillis()));
         courseSectionDao.saveAndFlush(checkOldCourseSectionPo);
     }
+
+    @Override
+    public void deleteSection(int courseSectionId) throws RuntimeException {
+        List<TCourseSectionPo> checkSectionPoList = courseSectionDao.findAllById(courseSectionId);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(checkSectionPoList)){
+            throw new RuntimeException("删除失败，章节不存在");
+        }
+        courseSectionDao.delete(checkSectionPoList.get(0));
+    }
 }

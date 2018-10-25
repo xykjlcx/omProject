@@ -2,16 +2,21 @@ package com.xykj.omadmin.controllers;
 
 import com.alibaba.fastjson.JSONObject;
 import com.xykj.omadmin.business.IUserBusiness;
-import com.xykj.omadmin.business.impl.UserBusinessImpl;
 import com.xykj.omadmin.vo.UserVoAdmin;
 import com.xykj.ombase.returnformat.OceanReturn;
 import com.xykj.ombase.returnformat.Result;
-import com.xykj.ombase.utils.redis.IRedisClient;
+import com.xykj.omservice.user.po.TUserPo;
+import com.xykj.omservice.user.services.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
 
 /**
  * @author ocean
@@ -26,6 +31,8 @@ public class UserController {
 
     @Autowired
     IUserBusiness userBusiness;
+    @Autowired
+    IUserService userService;
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public Result login(@RequestBody JSONObject jsonObject){
@@ -96,6 +103,92 @@ public class UserController {
         }else {
             return OceanReturn.successResult(
                     "退出登录失败",
+                    null
+            );
+        }
+    }
+
+
+    /**
+     * 获取用户列表
+     * @param jsonObject
+     * @return
+     */
+    @RequestMapping(value = "/getAllUserInfo",method = RequestMethod.POST)
+    public Result getAllUserInfo(@RequestBody JSONObject jsonObject){
+        try {
+            int page = jsonObject.getInteger("page");
+            int size = jsonObject.getInteger("size");
+            int status = jsonObject.getInteger("status");
+            Map<String,Object> data = userBusiness.getAllUserInfo(status,page,size);
+            return OceanReturn.successResult(
+                    "获取用户列表成功",
+                    data
+            );
+        }catch (Exception e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    "获取用户列表失败",
+                    null
+            );
+        }
+    }
+
+
+
+    @RequestMapping(value = "/deleteUser",method = RequestMethod.POST)
+    public Result deleteUser(@RequestBody JSONObject jsonObject) {
+       try {
+           int userId = jsonObject.getInteger("userId");
+           userService.deleteUserById(userId);
+           // 删除成功后，清除redis缓存
+
+           return OceanReturn.successResult(
+                   "删除成功",
+                   null
+           );
+       }catch (RuntimeException e){
+           e.printStackTrace();
+           return OceanReturn.errorResult(
+                   e.getMessage(),
+                   null
+           );
+       }catch (Exception e){
+           e.printStackTrace();
+           return OceanReturn.errorResult(
+                   "删除失败，未知异常",
+                   null
+           );
+       }
+    }
+
+    /**
+     * 操作用户状态禁用/可用
+     * @param jsonObject
+     * @return
+     */
+    @RequestMapping(value = "/operateUserStatus",method = RequestMethod.POST)
+    public Result operateUserStatus(@RequestBody JSONObject jsonObject) {
+        Integer userId = null;
+        Boolean isBan = null;
+        try {
+            userId = jsonObject.getInteger("userId");
+            isBan = jsonObject.getBoolean("isBan");
+            userService.operateUserStatus(userId,isBan);
+            return OceanReturn.successResult(
+                    "操作成功",
+                    null
+            );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    null
+            );
+        }catch (Exception e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    "操作失败",
                     null
             );
         }

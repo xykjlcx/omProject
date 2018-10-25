@@ -1,5 +1,6 @@
 package com.xykj.omservice.user.services.impl;
 
+import com.alibaba.fastjson.JSONObject;
 import com.xykj.ombase.utils.OceanDateUtil;
 import com.xykj.ombase.utils.OceanOperationUtil;
 import com.xykj.omservice.OmConstant;
@@ -7,6 +8,8 @@ import com.xykj.omservice.user.dao.UserDao;
 import com.xykj.omservice.user.po.TUserPo;
 import com.xykj.omservice.user.services.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
@@ -111,6 +114,26 @@ public class UserServiceImpl implements IUserService {
         userDao.save(userPo);
     }
 
+    @Override
+    public Page<TUserPo> getAllUserByStatus(Integer status,Pageable pageable) throws RuntimeException {
+       if (status == null){
+           throw new RuntimeException("查询失败，状态码不存在");
+       }
+       Page<TUserPo> userPoPage = null;
+        switch (status){
+            case -1 :
+                userPoPage = userDao.findAll(pageable);
+                break;
+            case 0:
+            case 1:
+                userPoPage = userDao.findAllByStatus(status,pageable);
+                break;
+            default:
+                throw new RuntimeException("状态码错误，不存在该状态");
+        }
+        return userPoPage;
+    }
+
 
     @Override
     public void save(TUserPo data) throws Exception {
@@ -136,5 +159,31 @@ public class UserServiceImpl implements IUserService {
             throw new RuntimeException("查询不到用户");
         }
         return tUserPoList.get(0);
+    }
+
+    @Override
+    public void deleteUserById(int userId) throws RuntimeException {
+        List<TUserPo> checkUserPoList = userDao.findAllById(userId);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(checkUserPoList)){
+            throw new RuntimeException("删除失败，用户已经不存在");
+        }
+        userDao.delete(checkUserPoList.get(0));
+    }
+
+    @Override
+    public void operateUserStatus(int userId, boolean isBan) throws RuntimeException {
+        List<TUserPo> checkUserList = userDao.findAllById(userId);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(checkUserList)){
+            throw new RuntimeException("操作失败，用户不存在");
+        }
+        int operateStatus = 0;
+        if (isBan){
+            operateStatus = 0;
+        }else {
+            operateStatus = 1;
+        }
+        TUserPo saveUser = checkUserList.get(0);
+        saveUser.setStatus(operateStatus);
+        userDao.saveAndFlush(saveUser);
     }
 }

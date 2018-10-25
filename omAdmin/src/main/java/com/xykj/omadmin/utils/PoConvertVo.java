@@ -3,10 +3,12 @@ package com.xykj.omadmin.utils;
 import com.xykj.omadmin.vo.CourseClassifyVoAdmin;
 import com.xykj.omadmin.vo.CourseSectionVo;
 import com.xykj.omadmin.vo.CourseVoAdmin;
+import com.xykj.omadmin.vo.UserVoAdmin;
 import com.xykj.ombase.utils.OceanDateUtil;
 import com.xykj.omservice.course.po.TCourseClassifyPo;
 import com.xykj.omservice.course.po.TCoursePo;
 import com.xykj.omservice.course.po.TCourseSectionPo;
+import com.xykj.omservice.user.po.TUserPo;
 
 /**
  * @author ocean
@@ -65,5 +67,59 @@ public class PoConvertVo {
                 .videoUrl(tCourseSectionPo.getVideoUrl())
                 .build();
     }
+
+    public static UserVoAdmin convert(TUserPo tUserPo,int id) {
+        UserVoAdmin userVoAdmin =  UserVoAdmin.builder()
+                .id(id)
+                .dbId(tUserPo.getId())
+                .userName(tUserPo.getUserName())
+                .email(tUserPo.getEmail())
+                .realName(tUserPo.getRealName())
+                .avator(tUserPo.getHeadImg())
+                .status(tUserPo.getStatus())
+                .build();
+        String genderStr = "";
+        switch (tUserPo.getGender()){
+            case 0:
+                genderStr = "男";
+                break;
+            case 1:
+                genderStr = "女";
+                break;
+            default:
+                genderStr = "人妖?";
+                break;
+        }
+        userVoAdmin.setGenderStr(genderStr);
+        String edustr = "";
+        switch (tUserPo.getEducation()){
+            case 0:
+                edustr = "专科";
+                break;
+            case 1:
+                edustr = "本科";
+                break;
+            case 2:
+                edustr = "研究生";
+                break;
+            case 3:
+                edustr = "博士";
+                break;
+            case 4:
+                edustr = "其他";
+                break;
+            default:
+                edustr = "秘密杀手?";
+                break;
+        }
+        if (tUserPo.getStatus() == 0){
+            userVoAdmin.setStatusBool(false);
+        }else {
+            userVoAdmin.setStatusBool(true);
+        }
+        userVoAdmin.setEducation(edustr);
+        return userVoAdmin;
+    }
+
 
 }

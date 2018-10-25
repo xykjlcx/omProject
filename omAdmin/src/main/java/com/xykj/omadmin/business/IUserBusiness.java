@@ -3,6 +3,8 @@ package com.xykj.omadmin.business;
 import com.xykj.omadmin.vo.UserVoAdmin;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 /**
  * @author ocean
  * @Title: IUserBusiness
@@ -34,5 +36,15 @@ public interface IUserBusiness {
      * @return
      */
     int logoutAdmin(String token);
+
+    /**
+     * 查询所有用户信息
+     * @param status
+     * @param page
+     * @param size
+     * @return
+     * @throws RuntimeException
+     */
+    Map<String,Object> getAllUserInfo(int status,int page,int size) throws RuntimeException;
 
 }

@@ -2,6 +2,8 @@ package com.xykj.omservice.user.dao;
 
 import com.xykj.omservice.bases.BaseJpaDao;
 import com.xykj.omservice.user.po.TUserPo;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -25,6 +27,11 @@ public interface UserDao extends BaseJpaDao<TUserPo,Integer> {
      */
     List<TUserPo> findAllByEmail(String email);
 
-
+    /**
+     * 根据状态信息查询所有(分页)
+     * @param status
+     * @return
+     */
+    Page<TUserPo> findAllByStatus(Integer status, Pageable pageable);
 
 }

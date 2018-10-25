@@ -34,4 +34,6 @@ public interface CourseSectionDao extends BaseJpaDao<TCourseSectionPo,Integer> {
     )
     Integer getMaxsequenceByParentId(int parentId);
 
+    List<TCourseSectionPo> findAllById(int dbId);
+
 }

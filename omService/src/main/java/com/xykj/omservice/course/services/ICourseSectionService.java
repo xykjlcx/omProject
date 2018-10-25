@@ -33,4 +33,11 @@ public interface ICourseSectionService {
 
     void editSection(TCourseSectionPo tCourseSectionPo) throws RuntimeException;
 
+    /**
+     * 删除课程章节
+     * @param courseSectionId
+     * @throws RuntimeException
+     */
+    void deleteSection(int courseSectionId) throws RuntimeException;
+
 }

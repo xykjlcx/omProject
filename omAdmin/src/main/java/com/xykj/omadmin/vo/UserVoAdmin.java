@@ -19,12 +19,17 @@ import lombok.NoArgsConstructor;
 public class UserVoAdmin {
 
     private Integer id;
+    private Integer dbId;
     private String userName;
     private String email;
     private String realName;
     private String signature;
     private int gender;
+    private String genderStr;
     private String token;
     private String avator;
+    private String education;
+    private int status;
+    private boolean statusBool;
 
 }
