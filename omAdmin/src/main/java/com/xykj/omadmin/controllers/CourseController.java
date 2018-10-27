@@ -235,6 +235,37 @@ public class CourseController {
         }
     }
 
+    @RequestMapping(value = "/getAllClassifyTree",method = RequestMethod.GET)
+    public Result getAllClassifyTree(){
+        List<CourseClassifyVoAdmin> dataList = new ArrayList<>();
+        try {
+            /*一级分类*/
+            List<TCourseClassifyPo> levelOneClassifyList = couseClassifyService.findAnyLevel(0);
+            for (int i = 0; i < levelOneClassifyList.size(); i++) {
+                TCourseClassifyPo tCourseClassifyPo = levelOneClassifyList.get(i);
+                CourseClassifyVoAdmin courseClassifyVoAdmin = PoConvertVo.convert(tCourseClassifyPo,i+1);
+                int parentId = tCourseClassifyPo.getId();
+                List<TCourseClassifyPo> tempChildList = couseClassifyService.findAnyLevel(parentId);
+                List<CourseClassifyVoAdmin> tempVo = new ArrayList<>();
+                for (int i1 = 0; i1 < tempChildList.size(); i1++) {
+                    tempVo.add(PoConvertVo.convert(tempChildList.get(i1),(i1+1)));
+                }
+                courseClassifyVoAdmin.setChilds(tempVo);
+                dataList.add(courseClassifyVoAdmin);
+            }
+            return OceanReturn.successResult(
+                    "获取所有分类成功",
+                    dataList
+            );
+        }catch (Exception e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    "获取所有分类失败",
+                    null
+            );
+        }
+    }
+
 
     /**
      * 课程搜索

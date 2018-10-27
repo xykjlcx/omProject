@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 /**
  * @author ocean
  * @Title: CourseClassifyVoAdmin
@@ -23,5 +25,6 @@ public class CourseClassifyVoAdmin {
     private String classifyName;
     private Integer parentId;
     private Integer sequence;
+    private List<CourseClassifyVoAdmin> childs;
 
 }
