@@ -1,6 +1,7 @@
 package com.xykj.omservice.testservices;
 import com.xykj.omservice.course.dao.CourseDao;
 import com.xykj.omservice.course.dao.CourseSectionDao;
+import com.xykj.omservice.course.services.ICourseClassifyService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,14 @@ public class TestCourseSevices {
 //    public void test1(){
 //        System.out.println(courseSectionDao.getMaxsequenceByParentId(0));
 //    }
+
+    @Autowired
+    ICourseClassifyService courseClassifyService;
+
+    @Test
+    public void test1(){
+        courseClassifyService.deleteClassifyAndAllChildClassify(53);
+    }
 
 
 }

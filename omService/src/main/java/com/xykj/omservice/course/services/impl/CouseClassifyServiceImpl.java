@@ -91,5 +91,14 @@ public class CouseClassifyServiceImpl implements ICourseClassifyService {
         }
     }
 
+    @Override
+    public void deleteClassifyAndAllChildClassify(int delId) throws RuntimeException {
+        List<TCourseClassifyPo> checkClassifyPoList = courseClassifyDao.findAllById(delId);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(checkClassifyPoList)){
+            throw new RuntimeException("删除分类失败，该分类不存在");
+        }
+        courseClassifyDao.deleteAllIncludeDelIdClassify(delId);
+    }
+
 
 }

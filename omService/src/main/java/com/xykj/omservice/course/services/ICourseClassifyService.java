@@ -37,4 +37,10 @@ public interface ICourseClassifyService {
      */
     void editClassifyInfo(Integer selfId,String classifyName,Integer parentId);
 
+    /**
+     * 根据id删除分类，并删除以此id为父分类的所有子分类
+     * @param delId
+     */
+    void deleteClassifyAndAllChildClassify(int delId) throws RuntimeException;
+
 }

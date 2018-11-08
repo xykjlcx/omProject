@@ -300,6 +300,31 @@ public class CourseController {
         }
     }
 
+    /**
+     * 删除分类
+     * 分类删除成功后，该分类下的所有课程也将全部删除
+     * @param jsonObject
+     * @return
+     */
+    @RequestMapping(value = "/deleteClassify",method = RequestMethod.POST)
+    public Result deleteClassify(@RequestBody JSONObject jsonObject){
+        Integer delClassifyId = null;
+        try {
+            delClassifyId = jsonObject.getInteger("delId");
+            couseClassifyService.deleteClassifyAndAllChildClassify(delClassifyId);
+            return OceanReturn.successResult(
+                    "删除成功",
+                    courseBusiness.getTreeClassify()
+            );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    null
+            );
+        }
+    }
+
 
     /**
      * 课程搜索
