@@ -1,8 +1,10 @@
 package com.xykj.omadmin.business;
 
+import com.xykj.omadmin.vo.CourseClassifyVoAdmin;
 import com.xykj.omadmin.vo.CourseSectionVo;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,6 +18,8 @@ import java.util.Map;
 public interface ICourseBusiness {
 
     Map<String,Object> getChapterAndSection(int courseId) throws RuntimeException;
+
+    List<CourseClassifyVoAdmin> getTreeClassify();
 
     void addNewChapterAndSection(CourseSectionVo sectionVo) throws RuntimeException;
 

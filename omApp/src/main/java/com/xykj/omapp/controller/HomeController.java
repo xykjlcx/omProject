@@ -72,7 +72,7 @@ public class HomeController {
      * 获取首页公告
      * @return
      */
-    @RequestMapping("/getNotice")
+    @RequestMapping(value = "/getNotice",method = RequestMethod.GET)
     public Result getNotice(){
         List<TNoticesPo> list = noticesDao.findAll();
         return OceanReturn.successResult(

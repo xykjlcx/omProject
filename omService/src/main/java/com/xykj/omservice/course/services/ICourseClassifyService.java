@@ -22,4 +22,19 @@ public interface ICourseClassifyService {
      */
     TCourseClassifyPo findById(int id);
 
+    /**
+     * 添加新的分类
+     * @param classifyName
+     * @param parentId
+     */
+    void addNewClassify(String classifyName,Integer parentId);
+
+    /**
+     * 编辑已有分类
+     * @param selfId
+     * @param classifyName
+     * @param parentId
+     */
+    void editClassifyInfo(Integer selfId,String classifyName,Integer parentId);
+
 }

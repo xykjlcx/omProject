@@ -3,10 +3,14 @@ package com.xykj.omadmin.business.impl;
 import com.xykj.omadmin.business.ICourseBusiness;
 import com.xykj.omadmin.utils.PoConvertVo;
 import com.xykj.omadmin.utils.VoConvertPo;
+import com.xykj.omadmin.vo.CourseClassifyVoAdmin;
 import com.xykj.omadmin.vo.CourseSectionVo;
+import com.xykj.omservice.course.po.TCourseClassifyPo;
 import com.xykj.omservice.course.po.TCourseSectionPo;
+import com.xykj.omservice.course.services.ICourseClassifyService;
 import com.xykj.omservice.course.services.ICourseCommentService;
 import com.xykj.omservice.course.services.impl.CourseSectionServiceImpl;
+import com.xykj.omservice.course.services.impl.CouseClassifyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +29,8 @@ import java.util.Map;
 public class CourseBusinessImpl implements ICourseBusiness {
     @Autowired
     CourseSectionServiceImpl courseSectionService;
+    @Autowired
+    ICourseClassifyService couseClassifyService;
 
     @Override
     public Map<String, Object> getChapterAndSection(int courseId) throws RuntimeException {
@@ -66,6 +72,31 @@ public class CourseBusinessImpl implements ICourseBusiness {
             throw e;
         }
         return data;
+    }
+
+    @Override
+    public List<CourseClassifyVoAdmin> getTreeClassify() {
+        List<CourseClassifyVoAdmin> dataList = new ArrayList<>();
+        try {
+            /*一级分类*/
+            List<TCourseClassifyPo> levelOneClassifyList = couseClassifyService.findAnyLevel(0);
+            for (int i = 0; i < levelOneClassifyList.size(); i++) {
+                TCourseClassifyPo tCourseClassifyPo = levelOneClassifyList.get(i);
+                CourseClassifyVoAdmin courseClassifyVoAdmin = PoConvertVo.convert(tCourseClassifyPo,i+1);
+                int parentId = tCourseClassifyPo.getId();
+                List<TCourseClassifyPo> tempChildList = couseClassifyService.findAnyLevel(parentId);
+                List<CourseClassifyVoAdmin> tempVo = new ArrayList<>();
+                for (int i1 = 0; i1 < tempChildList.size(); i1++) {
+                    tempVo.add(PoConvertVo.convert(tempChildList.get(i1),(i1+1)));
+                }
+                courseClassifyVoAdmin.setChilds(tempVo);
+                dataList.add(courseClassifyVoAdmin);
+            }
+            return dataList;
+        }catch (Exception e){
+            e.printStackTrace();
+            throw new RuntimeException("获取分类树失败");
+        }
     }
 
     @Override

@@ -28,7 +28,7 @@ public interface CourseSectionDao extends BaseJpaDao<TCourseSectionPo,Integer> {
 
     List<TCourseSectionPo> findAllByIdAndCourseId(int id,int courseId);
 
-    // todo 添加根据parentId查询其下最后一个章节的squee
+    // 添加根据parentId查询其下最后一个章节的squee
     @Query(
             "SELECT max(tcs.sequence) from TCourseSectionPo  tcs where tcs.parentId = ?1"
     )

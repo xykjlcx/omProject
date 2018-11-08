@@ -266,6 +266,40 @@ public class CourseController {
         }
     }
 
+    /**
+     * 添加/编辑分类接口
+     * @param jsonObject
+     * @return
+     */
+    @RequestMapping(value = "/addAndEditClassify",method = RequestMethod.POST)
+    public Result addAndEditClassify(@RequestBody JSONObject jsonObject) {
+        String classifyName = null;
+        Integer parentId = null;
+        Integer selfDbId = null;    // 当新增分类时，该值为-1
+        try {
+            classifyName = jsonObject.getString("classifyName");
+            parentId = jsonObject.getInteger("parentId");
+            selfDbId = jsonObject.getInteger("selfDbId");
+            if (selfDbId == -1){
+                // 新增分类
+                couseClassifyService.addNewClassify(classifyName,parentId);
+            }else {
+                // 修改分类信息
+                couseClassifyService.editClassifyInfo(selfDbId,classifyName,parentId);
+            }
+            return OceanReturn.successResult(
+                    "操作成功",
+                    courseBusiness.getTreeClassify()
+            );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    null
+            );
+        }
+    }
+
 
     /**
      * 课程搜索
