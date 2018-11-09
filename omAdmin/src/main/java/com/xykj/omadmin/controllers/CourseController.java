@@ -12,6 +12,7 @@ import com.xykj.ombase.returnformat.Result;
 import com.xykj.ombase.utils.OceanDateUtil;
 import com.xykj.omservice.course.po.TCourseClassifyPo;
 import com.xykj.omservice.course.po.TCoursePo;
+import com.xykj.omservice.course.services.ICourseCommentService;
 import com.xykj.omservice.course.services.impl.CourseSectionServiceImpl;
 import com.xykj.omservice.course.services.impl.CourseServiceImpl;
 import com.xykj.omservice.course.services.impl.CouseClassifyServiceImpl;
@@ -51,6 +52,8 @@ public class CourseController {
     CourseBusinessImpl courseBusiness;
     @Autowired
     CourseSectionServiceImpl courseSectionService;
+    @Autowired
+    ICourseCommentService courseCommentService;
 
     /**
      * 获取所有课程(分页)
@@ -579,6 +582,58 @@ public class CourseController {
         try {
             sectionDbId = jsonObject.getInteger("dbId");
             courseSectionService.deleteSection(sectionDbId);
+            return OceanReturn.successResult(
+                    "删除成功",
+                    null
+            );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    null
+            );
+        }
+    }
+
+
+    @RequestMapping(value = "/getAllComment",method = RequestMethod.POST)
+    public Result getAllComment(@RequestBody JSONObject jsonObject) {
+        Integer page = null;
+        Integer size = null;
+        Integer sortType = null;
+        String sortProp = null;
+        try {
+            page = jsonObject.getInteger("page");
+            size = jsonObject.getInteger("size");
+            sortType = jsonObject.getInteger("sortType");
+            sortProp = jsonObject.getString("sortProp");
+            Sort sort = null;
+            if (sortType == 0){
+                sort = new Sort(Sort.Direction.ASC,sortProp);
+            }else {
+                sort = new Sort(Sort.Direction.DESC,sortProp);
+            }
+            Pageable pageable = new PageRequest(page,size,sort);
+            return OceanReturn.successResult(
+                    "获取评论列表成功",
+                    courseBusiness.getCommentsManagerData(pageable)
+            );
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return OceanReturn.errorResult(
+                    e.getMessage(),
+                    null
+            );
+        }
+    }
+
+
+    @RequestMapping(value = "/deleteComment",method = RequestMethod.POST)
+    public Result deleteComment(@RequestBody JSONObject jsonObject) {
+        Integer delId = null;
+        try {
+            delId = jsonObject.getInteger("delId");
+            courseCommentService.deleteOneComment(delId);
             return OceanReturn.successResult(
                     "删除成功",
                     null

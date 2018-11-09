@@ -11,6 +11,7 @@ import com.xykj.omservice.course.services.ICourseCommentService;
 import com.xykj.omservice.user.dao.UserDao;
 import com.xykj.omservice.user.po.TUserPo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -82,6 +83,24 @@ public class CourseCommentServiceImpl implements ICourseCommentService {
             throw new RuntimeException("该用户未发表任何评论");
         }
         return courseCommentPoList;
+    }
+
+    @Override
+    public Page<TCourseCommentPo> getCommentsPage(Pageable pageable) throws RuntimeException {
+        Page<TCourseCommentPo> resultCommentList = courseCommentDao.findAll(pageable);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(resultCommentList.getContent())){
+            throw new RuntimeException("暂无评论数据");
+        }
+        return resultCommentList;
+    }
+
+    @Override
+    public void deleteOneComment(Integer commentId) throws RuntimeException {
+        List<TCourseCommentPo> checkCommentList = courseCommentDao.findAllById(commentId);
+        if (OceanOperationUtil.isNullOrEmptyForCollection(checkCommentList)){
+            throw new RuntimeException("删除失败，该评论不存在");
+        }
+        courseCommentDao.delete(checkCommentList.get(0));
     }
 
 }
