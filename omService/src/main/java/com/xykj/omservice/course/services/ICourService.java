@@ -1,6 +1,7 @@
 package com.xykj.omservice.course.services;
 
 import com.xykj.omservice.course.po.TCoursePo;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +21,7 @@ public interface ICourService {
      * @param classifyId
      * @return
      */
-    List<TCoursePo> findByClassifyIdAndPage(int classifyId,Pageable pageable) throws Exception;
+    Page<TCoursePo> findByClassifyIdAndPage(int classifyId, Pageable pageable) throws Exception;
 
 
     /**

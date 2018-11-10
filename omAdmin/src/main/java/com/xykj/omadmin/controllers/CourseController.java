@@ -19,6 +19,7 @@ import com.xykj.omservice.course.services.impl.CouseClassifyServiceImpl;
 import com.xykj.omservice.home.services.impl.HomeBannerService;
 import com.xykj.omservice.user.services.impl.UserCourseStudyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -86,7 +87,8 @@ public class CourseController {
                 Sort orders2 = new Sort(Sort.Direction.DESC,sortProp);
                 pageable = new PageRequest(page, size,orders2);
             }
-            List<TCoursePo> coursePoList = courseService.findByClassifyIdAndPage(classify,pageable);
+            Page<TCoursePo> coursePoPage = courseService.findByClassifyIdAndPage(classify,pageable);
+            List<TCoursePo> coursePoList = coursePoPage.getContent();
             List<CourseVoAdmin> courseVoList = new ArrayList<>();
             for (int i = 0; i < coursePoList.size(); i++) {
                 TCoursePo tCoursePo = coursePoList.get(i);
@@ -99,7 +101,7 @@ public class CourseController {
             }
             Map<String,Object> data = new HashMap<>();
             data.put("courseList",courseVoList);
-            data.put("count",courseService.getCourseCount());
+            data.put("count",coursePoPage.getTotalElements());
             long endTime = OceanDateUtil.getCurrentTime();
             System.out.println("查询所有课程的用时：" + (endTime - firstTime));
             return OceanReturn.successResult(

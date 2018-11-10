@@ -39,21 +39,21 @@ public class CourseServiceImpl implements ICourService {
     }
 
     @Override
-    public List<TCoursePo> findByClassifyIdAndPage(int classifyId, Pageable pageable) throws Exception {
-        List<TCoursePo> coursePoList = null;
+    public Page<TCoursePo> findByClassifyIdAndPage(int classifyId, Pageable pageable) throws Exception {
+        Page<TCoursePo> coursePoListPage = null;
         if (classifyId == 0){
-            coursePoList = courseDao.findAll(pageable).getContent();
+            coursePoListPage = courseDao.findAll(pageable);
         }else {
-            coursePoList = courseDao.findAllByClassifyId(classifyId,pageable);
             TCourseClassifyPo courseClassifyPo = courseClassifyDao.findById(classifyId).get();
             if (courseClassifyPo == null){
                 throw new OceanException("根据分类查询课程失败，分类不存在");
             }
+            coursePoListPage = courseDao.findAllByClassifyId(classifyId,pageable);
         }
-        if (OceanOperationUtil.isNullOrEmptyForCollection(coursePoList)){
-            throw new OceanException("没有查询到该分类下的课程");
+        if (OceanOperationUtil.isNullOrEmptyForCollection(coursePoListPage.getContent())){
+            throw new RuntimeException("没有查询到该分类下的课程");
         }
-        return coursePoList;
+        return coursePoListPage;
     }
 
     @Override
