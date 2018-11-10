@@ -71,4 +71,5 @@ public interface IUserService extends BaseService<TUserPo,Integer> {
      */
     void operateUserStatus(int userId,boolean isBan) throws RuntimeException;
 
+
 }

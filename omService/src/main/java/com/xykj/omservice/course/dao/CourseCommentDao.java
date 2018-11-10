@@ -38,4 +38,14 @@ public interface CourseCommentDao extends BaseJpaDao<TCourseCommentPo,Integer> {
 
     List<TCourseCommentPo> findAllById(int commentId);
 
+    /**
+     * 获取最新一条评论数据
+     * @return
+     */
+    @Query(
+            value = "SELECT * FROM t_course_comment ORDER BY create_time DESC LIMIT 1;",
+            nativeQuery = true
+    )
+    TCourseCommentPo findRecentlyComment();
+
 }

@@ -209,13 +209,21 @@ public class OmServiceApplicationTests {
 //        courseService.addNewCourse(tCoursePo);
 //    }
 
-    @Autowired
-    UserServiceImpl userService;
+//    @Autowired
+//    UserServiceImpl userService;
+//
+//    @Test
+//    public void test10(){
+//        Pageable pageable = new PageRequest(0,10);
+//        userService.getAllUserByStatus(0,pageable);
+//    }
 
-    @Test
-    public void test10(){
-        Pageable pageable = new PageRequest(0,10);
-        userService.getAllUserByStatus(0,pageable);
-    }
+    @Autowired
+    CourseDao courseDao;
+
+//    @Test
+//    public void test1() {
+//        System.out.println(courseDao.findCourseByStudyCountBest().get(0)[0] + "|" + courseDao.findCourseByStudyCountBest().get(0)[1]);
+//    }
 
 }

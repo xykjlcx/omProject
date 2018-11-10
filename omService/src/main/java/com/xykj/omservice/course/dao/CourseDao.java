@@ -34,4 +34,14 @@ public interface CourseDao extends BaseJpaDao<TCoursePo,Integer> {
      */
     List<TCoursePo> findAllByCourseNameLike(String searchCourseName,Pageable pageable);
 
+    /**
+     * 获取用户学习数量最多的课程
+     * @return
+     */
+    @Query(
+            value = "SELECT jass.course_id,COUNT(*) AS num FROM (SELECT user_id,course_id FROM t_user_course_study GROUP BY user_id,course_id) AS jass GROUP BY jass.course_id ORDER BY num DESC;",
+            nativeQuery = true
+    )
+    List<Object[]> findCourseByStudyCountBest();
+
 }
