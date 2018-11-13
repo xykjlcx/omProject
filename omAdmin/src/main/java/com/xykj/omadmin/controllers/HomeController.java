@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2018/11/69:21 AM
  */
 @RestController
-@RequestMapping("/admin/home")
+@RequestMapping("/api/admin/home")
 public class HomeController {
 
     @Autowired

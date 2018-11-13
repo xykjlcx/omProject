@@ -21,7 +21,7 @@ import java.io.FileOutputStream;
  * @date 2018/10/13下午5:59
  */
 @RestController
-@RequestMapping("/admin/main")
+@RequestMapping("/api/admin/main")
 public class MainController {
 
     @Autowired

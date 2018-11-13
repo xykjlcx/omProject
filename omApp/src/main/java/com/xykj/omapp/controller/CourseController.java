@@ -17,6 +17,7 @@ import com.xykj.omservice.course.services.impl.CourseServiceImpl;
 import com.xykj.omservice.course.services.impl.CouseClassifyServiceImpl;
 import com.xykj.omservice.user.services.impl.UserCourseStudyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
@@ -57,7 +58,8 @@ public class CourseController {
         try {
             System.out.println("page:" + page + ",size:" + size);
             Pageable pageable = new PageRequest(page, size);
-            List<TCoursePo> coursePoList = courseService.findByClassifyIdAndPage(classify,pageable);
+            Page<TCoursePo> coursePoPage = courseService.findByClassifyIdAndPage(classify,pageable);
+            List<TCoursePo> coursePoList = coursePoPage.getContent();
             List<CourseVo> courseVoList = new ArrayList<>();
             coursePoList.forEach(tCoursePo -> {
                 CourseVo courseVo = PoConvertVo.convert(tCoursePo);

@@ -38,7 +38,7 @@ import java.util.Map;
  * @date 2018/10/13下午5:53
  */
 @RestController
-@RequestMapping("/admin/courses")
+@RequestMapping("/api/admin/courses")
 public class CourseController {
 
     @Autowired
