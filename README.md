@@ -12,12 +12,18 @@
 - 更多
     - [请移步我的博客](http://39.105.73.27/launch-ocean-mooc/)
 
+## 系统拓扑
+![Mysql](http://oceanbucket.oss-cn-beijing.aliyuncs.com/%E7%B3%BB%E7%BB%9F%E6%8B%93%E6%89%91.png)
+
 ## 软件架构
 
 - 该项目为作者毕设项目群中的Server端，采用模块化开发
+- 系统架构
+
+![Mysql](http://oceanbucket.oss-cn-beijing.aliyuncs.com/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%9E%B6%E6%9E%84.png
+)
+
 - 开发环境
-    - About IDE
-    ![idea](https://note.youdao.com/yws/public/resource/5f15fd7b7db124976cdb1208cb9d1091/xmlnote/203C7BCEEECB42ACBD4F870CFCA27517/306)
     - JDK Version：10.0.1
     - Maven Version：3.3.9
     - About Mysql
@@ -49,23 +55,41 @@
     - 其次，早期做模块化处理，也会更方便我们后期考虑的微服务架构演变
 
 
-#### 安装教程
+## 安装教程
 
-1. 创建数据库，Database Name:omdb，执行sql脚本
+1. 安装Mysql，执行install.sql脚本
 2. 配置application.properties的数据库连接参数
 3. git clone https://gitee.com/xykjlcx/omProject.git
+4. 下载安装Redis并启动
+5. omApp模块为移动端接口，端口为：8088
+6. omAdmin模块为Web端接口，端口为：8086，支持HTTPS
 
-#### 使用说明
-
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### 参与贡献
+## 参与贡献
 
 1. Fork 本项目
 2. 新建 Feat_xxx 分支
 3. 提交代码
 4. 新建 Pull Request
 
-### 开源协议
+## 未来
+
+> 整个项目，从服务端、到Web端和Android端，包括作者整理、撰写论文，差不多一共用了一个半月。所以项目有很多不成熟的地方，代码写的也不够优雅，在2.0版本中，我们会解决这些问题，并新增一些功能。
+
+![image](http://oceanbucket.oss-cn-beijing.aliyuncs.com/%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92%20%282%29.png)
+
+### 技术交流
+
+- QQ交流群***708261041***，加群后可以获得开发文档、毕设论文、疑问解答
+- 或者添加我的个人QQ：348686686，请注明来意
+
+### 商业授权
+
+- 本项目为开源项目，遵循MIT协议
+- 商用请联系作者授权。
+
+### 点滴支持，将是我不解的动力
+![image](https://raw.githubusercontent.com/xykjlcx/om-admin-vue/master/readme-img/pay-ali.jpg)
+
+---
+
+![image](https://raw.githubusercontent.com/xykjlcx/om-admin-vue/master/readme-img/pay-weixin.png)
